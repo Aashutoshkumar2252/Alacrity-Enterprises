@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AutoPartsPro</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS (ensure style.css exists and has your custom styles like .section-heading, .btn-primary) -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Custom styles for this page, if any specific overrides are needed */
+        .section-heading {
+            font-size: 2.5rem; /* Equivalent to text-4xl or text-5xl in Tailwind */
+            font-weight: 700; /* Equivalent to font-bold or font-extrabold */
+            color: #1a202c; /* Equivalent to text-gray-900 */
+        }
+        .text-blue-600 {
+            color: #2563eb;
+        }
+        .hover\:text-blue-600:hover {
+            color: #2563eb;
+        }
+        .bg-blue-600 {
+            background-color: #2563eb;
+        }
+        .btn-primary {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            /* Removed background-color and color to allow Tailwind classes to apply */
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            /* Removed background-color to allow Tailwind classes to apply */
+        }
+        .btn-primary-header {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border-radius: 0.375rem;
+            /* Removed background-color and color to allow Tailwind classes to apply */
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary-header:hover {
+            /* Removed background-color to allow Tailwind classes to apply */
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .hero-about {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x600/1F2937/F3F4F6?text=About+Us+Background') no-repeat center center/cover;
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-inter">
+
+    <!-- Header (from your provided code) -->
+    <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-900">
+                <a href="./index.html" class="hover:text-blue-600 transition-colors duration-300">AutoPartsPro</a>
+            </div>
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a href="./index.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
+                </li>
+                <li><a href="./aboutUs.html"
+                        class="text-blue-600 font-medium transition-colors duration-300">About
+                        Us</a></li>
+                <li><a href="./index.html#products"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a>
+                </li>
+                <li><a href="./index.html#contact" class="btn-primary-header inline-block">Contact Us</a></li>
+            </ul>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none"
+                aria-label="Toggle mobile menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden bg-white px-6 py-4 border-t border-gray-200 hidden">
+            <ul class="flex flex-col space-y-4">
+                <li><a href="./index.html"
+                        class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
+                </li>
+                <li><a href="./aboutUs.html"
+                        class="block text-blue-600 font-medium transition-colors duration-300">About
+                        Us</a></li>
+                <li><a href="./index.html#products"
+                        class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a>
+                </li>
+                <li><a href="./index.html#contact" class="block btn-primary-header">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content for About Us Page -->
+    <main>
+        <!-- About Us Hero Section -->
+        <section class="hero-about">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">About AutoPartsPro</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90">
+                    Your trusted global partner in high-quality automobile parts wholesale.
+                </p>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section id="our-story" class="py-20 bg-white">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/D1D5DB/4B5563?text=Our+Story" alt="Our Story" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2 text-left">
+                    <h2 class="section-heading mb-6 text-center md:text-left">Our Journey & Growth</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Founded in 2005, AutoPartsPro began with a simple vision: to bridge the gap between reliable manufacturers and businesses in need of high-quality automobile components. What started as a small local distributor quickly grew into a global wholesale leader, driven by our commitment to excellence and customer satisfaction.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Over the years, we've built strong relationships with leading manufacturers worldwide, ensuring a diverse and robust inventory. Our dedication to innovation and efficiency has allowed us to serve a vast network of clients, from independent repair shops to large-scale automotive enterprises.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission, Vision, Values Section -->
+        <section id="mission-vision-values" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-heading mb-12">Our Core Principles</h2>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <!-- Mission Card -->
+                    <div class="card p-8 w-full md:w-1/3 lg:w-1/4 flex flex-col items-center text-center">
+                        <i class="fas fa-bullseye text-5xl text-blue-600 mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Our Mission</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            To provide superior automobile parts and exceptional service, empowering our clients to succeed by ensuring reliability and efficiency in their operations.
+                        </p>
+                    </div>
+                    <!-- Vision Card -->
+                    <div class="card p-8 w-full md:w-1/3 lg:w-1/4 flex flex-col items-center text-center">
+                        <i class="fas fa-lightbulb text-5xl text-yellow-500 mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Our Vision</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            To be the global leader in automobile parts wholesale, recognized for our unwavering commitment to quality, innovation, and customer-centric solutions.
+                        </p>
+                    </div>
+                    <!-- Values Card -->
+                    <div class="card p-8 w-full md:w-1/3 lg:w-1/4 flex flex-col items-center text-center">
+                        <i class="fas fa-handshake text-5xl text-green-600 mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Our Values</h3>
+                        <ul class="text-gray-700 leading-relaxed list-disc list-inside text-left">
+                            <li>Integrity & Trust</li>
+                            <li>Quality & Reliability</li>
+                            <li>Customer Focus</li>
+                            <li>Innovation</li>
+                            <li>Sustainability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-heading mb-12">Why Choose AutoPartsPro?</h2>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <!-- Feature Card 1 -->
+                    <div class="card p-6 w-full sm:w-1/2 md:w-[calc(25%-24px)] flex flex-col items-center text-center">
+                        <i class="fas fa-globe text-4xl text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Global Reach</h3>
+                        <p class="text-gray-700">Extensive network of suppliers and distributors worldwide.</p>
+                    </div>
+                    <!-- Feature Card 2 -->
+                    <div class="card p-6 w-full sm:w-1/2 md:w-[calc(25%-24px)] flex flex-col items-center text-center">
+                        <i class="fas fa-star text-4xl text-red-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Unmatched Quality</h3>
+                        <p class="text-gray-700">Strict quality control ensures only the best parts.</p>
+                    </div>
+                    <!-- Feature Card 3 -->
+                    <div class="card p-6 w-full sm:w-1/2 md:w-[calc(25%-24px)] flex flex-col items-center text-center">
+                        <i class="fas fa-truck-fast text-4xl text-indigo-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Timely Delivery</h3>
+                        <p class="text-gray-700">Efficient logistics for prompt and reliable shipments.</p>
+                    </div>
+                    <!-- Feature Card 4 -->
+                    <div class="card p-6 w-full sm:w-1/2 md:w-[calc(25%-24px)] flex flex-col items-center text-center">
+                        <i class="fas fa-headset text-4xl text-orange-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Dedicated Support</h3>
+                        <p class="text-gray-700">Expert team ready to assist with all your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-20 bg-blue-600 text-white text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-6">Ready to Partner with AutoPartsPro?</h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">
+                    Join countless satisfied businesses who trust us for their automotive part needs.
+                </p>
+                <!-- Button color changed for better visibility -->
+                <a href="./index.html#contact" class="btn-primary bg-yellow-400 text-blue-800 hover:bg-yellow-500">Get in Touch Today</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (from your provided code) -->
+    <footer class="footer bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> 123 Auto Parts Lane, Industrial City, ZIP
+                    12345</p>
+                <p class="mb-2"><i class="fas fa-phone mr-2"></i> +1 (555) 123-4567</p>
+                <p class="mb-2"><i class="fas fa-envelope mr-2"></i> info@autopartspro.com</p>
+                <p class="mb-2"><i class="fas fa-clock mr-2"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+            </div>
+
+            <!-- Our Company Section -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Our Company</h3>
+                <ul>
+                    <li class="mb-2"><a href="./aboutUs.html"
+                                class="text-gray-400 hover:text-blue-400 transition-colors duration-300">About Us</a></li>
+                    <li class="mb-2"><a href="./index.html#products"
+                                class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Our Products</a>
+                    </li>
+                    <li class="mb-2"><a href="./index.html#contact"
+                                class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact Us</a></li>
+                    <li class="mb-2"><a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Sitemap</a></li>
+                    <li class="mb-2"><a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Download
+                                Brochure</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                        aria-label="Facebook"><i class="fab fa-facebook-f text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                        aria-label="Twitter"><i class="fab fa-twitter text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin-in text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                        aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
+                </div>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Our Location</h3>
+                <div class="w-full h-48 bg-gray-700 rounded-lg overflow-hidden">
+                    <!-- Placeholder for Google Maps iframe -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.250551185368!2d144.963057615317!3d-37.8142170797519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b58c2f1f2d%3A0x50456784629e4e0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1678901234567!5m2!1sen!2sau"
+                        width="100%" height="100%" class="map-iframe-style" allowfullscreen=""
+                        title="Company Location on Map"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-8 pt-8 border-t border-gray-700">
+            <p class="mb-4 text-gray-400">&copy; 2025 AutoPartsPro. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 text-gray-400">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
