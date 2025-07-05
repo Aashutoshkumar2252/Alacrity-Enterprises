@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile Parts Wholesaler - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Social Icons (optional, for real icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-900">
+                <a href="#" class="hover:text-blue-600 transition-colors duration-300">AutoPartsPro</a>
+            </div>
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a href="#home" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a></li>
+                <li><a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
+                <li><a href="#products" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
+                <li><a href="#contact" class="btn-primary-header inline-block">Contact Us</a></li>
+            </ul>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none" aria-label="Toggle mobile menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden bg-white px-6 py-4 border-t border-gray-200 hidden">
+            <ul class="flex flex-col space-y-4">
+                <li><a href="#home" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a></li>
+                <li><a href="#about" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
+                <li><a href="#products" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
+                <li><a href="#contact" class="block btn-primary-header">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section (Default UI) -->
+    <section id="home" class="hero-section">
+        <div class="container mx-auto px-6 relative z-10">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">Your Trusted Partner in <br> Automobile Parts Wholesale</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Delivering high-quality, reliable automobile components to businesses worldwide.
+                Experience unparalleled service and competitive pricing.
+            </p>
+            <a href="#contact" class="btn-primary inline-block">Get a Quote Today</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-heading mb-12">About Our Company</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10 max-w-5xl mx-auto">
+                <div class="md:w-1/2 text-lg leading-relaxed text-gray-700 text-left">
+                    <p class="mb-6">
+                        Founded in 1995, AutoPartsPro has grown to become a leading wholesaler of automobile parts, serving a diverse clientele across the globe. Our journey began with a simple mission: to provide the highest quality automotive components with exceptional service.
+                    </p>
+                    <p class="mb-6">
+                        We specialize in a wide range of parts, from engine components and braking systems to electrical parts and body panels. Our extensive inventory ensures that we can meet the demands of various vehicle types and models, always adhering to stringent quality control standards.
+                    </p>
+                    <p>
+                        At AutoPartsPro, we pride ourselves on building strong, lasting relationships with our partners. Our dedicated team is committed to understanding your needs and providing tailored solutions, ensuring timely delivery and competitive pricing. We are more than just a supplier; we are your strategic partner in success.
+                    </p>
+                </div>
+                <div class="md:w-1/2 about-image-placeholder">
+                    <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=About+Us+Image" alt="About Us Image" class="rounded-xl shadow-lg w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-heading mb-12">Our Product Range</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 product-grid">
+                <!-- Product Card 1 -->
+                <div class="card p-6 flex flex-col items-center">
+                    <img src="https://placehold.co/400x200/4F46E5/FFFFFF?text=Engine+Parts" alt="Engine Parts" class="product-card-image mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Engine Components</h3>
+                    <p class="text-gray-600 text-center">Comprehensive selection of engine parts including blocks, pistons, crankshafts, and cylinder heads.</p>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="card p-6 flex flex-col items-center">
+                    <img src="https://placehold.co/400x200/F59E0B/FFFFFF?text=Braking+Systems" alt="Braking Systems" class="product-card-image mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Braking Systems</h3>
+                    <p class="text-gray-600 text-center">High-performance brake pads, rotors, calipers, and master cylinders for all vehicle types.</p>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="card p-6 flex flex-col items-center">
+                    <img src="https://placehold.co/400x200/10B981/FFFFFF?text=Suspension" alt="Suspension Parts" class="product-card-image mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Suspension & Steering</h3>
+                    <p class="text-gray-600 text-center">Shocks, struts, control arms, tie rods, and power steering components for smooth rides.</p>
+                </div>
+                <!-- Product Card 4 -->
+                <div class="card p-6 flex flex-col items-center">
+                    <img src="https://placehold.co/400x200/EF4444/FFFFFF?text=Electrical+Parts" alt="Electrical Parts" class="product-card-image mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Electrical Components</h3>
+                    <p class="text-gray-600 text-center">Starters, alternators, batteries, wiring harnesses, and various sensors.</p>
+                </div>
+                <!-- Product Card 5 -->
+                <div class="card p-6 flex flex-col items-center">
+                    <img src="https://placehold.co/400x200/6366F1/FFFFFF?text=Body+Panels" alt="Body Panels" class="product-card-image mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Body & Exterior</h3>
+                    <p class="text-gray-600 text-center">Fenders, bumpers, doors, mirrors, and lighting assemblies for all models.</p>
+                </div>
+                <!-- Product Card 6 -->
+                <div class="card p-6 flex flex-col items-center">
+                    <img src="https://placehold.co/400x200/06B6D4/FFFFFF?text=Transmission" alt="Transmission Parts" class="product-card-image mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Transmission & Drivetrain</h3>
+                    <p class="text-gray-600 text-center">Transmissions, clutches, axles, and universal joints for efficient power transfer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-heading mb-4">What Our Customers Say</h2>
+            <!-- Overall Rating Summary -->
+            <div class="overall-rating-summary mb-12">
+                <p class="text-4xl font-bold text-gray-900 mb-2">4.9 / 5.0</p>
+                <div class="text-yellow-500 text-3xl mb-2">
+                    ★★★★★
+                </div>
+                <p class="text-gray-600 text-lg">(Based on 150+ reviews)</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Review Card 1 -->
+                <div class="card p-6 text-left">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60/A0AEC0/FFFFFF?text=JD" alt="Customer Avatar" class="rounded-full w-16 h-16 mr-4 object-cover">
+                        <div>
+                            <p class="font-semibold text-lg text-gray-900">Jane Doe</p>
+                            <p class="text-sm text-gray-600">CEO, AutoSupply Co.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">"AutoPartsPro has been our go-to supplier for years. Their quality is unmatched, and their delivery is always on time. Highly recommend!"</p>
+                    <div class="text-yellow-500">
+                        ★★★★★
+                    </div>
+                </div>
+                <!-- Review Card 2 -->
+                <div class="card p-6 text-left">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60/A0AEC0/FFFFFF?text=MS" alt="Customer Avatar" class="rounded-full w-16 h-16 mr-4 object-cover">
+                        <div>
+                            <p class="font-semibold text-lg text-gray-900">Mark Smith</p>
+                            <p class="text-sm text-gray-600">Procurement Manager, Global Auto</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">"Their extensive range of parts and competitive pricing have significantly boosted our efficiency. A truly reliable partner!"</p>
+                    <div class="text-yellow-500">
+                        ★★★★★
+                    </div>
+                </div>
+                <!-- Review Card 3 -->
+                <div class="card p-6 text-left">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60/A0AEC0/FFFFFF?text=LR" alt="Customer Avatar" class="rounded-full w-16 h-16 mr-4 object-cover">
+                        <div>
+                            <p class="font-semibold text-lg text-gray-900">Lisa Ray</p>
+                            <p class="text-sm text-gray-600">Owner, Speedy Repairs</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">"Fantastic customer service and high-quality parts. They always go the extra mile to ensure we get what we need."</p>
+                    <div class="text-yellow-500">
+                        ★★★★★
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Partners Section -->
+    <section id="partners" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-heading mb-12">Our Valued Brand Partners</h2>
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 lg:gap-20">
+                <!-- Partner Logo 1 -->
+                <img src="https://placehold.co/150x80/E2E8F0/1A202C?text=Brand+A" alt="Brand A Logo" class="partner-logo">
+                <!-- Partner Logo 2 -->
+                <img src="https://placehold.co/150x80/E2E8F0/1A202C?text=Brand+B" alt="Brand B Logo" class="partner-logo">
+                <!-- Partner Logo 3 -->
+                <img src="https://placehold.co/150x80/E2E8F0/1A202C?text=Brand+C" alt="Brand C Logo" class="partner-logo">
+                <!-- Partner Logo 4 -->
+                <img src="https://placehold.co/150x80/E2E8F0/1A202C?text=Brand+D" alt="Brand D Logo" class="partner-logo">
+                <!-- Partner Logo 5 -->
+                <img src="https://placehold.co/150x80/E2E8F0/1A202C?text=Brand+E" alt="Brand E Logo" class="partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-heading mb-12">Get a Quote / Contact Us</h2>
+            <div class="max-w-2xl mx-auto contact-form-container">
+                <p class="text-gray-600 mb-8">
+                    Have questions or need a custom quote? Fill out the form below and we'll get back to you promptly.
+                </p>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-left text-gray-700 text-sm font-medium mb-2">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-left text-gray-700 text-sm font-medium mb-2">Your Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="john.doe@example.com" required>
+                    </div>
+                    <div>
+                        <label for="company" class="block text-left text-gray-700 text-sm font-medium mb-2">Company Name (Optional)</label>
+                        <input type="text" id="company" name="company" class="form-input" placeholder="ABC Auto Supply">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-left text-gray-700 text-sm font-medium mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-input" placeholder="Quote Request for Engine Parts" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-left text-gray-700 text-sm font-medium mb-2">Your Message / Quote Details</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" placeholder="Please provide details about the parts you need, quantities, and any specific requirements." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full py-3">Send Message</button>
+                    <div id="success-message" class="success-message">
+                        Thank you for your message! We will get back to you shortly.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> 123 Auto Parts Lane, Industrial City, ZIP 12345</p>
+                <p class="mb-2"><i class="fas fa-phone mr-2"></i> +1 (555) 123-4567</p>
+                <p class="mb-2"><i class="fas fa-envelope mr-2"></i> info@autopartspro.com</p>
+                <p class="mb-2"><i class="fas fa-clock mr-2"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+            </div>
+
+            <!-- Our Company Section -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Our Company</h3>
+                <ul>
+                    <li class="mb-2"><a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">About Us</a></li>
+                    <li class="mb-2"><a href="#products" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Our Products</a></li>
+                    <li class="mb-2"><a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact Us</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Sitemap</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Download Brochure</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" aria-label="Facebook"><i class="fab fa-facebook-f text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" aria-label="Twitter"><i class="fab fa-twitter text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
+                </div>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Our Location</h3>
+                <div class="w-full h-48 bg-gray-700 rounded-lg overflow-hidden">
+                    <!-- Placeholder for Google Maps iframe -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.250551185368!2d144.963057615317!3d-37.8142170797519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b58c2f1f2d%3A0x50456784629e4e0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1678901234567!5m2!1sen!2sau"
+                        width="100%"
+                        height="100%"
+                        class="map-iframe-style"
+                        allowfullscreen=""
+                        title="Company Location on Map"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-8 pt-8 border-t border-gray-700">
+            <p class="mb-4">&copy; 2025 AutoPartsPro. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

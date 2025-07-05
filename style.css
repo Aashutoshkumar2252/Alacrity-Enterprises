@@ -1,0 +1,229 @@
+/* Custom CSS for decorative elements and overrides */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8faff; /* Light background for the whole page */
+}
+.hero-section {
+    background: linear-gradient(135deg, #2a4365, #1a202c); /* Dark blue to black gradient */
+    color: white;
+    padding: 8rem 0; /* Adjusted padding for default look */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: auto; /* Revert to auto height */
+    min-height: 0; /* Remove min-height */
+    display: block; /* Revert to block display */
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+    animation: rotateBackground 20s linear infinite;
+}
+@keyframes rotateBackground {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.btn-primary {
+    background: linear-gradient(90deg, #3b82f6, #2563eb); /* Blue gradient */
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px; /* Fully rounded */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+.btn-primary:hover {
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+    transform: translateY(-2px);
+}
+
+/* New style for header contact button */
+.btn-primary-header {
+    background: linear-gradient(90deg, #3b82f6, #2563eb); /* Blue gradient */
+    color: white;
+    padding: 0.5rem 1.25rem; /* Slightly smaller padding than main button */
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary-header:hover {
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+    transform: translateY(-1px);
+}
+
+
+.section-heading {
+    font-size: 2.5rem; /* H1 equivalent */
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #3b82f6;
+    border-radius: 2px;
+}
+.card {
+    background-color: white;
+    border-radius: 1.5rem; /* More rounded */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+.product-card-image {
+    width: 100%;
+    height: 200px; /* Fixed height for product images */
+    object-fit: cover;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e0; /* Light gray border */
+    border-radius: 0.75rem; /* Rounded corners */
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-input:focus {
+    outline: none;
+    border-color: #3b82f6; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); /* Light blue shadow on focus */
+}
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.contact-form-container {
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+}
+.success-message {
+    background-color: #d1fae5; /* Green light */
+    color: #065f46; /* Green dark */
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+    display: none; /* Hidden by default */
+}
+.footer {
+    background-color: #1a202c; /* Dark background */
+    color: #e2e8f0; /* Light gray text */
+    padding: 3rem 0;
+    text-align: center;
+}
+.footer a {
+    color: #90cdf4; /* Light blue links */
+    transition: color 0.3s ease;
+}
+.footer a:hover {
+    color: #63b3ed; /* Slightly darker blue on hover */
+}
+
+/* New: Partner Logo Styling */
+.partner-logo {
+    max-width: 150px; /* Max width for logos */
+    height: auto;
+    filter: grayscale(100%); /* Grayscale effect */
+    opacity: 0.7; /* Slightly transparent */
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%); /* Full color on hover */
+    opacity: 1; /* Full opacity on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* New: Overall Rating Summary Styling */
+.overall-rating-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem; /* More space below the summary */
+}
+.overall-rating-summary .text-4xl {
+    font-size: 3rem; /* Larger font for the score */
+}
+.overall-rating-summary .text-3xl {
+    font-size: 2.5rem; /* Larger stars */
+}
+
+/* New: Map iframe styling */
+.map-iframe-style {
+    border: 0; /* Moved from inline style */
+}
+
+/* About Us Image Placeholder */
+.about-image-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px; /* Ensure it has some height even if image is not loaded */
+}
+.about-image-placeholder img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 6rem 0;
+    }
+    .section-heading {
+        font-size: 2rem;
+    }
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .footer .grid {
+        grid-template-columns: 1fr; /* Stack footer columns on small screens */
+        text-align: center;
+    }
+    .footer .flex {
+        justify-content: center; /* Center social icons on small screens */
+    }
+    /* Adjust header navigation for mobile */
+    header nav ul {
+        align-items: flex-start; /* Align items to start in mobile flex column */
+    }
+    .btn-primary-header {
+        width: fit-content; /* Adjust width for mobile button */
+        margin-top: 1rem; /* Add some space above the button */
+    }
+}
+
+/* Specific adjustment for medium screens and up for the 4-column footer */
+@media (min-width: 768px) {
+    .footer .grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for medium screens and up */
+    }
+}
