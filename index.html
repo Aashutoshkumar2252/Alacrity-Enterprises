@@ -30,9 +30,12 @@
                         <i class="fas fa-search"></i>
                     </button>
                 </li>
-                <li><a href="./index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a></li>
-                <li><a href="./aboutUs.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
-                <li><a href="./products.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
+                <li><a href="./aboutUs.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About
+                        Us</a></li>
+                <li><a href="./products.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a>
+                </li>
                 <li><a href="#contact" class="btn-primary-header inline-block">Contact Us</a></li>
             </ul>
             <!-- Mobile Menu Button (Hamburger) -->
@@ -292,54 +295,66 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section id="contact" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="section-heading mb-12">Get a Quote / Contact Us</h2>
-            <div class="max-w-2xl mx-auto contact-form-container">
-                <p class="text-gray-600 mb-8">
-                    Have questions or need a custom quote? Fill out the form below and we'll get back to you promptly.
-                </p>
-                <form id="contact-form" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-left text-gray-700 text-sm font-medium mb-2">Your
-                            Name</label>
-                        <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
-                    </div>
-                    <div>
-                        <label for="email" class="block text-left text-gray-700 text-sm font-medium mb-2">Your
-                            Email</label>
-                        <input type="email" id="email" name="email" class="form-input"
-                            placeholder="john.doe@example.com" required>
-                    </div>
-                    <div>
-                        <label for="company" class="block text-left text-gray-700 text-sm font-medium mb-2">Company Name
-                            (Optional)</label>
-                        <input type="text" id="company" name="company" class="form-input" placeholder="ABC Auto Supply">
-                    </div>
-                    <div>
-                        <label for="subject"
-                            class="block text-left text-gray-700 text-sm font-medium mb-2">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-input"
-                            placeholder="Quote Request for Engine Parts" required>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-left text-gray-700 text-sm font-medium mb-2">Your Message
-                            / Quote Details</label>
-                        <textarea id="message" name="message" class="form-input form-textarea"
-                            placeholder="Please provide details about the parts you need, quantities, and any specific requirements."
-                            required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary w-full py-3">Send Message</button>
-                    <div id="success-message" class="success-message">
-                        Thank you for your message! We will get back to you shortly.
-                    </div>
-                </form>
-            </div>
+    <section id="contact" class="py-20 bg-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8">Get a Quote / Contact Us</h2>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto">Click the button below to request a custom quote—no need to
+                scroll through the page.</p>
+            <button id="openModal"
+                class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition">
+                Get a Quotation
+            </button>
         </div>
     </section>
 
+
+
+    <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+        style="backdrop-filter: blur(8px); z-index: 9999;">
+        <!-- Modal Container -->
+        <div
+            class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto p-8 relative border border-gray-200 dark:border-gray-700">
+            <!-- Close Button -->
+            <button id="closeModal"
+                class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-3xl font-extrabold transition z-10"
+                aria-label="Close modal" type="button">
+                &times;
+            </button>
+
+            <!-- Modal Title -->
+            <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Get a Quotation</h2>
+
+            <!-- Modal Form -->
+            <form id="modal-contact-form" class="space-y-4">
+                <input id="modal-name" type="text" placeholder="Name" required
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
+                <input id="modal-email" type="email" placeholder="Email" required
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
+                <input id="modal-company" type="text" placeholder="Company"
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
+                <input id="modal-subject" type="text" placeholder="Subject" required
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
+                <textarea id="modal-message" placeholder="Message" required rows="4"
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white resize-y"></textarea>
+
+                <button type="submit"
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-md transition">
+                    Submit
+                </button>
+            </form>
+
+            <!-- Success Message -->
+            <p id="modal-success"
+                class="hidden mt-4 p-3 bg-green-100 text-green-800 rounded-md font-semibold text-center">
+                Thank you for your message! We will get back to you soon.
+            </p>
+        </div>
+    </div>
+
+
+
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
             <!-- Contact Info -->
             <div>
@@ -407,7 +422,7 @@
     </footer>
 
     <!-- Custom JavaScript -->
-   <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
