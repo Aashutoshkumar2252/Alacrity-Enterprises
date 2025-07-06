@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,18 +13,22 @@
     <!-- Font Awesome for Social Icons (optional, for real icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Header -->
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <div class="text-2xl font-bold text-gray-900">
-                <a href="#" class="hover:text-blue-600 transition-colors duration-300">AutoPartsPro</a>
+                <a href="#" class="hover:text-blue-600 transition-colors duration-300">Alacrity Enterprises</a>
             </div>
-            <ul class="hidden md:flex space-x-8 items-center">
-                <li><a href="./index.html"
-                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
+            <ul class="hidden md:flex flex-grow justify-center items-center space-x-8">
+                <!-- Search Box and Button for Desktop -->
+                <li class="relative flex items-center">
+                    <input type="text" placeholder="What are you looking for?" class="pl-10 pr-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-r-full hover:bg-blue-700 transition-colors duration-300 text-sm" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </li>
                 <li><a href="./aboutUs.html"
                         class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About
@@ -33,29 +36,30 @@
                 <li><a href="./products.html"
                         class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a>
                 </li>
-                <li><a href="#footer" class="btn-primary-header inline-block">Contact Us</a></li>
+                <li><a href="#contact" class="btn-primary-header inline-block">Contact Us</a></li>
             </ul>
             <!-- Mobile Menu Button (Hamburger) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none"
-                aria-label="Toggle mobile menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
-                    </path>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none" aria-label="Toggle mobile menu" title="Toggle mobile menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </nav>
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="md:hidden bg-white px-6 py-4 border-t border-gray-200 hidden">
             <ul class="flex flex-col space-y-4">
-                <li><a href="#home"
-                        class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
-                </li>
-                <li><a href="#about"
-                        class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About
-                        Us</a></li>
-                <li><a href="#products"
-                        class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a>
+                <li><a href="#home" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a></li>
+                <li><a href="#about" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
+                <li><a href="#products" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
+                <!-- Search Box and Button for Mobile -->
+                <li class="flex items-center w-full">
+                    <div class="relative flex-grow">
+                        <input type="text" placeholder="Search products..." class="pl-10 pr-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm w-full">
+                        <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-r-full hover:bg-blue-700 transition-colors duration-300 text-sm flex-shrink-0" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </li>
                 <li><a href="#contact" class="block btn-primary-header">Contact Us</a></li>
             </ul>
@@ -290,8 +294,21 @@
         </div>
     </section>
 
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8">Get a Quote / Contact Us</h2>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto">Click the button below to request a custom quote—no need to
+                scroll through the page.</p>
+            <button id="openModal"
+                class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition">
+                Get a Quotation
+            </button>
+        </div>
+    </section>
 
-    <!-- Contact Us Modal -->
+
+
     <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
         style="backdrop-filter: blur(8px); z-index: 9999;">
         <!-- Modal Container -->
