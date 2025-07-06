@@ -12,17 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Smooth scrolling for internal anchor links and normal navigation for external links ---
-    // This targets all <a> tags within <nav> elements.
+    // --- Smooth scrolling for internal anchor links ---
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
 
-            // Check if the href starts with '#' (indicating an internal anchor link)
             if (href && href.startsWith('#')) {
-                e.preventDefault(); // Prevent default browser navigation for internal links
+                e.preventDefault();
 
-                // Get the target element to scroll to
                 const targetElement = document.querySelector(href);
 
                 if (targetElement) {
@@ -31,41 +28,55 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
 
-                // Close mobile menu after clicking an internal link
                 if (mobileMenu && mobileMenu.classList.contains('flex')) {
                     mobileMenu.classList.remove('flex');
                     mobileMenu.classList.add('hidden');
                 }
             }
-            // For links that do NOT start with '#', the default behavior (navigating to a new page)
-            // is allowed to proceed, so no e.preventDefault() here.
         });
     });
 
-    // --- Handle contact form submission ---
-    // This part of the script will only run if the contact form elements exist on the page.
-    const contactForm = document.getElementById('contact-form');
-    const successMessage = document.getElementById('success-message');
+    // --- Modal Form Handling ---
+    const openModalBtn = document.getElementById('openModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalForm = document.getElementById('modal-contact-form');
+    const modalSuccess = document.getElementById('modal-success');
 
-    if (contactForm && successMessage) { // Ensure both elements exist before adding listener
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission (page reload)
-
-            console.log('Form submitted!');
-            console.log('Name:', document.getElementById('name').value);
-            console.log('Email:', document.getElementById('email').value);
-            console.log('Company:', document.getElementById('company').value);
-            console.log('Subject:', document.getElementById('subject').value);
-            console.log('Message:', document.getElementById('message').value);
-
-            // Show success message
-            successMessage.style.display = 'block';
-
-            // Optionally, clear the form fields and hide the message after a short delay
-            setTimeout(() => {
-                contactForm.reset(); // Clears all form fields
-                successMessage.style.display = 'none'; // Hides the success message
-            }, 3000); // 3 seconds
+    if (openModalBtn && modalOverlay && closeModalBtn) {
+        // Open modal
+        openModalBtn.addEventListener('click', () => {
+            modalOverlay.classList.remove('hidden');
         });
+
+        // Close modal
+        closeModalBtn.addEventListener('click', () => {
+            modalOverlay.classList.add('hidden');
+            modalForm.reset();
+            modalSuccess.classList.add('hidden');
+        });
+
+        // Handle form submission
+        if (modalForm && modalSuccess) {
+            modalForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                console.log('Modal form submitted!');
+                console.log('Name:', document.getElementById('modal-name').value);
+                console.log('Email:', document.getElementById('modal-email').value);
+                console.log('Company:', document.getElementById('modal-company').value);
+                console.log('Subject:', document.getElementById('modal-subject').value);
+                console.log('Message:', document.getElementById('modal-message').value);
+
+                modalSuccess.classList.remove('hidden');
+
+                // Clear form and auto-close after delay
+                setTimeout(() => {
+                    modalForm.reset();
+                    modalSuccess.classList.add('hidden');
+                    modalOverlay.classList.add('hidden');
+                }, 3000);
+            });
+        }
     }
 });
