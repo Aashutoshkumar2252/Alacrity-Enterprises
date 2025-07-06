@@ -1,5 +1,3 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', () => {
     // --- Mobile Menu Toggle ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -36,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Modal Form Handling ---
+    // --- Modal Form Handling with animation ---
     const openModalBtn = document.getElementById('openModal');
     const closeModalBtn = document.getElementById('closeModal');
     const modalOverlay = document.getElementById('modalOverlay');
@@ -47,6 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Open modal
         openModalBtn.addEventListener('click', () => {
             modalOverlay.classList.remove('hidden');
+
+            // Add animation class to modal container (assumed first child div inside overlay)
+            const modalContainer = modalOverlay.querySelector('div');
+            modalContainer.classList.add('modal-open-animation');
         });
 
         // Close modal
@@ -54,6 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
             modalOverlay.classList.add('hidden');
             modalForm.reset();
             modalSuccess.classList.add('hidden');
+
+            const modalContainer = modalOverlay.querySelector('div');
+            modalContainer.classList.remove('modal-open-animation');
         });
 
         // Handle form submission
@@ -75,6 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     modalForm.reset();
                     modalSuccess.classList.add('hidden');
                     modalOverlay.classList.add('hidden');
+
+                    const modalContainer = modalOverlay.querySelector('div');
+                    modalContainer.classList.remove('modal-open-animation');
                 }, 3000);
             });
         }
