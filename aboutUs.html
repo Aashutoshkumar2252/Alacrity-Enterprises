@@ -17,19 +17,26 @@
     <style>
         /* Custom styles for this page, if any specific overrides are needed */
         .section-heading {
-            font-size: 2.5rem; /* Equivalent to text-4xl or text-5xl in Tailwind */
-            font-weight: 700; /* Equivalent to font-bold or font-extrabold */
-            color: #1a202c; /* Equivalent to text-gray-900 */
+            font-size: 2.5rem;
+            /* Equivalent to text-4xl or text-5xl in Tailwind */
+            font-weight: 700;
+            /* Equivalent to font-bold or font-extrabold */
+            color: #1a202c;
+            /* Equivalent to text-gray-900 */
         }
+
         .text-blue-600 {
             color: #2563eb;
         }
+
         .hover\:text-blue-600:hover {
             color: #2563eb;
         }
+
         .bg-blue-600 {
             background-color: #2563eb;
         }
+
         .btn-primary {
             display: inline-block;
             padding: 0.75rem 2rem;
@@ -38,9 +45,11 @@
             font-weight: 600;
             transition: background-color 0.3s ease;
         }
+
         .btn-primary:hover {
             /* Removed background-color to allow Tailwind classes to apply */
         }
+
         .btn-primary-header {
             display: inline-block;
             padding: 0.5rem 1.25rem;
@@ -49,19 +58,23 @@
             font-weight: 500;
             transition: background-color 0.3s ease;
         }
+
         .btn-primary-header:hover {
             /* Removed background-color to allow Tailwind classes to apply */
         }
+
         .card {
             background-color: #ffffff;
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
+
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
+
         .hero-about {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x600/1F2937/F3F4F6?text=About+Us+Background') no-repeat center center/cover;
             color: white;
@@ -77,19 +90,19 @@
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <div class="text-2xl font-bold text-gray-900">
-                <a href="./index.html" class="hover:text-blue-600 transition-colors duration-300">AutoPartsPro</a>
+                <a href="index.html" class="hover:text-blue-600 transition-colors duration-300">AutoPartsPro</a>
             </div>
             <ul class="hidden md:flex space-x-8 items-center">
-                <li><a href="./index.html"
+                <li><a href="index.html"
                         class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
                 </li>
-                <li><a href="./aboutUs.html"
-                        class="text-blue-600 font-medium transition-colors duration-300">About
+                <li><a href="aboutUs.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About
                         Us</a></li>
-                <li><a href="./products.html"
+                <li><a href="products.html"
                         class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a>
                 </li>
-                <li><a href="#footer" class="btn-primary-header inline-block">Contact Us</a></li>
+                <li><a href="#footer" class="btn-primary-header inline-block rounded-full">Contact Us</a></li>
             </ul>
             <!-- Mobile Menu Button (Hamburger) -->
             <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none"
@@ -104,16 +117,16 @@
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="md:hidden bg-white px-6 py-4 border-t border-gray-200 hidden">
             <ul class="flex flex-col space-y-4">
-                <li><a href="./index.html"
+                <li><a href="index.html#home"
                         class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
                 </li>
-                <li><a href="./aboutUs.html"
-                        class="block text-blue-600 font-medium transition-colors duration-300">About
+                <li><a href="index.html#about"
+                        class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About
                         Us</a></li>
-                <li><a href="./index.html#products"
+                <li><a href="index.html#products"
                         class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a>
                 </li>
-                <li><a href="./index.html#contact" class="block btn-primary-header">Contact Us</a></li>
+                <li><a href="index.html#contact" class="block btn-primary-header">Contact Us</a></li>
             </ul>
         </div>
     </header>
@@ -134,15 +147,22 @@
         <section id="our-story" class="py-20 bg-white">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
-                    <img src="https://placehold.co/600x400/D1D5DB/4B5563?text=Our+Story" alt="Our Story" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                    <img src="https://placehold.co/600x400/D1D5DB/4B5563?text=Our+Story" alt="Our Story"
+                        class="rounded-lg shadow-xl w-full h-auto object-cover">
                 </div>
                 <div class="md:w-1/2 text-left">
                     <h2 class="section-heading mb-6 text-center md:text-left">Our Journey & Growth</h2>
                     <p class="text-gray-700 leading-relaxed mb-4">
-                        Founded in 2005, AutoPartsPro began with a simple vision: to bridge the gap between reliable manufacturers and businesses in need of high-quality automobile components. What started as a small local distributor quickly grew into a global wholesale leader, driven by our commitment to excellence and customer satisfaction.
+                        Founded in 2005, AutoPartsPro began with a simple vision: to bridge the gap between reliable
+                        manufacturers and businesses in need of high-quality automobile components. What started as a
+                        small local distributor quickly grew into a global wholesale leader, driven by our commitment to
+                        excellence and customer satisfaction.
                     </p>
                     <p class="text-gray-700 leading-relaxed">
-                        Over the years, we've built strong relationships with leading manufacturers worldwide, ensuring a diverse and robust inventory. Our dedication to innovation and efficiency has allowed us to serve a vast network of clients, from independent repair shops to large-scale automotive enterprises.
+                        Over the years, we've built strong relationships with leading manufacturers worldwide, ensuring
+                        a diverse and robust inventory. Our dedication to innovation and efficiency has allowed us to
+                        serve a vast network of clients, from independent repair shops to large-scale automotive
+                        enterprises.
                     </p>
                 </div>
             </div>
@@ -158,7 +178,8 @@
                         <i class="fas fa-bullseye text-5xl text-blue-600 mb-4"></i>
                         <h3 class="text-2xl font-semibold text-gray-900 mb-3">Our Mission</h3>
                         <p class="text-gray-700 leading-relaxed">
-                            To provide superior automobile parts and exceptional service, empowering our clients to succeed by ensuring reliability and efficiency in their operations.
+                            To provide superior automobile parts and exceptional service, empowering our clients to
+                            succeed by ensuring reliability and efficiency in their operations.
                         </p>
                     </div>
                     <!-- Vision Card -->
@@ -166,7 +187,8 @@
                         <i class="fas fa-lightbulb text-5xl text-yellow-500 mb-4"></i>
                         <h3 class="text-2xl font-semibold text-gray-900 mb-3">Our Vision</h3>
                         <p class="text-gray-700 leading-relaxed">
-                            To be the global leader in automobile parts wholesale, recognized for our unwavering commitment to quality, innovation, and customer-centric solutions.
+                            To be the global leader in automobile parts wholesale, recognized for our unwavering
+                            commitment to quality, innovation, and customer-centric solutions.
                         </p>
                     </div>
                     <!-- Values Card -->
@@ -226,7 +248,8 @@
                     Join countless satisfied businesses who trust us for their automotive part needs.
                 </p>
                 <!-- Button color changed for better visibility -->
-                <a href="./index.html#contact" class="btn-primary bg-yellow-400 text-blue-800 hover:bg-yellow-500">Get in Touch Today</a>
+                <a href="./index.html#contact" class="btn-primary bg-yellow-400 text-blue-800 hover:bg-yellow-500">Get
+                    in Touch Today</a>
             </div>
         </section>
     </main>
@@ -249,17 +272,17 @@
                 <h3 class="text-xl font-semibold mb-4">Our Company</h3>
                 <ul>
                     <li class="mb-2"><a href="./aboutUs.html"
-                                class="text-gray-400 hover:text-blue-400 transition-colors duration-300">About Us</a></li>
+                            class="text-gray-400 hover:text-blue-400 transition-colors duration-300">About Us</a></li>
                     <li class="mb-2"><a href="./index.html#products"
-                                class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Our Products</a>
+                            class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Our Products</a>
                     </li>
                     <li class="mb-2"><a href="./index.html#contact"
-                                class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact Us</a></li>
+                            class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact Us</a></li>
                     <li class="mb-2"><a href="#"
-                                class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Sitemap</a></li>
+                            class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Sitemap</a></li>
                     <li class="mb-2"><a href="#"
-                                class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Download
-                                Brochure</a></li>
+                            class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Download
+                            Brochure</a></li>
                 </ul>
             </div>
 
