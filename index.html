@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <!-- Font Awesome for Social Icons (optional, for real icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Header -->
@@ -25,9 +27,12 @@
             <!-- Search Box (Desktop) - Centered -->
             <div class="hidden md:flex flex-grow justify-center items-center">
                 <div class="relative flex items-center">
-                    <input type="text" placeholder="What are you looking for?" class="pl-10 pr-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm">
+                    <input type="text" placeholder="What are you looking for?"
+                        class="pl-10 pr-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm">
                     <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                    <button class="px-4 py-2 bg-blue-600 text-white rounded-r-full hover:bg-blue-700 transition-colors duration-300 text-sm" title="Search">
+                    <button
+                        class="px-4 py-2 bg-blue-600 text-white rounded-r-full hover:bg-blue-700 transition-colors duration-300 text-sm"
+                        title="Search">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
@@ -35,32 +40,50 @@
 
             <!-- Navigation Links (Desktop) - Pushed to right -->
             <ul class="hidden md:flex items-center space-x-8 flex-shrink-0">
-                <li><a href="./index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a></li>
-                <li><a href="./aboutUs.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
-                <li><a href="./products.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
+                <li><a href="./index.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
+                </li>
+                <li><a href="./aboutUs.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About
+                        Us</a></li>
+                <li><a href="./products.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a>
+                </li>
                 <li><a href="#footer" class="btn-primary-header inline-block">Contact Us</a></li>
             </ul>
 
             <!-- Mobile Menu Button (Hamburger) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none" aria-label="Toggle mobile menu" title="Toggle mobile menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none"
+                aria-label="Toggle mobile menu" title="Toggle mobile menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
                 </svg>
             </button>
         </nav>
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="md:hidden bg-white px-6 py-4 border-t border-gray-200 hidden">
             <ul class="flex flex-col space-y-4">
-                <li><a href="#home" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a></li>
-                <li><a href="#about" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
-                <li><a href="#products" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
+                <li><a href="#home"
+                        class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
+                </li>
+                <li><a href="#about"
+                        class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About
+                        Us</a></li>
+                <li><a href="#products"
+                        class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a>
+                </li>
                 <!-- Search Box and Button for Mobile -->
                 <li class="flex items-center w-full">
                     <div class="relative flex-grow">
-                        <input type="text" placeholder="Search products..." class="pl-10 pr-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm w-full">
+                        <input type="text" placeholder="Search products..."
+                            class="pl-10 pr-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm w-full">
                         <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                     </div>
-                    <button class="px-4 py-2 bg-blue-600 text-white rounded-r-full hover:bg-blue-700 transition-colors duration-300 text-sm flex-shrink-0" title="Search">
+                    <button
+                        class="px-4 py-2 bg-blue-600 text-white rounded-r-full hover:bg-blue-700 transition-colors duration-300 text-sm flex-shrink-0"
+                        title="Search">
                         <i class="fas fa-search"></i>
                     </button>
                 </li>
@@ -298,40 +321,33 @@
     </section>
 
     <!-- Contact Us Section -->
-    <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden modal-overlay-custom">
-        <!-- Modal Container -->
+    <div id="modalOverlay" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
         <div
-            class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto p-8 relative border border-gray-200 dark:border-gray-700">
-            <!-- Close Button -->
+            class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto p-8 relative z-50 border border-gray-200 dark:border-gray-700">
+
             <button id="closeModal"
-                class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-3xl font-extrabold transition z-10"
-                aria-label="Close modal" type="button">
+                class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-3xl font-extrabold transition"
+                aria-label="Close modal">
                 &times;
             </button>
 
-            <!-- Modal Title -->
             <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Get a Quotation</h2>
 
-            <!-- Modal Form -->
             <form id="modal-contact-form" class="space-y-4">
                 <input id="modal-name" type="text" placeholder="Name" required
-                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
+                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 <input id="modal-email" type="email" placeholder="Email" required
-                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
+                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 <input id="modal-company" type="text" placeholder="Company"
-                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
+                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 <input id="modal-subject" type="text" placeholder="Subject" required
-                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
+                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 <textarea id="modal-message" placeholder="Message" required rows="4"
-                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white resize-y"></textarea>
-
+                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
                 <button type="submit"
-                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-md transition">
-                    Submit
-                </button>
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-md font-semibold transition">Submit</button>
             </form>
 
-            <!-- Success Message -->
             <p id="modal-success"
                 class="hidden mt-4 p-3 bg-green-100 text-green-800 rounded-md font-semibold text-center">
                 Thank you for your message! We will get back to you soon.
