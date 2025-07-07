@@ -5,14 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products - Alacrity Enterprises</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Tailwind CSS Configuration for Custom Colors -->
     <script>
         tailwind.config = {
             theme: {
@@ -20,7 +16,7 @@
                     colors: {
                         'primary-dark': '#0E2148',
                         'secondary-purple': '#483AA0',
-                        'neutral-bg': '#7965C1', /* This color will be used more sparingly for subtle accents */
+                        'neutral-bg': '#7965C1',
                         'highlight-yellow': '#E3D095',
                     },
                 },
@@ -29,18 +25,16 @@
     </script>
 
     <style>
-        /* Custom styles for this page, ensuring professional application of the palette */
+        /* Custom styles from your provided code */
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            /* Default text color is handled by Tailwind's text-gray-800 */
         }
 
         .section-heading {
             font-size: 2.5rem;
             font-weight: 700;
             color: #0E2148;
-            /* Primary Dark for strong headings */
             margin-bottom: 3rem;
             position: relative;
             display: inline-block;
@@ -52,7 +46,6 @@
             width: 60px;
             height: 4px;
             background-color: #483AA0;
-            /* Secondary color for heading underline */
             margin: 0.5rem auto 0;
             border-radius: 2px;
         }
@@ -60,11 +53,9 @@
         /* Buttons */
         .btn-primary {
             background-color: #483AA0;
-            /* Secondary color for main buttons */
             color: white;
             padding: 0.8rem 2rem;
             border-radius: 9999px;
-            /* Full rounded */
             font-weight: 600;
             transition: background-color 0.3s ease, transform 0.2s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -74,17 +65,14 @@
 
         .btn-primary:hover {
             background-color: #3A2E80;
-            /* Slightly darker secondary for hover */
             transform: translateY(-2px);
         }
 
         .btn-primary-header {
             background-color: #0E2148;
-            /* Primary dark for header buttons */
             color: white;
             padding: 0.6rem 1.5rem;
             border-radius: 9999px;
-            /* Full rounded */
             font-weight: 500;
             transition: background-color 0.3s ease, transform 0.2s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -93,16 +81,30 @@
 
         .btn-primary-header:hover {
             background-color: #1A3460;
-            /* Darker primary for hover */
             transform: translateY(-1px);
         }
 
         .card {
             background-color: #ffffff;
-            /* White background for cards for clean look */
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            /* Added cursor pointer to indicate clickability */
+            cursor: pointer;
+            /* Added a pseudo-element for full card clickable area if needed */
+            position: relative;
+        }
+
+        /* This pseudo-element makes the *entire* card area clickable without affecting layout */
+        .card a.card-link-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10; /* Ensures it's above other content for clicking */
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Inherit text color */
         }
 
         .card:hover {
@@ -114,7 +116,7 @@
             width: 100%;
             max-width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 0.5rem;
             margin-bottom: 1rem;
         }
@@ -122,7 +124,6 @@
         /* Filter Buttons */
         .filter-button {
             background-color: #483AA0;
-            /* Secondary color for filter buttons */
             color: white;
             padding: 0.6rem 1.5rem;
             border-radius: 9999px;
@@ -135,61 +136,51 @@
 
         .filter-button:hover {
             background-color: #3A2E80;
-            /* Darker secondary for hover */
             transform: translateY(-1px);
         }
 
         .filter-button.active {
             background-color: #0E2148;
-            /* Primary Dark for active filter button */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Footer styles for consistency across pages */
         .footer {
             background-color: #0E2148;
-            /* Primary color for footer background */
             color: #E0E0E0;
-            /* Light gray text for footer */
             padding: 4rem 0;
             text-align: center;
         }
 
         .footer a {
             color: #E0E0E0;
-            /* Light gray links in footer */
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer a:hover {
             color: #E3D095;
-            /* Highlight yellow on footer link hover */
         }
 
         .footer .fab,
         .footer .fas {
             color: #E0E0E0;
-            /* Light gray icons in footer */
         }
 
         .footer .fab:hover,
         .footer .fas:hover {
             color: #E3D095;
-            /* Highlight yellow on footer icon hover */
         }
 
         .map-iframe-style {
             border: 0;
             border-radius: 0.5rem;
-            /* rounded-lg */
         }
     </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header (Similar to index.html for consistency) -->
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <div class="text-2xl font-bold text-primary-dark">
@@ -208,7 +199,6 @@
                 </li>
                 <li><a href="#footer" class="btn-primary-header inline-block">Contact Us</a></li>
             </ul>
-            <!-- Mobile Menu Button (Hamburger) -->
             <button id="mobile-menu-button"
                 class="md:hidden text-gray-600 hover:text-secondary-purple focus:outline-none"
                 aria-label="Toggle mobile menu">
@@ -219,7 +209,6 @@
                 </svg>
             </button>
         </nav>
-        <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="md:hidden bg-white px-6 py-4 border-t border-gray-200 hidden">
             <ul class="flex flex-col space-y-4">
                 <li><a href="./index.html"
@@ -236,114 +225,112 @@
         </div>
     </header>
 
-    <!-- Products Listing Section -->
     <section class="container mx-auto px-6 py-12 md:py-20">
         <h2 class="section-heading mb-12">Our Full Product Catalog</h2>
 
-        <!-- Filter Buttons Section -->
-
         <div class="flex flex-wrap justify-center gap-3 mb-12">
             <button class="
-                       inline-flex items-center px-4 py-2 
-                       text-sm font-medium 
-                       rounded-full 
-                       bg-[#0E2148] text-white 
-                       shadow-lg transform -translate-y-0.5 
-                       transition-all duration-300 ease-in-out 
-                       cursor-pointer 
-                       border-2 border-[#0E2148] 
-                       ring-2 ring-[#6366F1] ring-offset-2 ring-offset-gray-100
-                       " data-filter="all">
+                        inline-flex items-center px-4 py-2
+                        text-sm font-medium
+                        rounded-full
+                        bg-[#0E2148] text-white
+                        shadow-lg transform -translate-y-0.5
+                        transition-all duration-300 ease-in-out
+                        cursor-pointer
+                        border-2 border-[#0E2148]
+                        ring-2 ring-[#6366F1] ring-offset-2 ring-offset-gray-100
+                        " data-filter="all">
                 All Products
             </button>
 
             <button class="
-                       inline-flex items-center px-4 py-2 
-                       text-sm font-medium 
-                       rounded-full 
-                       bg-gray-200 text-gray-800 
-                       hover:bg-gray-300 hover:text-gray-900 
-                       transition-all duration-300 ease-in-out 
-                       shadow-sm hover:shadow-md transform hover:-translate-y-0.5 
-                       cursor-pointer 
-                       border-2 border-transparent
-                       " data-filter="engine">
+                        inline-flex items-center px-4 py-2
+                        text-sm font-medium
+                        rounded-full
+                        bg-gray-200 text-gray-800
+                        hover:bg-gray-300 hover:text-gray-900
+                        transition-all duration-300 ease-in-out
+                        shadow-sm hover:shadow-md transform hover:-translate-y-0.5
+                        cursor-pointer
+                        border-2 border-transparent
+                        " data-filter="engine">
                 Engine Components
             </button>
 
             <button class="
-                       inline-flex items-center px-4 py-2 
-                       text-sm font-medium 
-                       rounded-full 
-                       bg-gray-200 text-gray-800 
-                       hover:bg-gray-300 hover:text-gray-900 
-                       transition-all duration-300 ease-in-out 
-                       shadow-sm hover:shadow-md transform hover:-translate-y-0.5 
-                       cursor-pointer 
-                       border-2 border-transparent
-                       " data-filter="braking">
+                        inline-flex items-center px-4 py-2
+                        text-sm font-medium
+                        rounded-full
+                        bg-gray-200 text-gray-800
+                        hover:bg-gray-300 hover:text-gray-900
+                        transition-all duration-300 ease-in-out
+                        shadow-sm hover:shadow-md transform hover:-translate-y-0.5
+                        cursor-pointer
+                        border-2 border-transparent
+                        " data-filter="braking">
                 Braking Systems
             </button>
 
             <button class="
-                       inline-flex items-center px-4 py-2 
-                       text-sm font-medium 
-                       rounded-full 
-                       bg-gray-200 text-gray-800 
-                       hover:bg-gray-300 hover:text-gray-900 
-                       transition-all duration-300 ease-in-out 
-                       shadow-sm hover:shadow-md transform hover:-translate-y-0.5 
-                       cursor-pointer 
-                       border-2 border-transparent
-                       " data-filter="suspension">
+                        inline-flex items-center px-4 py-2
+                        text-sm font-medium
+                        rounded-full
+                        bg-gray-200 text-gray-800
+                        hover:bg-gray-300 hover:text-gray-900
+                        transition-all duration-300 ease-in-out
+                        shadow-sm hover:shadow-md transform hover:-translate-y-0.5
+                        cursor-pointer
+                        border-2 border-transparent
+                        " data-filter="suspension">
                 Suspension & Steering
             </button>
 
             <button class="
-                       inline-flex items-center px-4 py-2 
-                       text-sm font-medium 
-                       rounded-full 
-                       bg-gray-200 text-gray-800 
-                       hover:bg-gray-300 hover:text-gray-900 
-                       transition-all duration-300 ease-in-out 
-                       shadow-sm hover:shadow-md transform hover:-translate-y-0.5 
-                       cursor-pointer 
-                       border-2 border-transparent
-                       " data-filter="electrical">
+                        inline-flex items-center px-4 py-2
+                        text-sm font-medium
+                        rounded-full
+                        bg-gray-200 text-gray-800
+                        hover:bg-gray-300 hover:text-gray-900
+                        transition-all duration-300 ease-in-out
+                        shadow-sm hover:shadow-md transform hover:-translate-y-0.5
+                        cursor-pointer
+                        border-2 border-transparent
+                        " data-filter="electrical">
                 Electrical Components
             </button>
 
             <button class="
-                       inline-flex items-center px-4 py-2 
-                       text-sm font-medium 
-                       rounded-full 
-                       bg-gray-200 text-gray-800 
-                       hover:bg-gray-300 hover:text-gray-900 
-                       transition-all duration-300 ease-in-out 
-                       shadow-sm hover:shadow-md transform hover:-translate-y-0.5 
-                       cursor-pointer 
-                       border-2 border-transparent
-                       " data-filter="body">
+                        inline-flex items-center px-4 py-2
+                        text-sm font-medium
+                        rounded-full
+                        bg-gray-200 text-gray-800
+                        hover:bg-gray-300 hover:text-gray-900
+                        transition-all duration-300 ease-in-out
+                        shadow-sm hover:shadow-md transform hover:-translate-y-0.5
+                        cursor-pointer
+                        border-2 border-transparent
+                        " data-filter="body">
                 Body & Exterior
             </button>
 
             <button class="
-                       inline-flex items-center px-4 py-2 
-                       text-sm font-medium 
-                       rounded-full 
-                       bg-gray-200 text-gray-800 
-                       hover:bg-gray-300 hover:text-gray-900 
-                       transition-all duration-300 ease-in-out 
-                       shadow-sm hover:shadow-md transform hover:-translate-y-0.5 
-                       cursor-pointer 
-                       border-2 border-transparent
-                       " data-filter="transmission">
+                        inline-flex items-center px-4 py-2
+                        text-sm font-medium
+                        rounded-full
+                        bg-gray-200 text-gray-800
+                        hover:bg-gray-300 hover:text-gray-900
+                        transition-all duration-300 ease-in-out
+                        shadow-sm hover:shadow-md transform hover:-translate-y-0.5
+                        cursor-pointer
+                        border-2 border-transparent
+                        " data-filter="transmission">
                 Transmission & Drivetrain
             </button>
         </div>
 
         <div class="flex flex-wrap justify-center gap-10 product-grid">
             <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <a href="productpage.html" class="card-link-overlay" aria-label="View Engine Components"></a>
                 <img src="https://carfromjapan.com/wp-content/uploads/2017/11/1-1.jpg" alt="Engine Parts"
                     class="product-card-image mb-4">
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Engine Components</h3>
@@ -351,6 +338,7 @@
                     blocks, pistons, crankshafts, and cylinder heads.</p>
             </div>
             <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <a href="productpage.html" class="card-link-overlay" aria-label="View Braking Systems"></a>
                 <img src="https://tse3.mm.bing.net/th/id/OIP.CmWuXuf7t2hlAFlj4wyiQgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                     alt="Braking Systems" class="product-card-image mb-4">
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Braking Systems</h3>
@@ -358,6 +346,7 @@
                     master cylinders for all vehicle types.</p>
             </div>
             <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <a href="productpage.html" class="card-link-overlay" aria-label="View Suspension & Steering"></a>
                 <img src="https://tse4.mm.bing.net/th/id/OIP.Jm7zvxNSJnpLsiSzJKjtcQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                     alt="Suspension Parts" class="product-card-image mb-4">
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Suspension & Steering</h3>
@@ -365,6 +354,7 @@
                     steering components for smooth rides.</p>
             </div>
             <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <a href="productpage.html" class="card-link-overlay" aria-label="View Electrical Components"></a>
                 <img src="https://tse3.mm.bing.net/th/id/OIP.gyfOSg1R9hiuWKjkK32N0AHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                     alt="Electrical Parts" class="product-card-image mb-4">
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Electrical Components</h3>
@@ -372,6 +362,7 @@
                     various sensors.</p>
             </div>
             <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <a href="productpage.html" class="card-link-overlay" aria-label="View Body & Exterior"></a>
                 <img src="https://tse4.mm.bing.net/th/id/OIP.Q3R330GRbHzEIR69ZyoP-AHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                     alt="Body Panels" class="product-card-image mb-4">
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Body & Exterior</h3>
@@ -379,6 +370,7 @@
                     assemblies for all models.</p>
             </div>
             <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <a href="productpage.html" class="card-link-overlay" aria-label="View Transmission & Drivetrain"></a>
                 <img src="https://th.bing.com/th/id/R.94722b0f55250a1bc57e563ddcf473dd?rik=a3SYMDbiJZOfDA&riu=http%3a%2f%2fcdn.shopify.com%2fs%2ffiles%2f1%2f0681%2f0212%2f7933%2fcollections%2fb-series-awd-dog-box_1024x1024.jpg%3fv%3d1676580241&ehk=D8tym4e%2fWzhYiHkBqXU9tFC2taePZ29tczPAFt5GciI%3d&risl=&pid=ImgRaw&r=0"
                     alt="Transmission Parts" class="product-card-image mb-4">
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Transmission & Drivetrain</h3>
@@ -386,6 +378,7 @@
                     for efficient power transfer.</p>
             </div>
             <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <a href="productpage.html" class="card-link-overlay" aria-label="View Exhaust Systems"></a>
                 <img src="https://tse3.mm.bing.net/th/id/OIP.6NRDfOugt0rj-vfJB4o5GAHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                     alt="Exhaust Systems" class="product-card-image mb-4">
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Exhaust Systems</h3>
@@ -393,6 +386,7 @@
                     performance headers.</p>
             </div>
             <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <a href="productpage.html" class="card-link-overlay" aria-label="View Fuel System"></a>
                 <img src="https://m.media-amazon.com/images/I/61FG7M0seJL._AC_SL1500_.jpg" alt="Fuel System"
                     class="product-card-image mb-4">
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Fuel System</h3>
@@ -400,6 +394,7 @@
                     fuel delivery.</p>
             </div>
             <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <a href="productpage.html" class="card-link-overlay" aria-label="View Cooling System"></a>
                 <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/PX/XR/SN/1520574/mahindra-car-radiator-1000x1000.jpg"
                     alt="Cooling System" class="product-card-image mb-4">
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Cooling System</h3>
@@ -407,6 +402,7 @@
                 </p>
             </div>
             <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <a href="productpage.html" class="card-link-overlay" aria-label="View Interior Components"></a>
                 <img src="https://www.motoringresearch.com/wp-content/uploads/2024/08/006-Most-Eye-Catching-Dashboards.jpg"
                     alt="Interior Parts" class="product-card-image mb-4">
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Interior Components</h3>
@@ -414,6 +410,7 @@
                 </p>
             </div>
             <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <a href="productpage.html" class="card-link-overlay" aria-label="View Wheels & Tires"></a>
                 <img src="https://tse4.mm.bing.net/th/id/OIP.7NJ37FNJ3HlWjPHJhReH7QHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                     alt="Wheels & Tires" class="product-card-image mb-4">
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Wheels & Tires</h3>
@@ -421,6 +418,7 @@
                     for all conditions.</p>
             </div>
             <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <a href="productpage.html" class="card-link-overlay" aria-label="View Filters & Fluids"></a>
                 <img src="https://urbanmatter.com/wp-content/uploads/2022/09/OilFilter.png" alt="Filters & Fluids"
                     class="product-card-image mb-4">
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Filters & Fluids</h3>
@@ -430,10 +428,8 @@
         </div>
     </section>
 
-    <!-- Footer (Similar to index.html for consistency) -->
     <footer class="footer bg-primary-dark text-gray-300 py-12" id="footer">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
-            <!-- Contact Info -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                 <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> 123 Auto Parts Lane, Industrial City, ZIP
@@ -443,7 +439,6 @@
                 <p class="mb-2"><i class="fas fa-clock mr-2"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
             </div>
 
-            <!-- Our Company Section -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Company</h3>
                 <ul>
@@ -466,7 +461,6 @@
                 </ul>
             </div>
 
-            <!-- Social Media -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
                 <div class="flex space-x-4">
@@ -481,11 +475,9 @@
                 </div>
             </div>
 
-            <!-- Map Placeholder -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Location</h3>
                 <div class="w-full h-48 bg-primary-dark rounded-lg overflow-hidden">
-                    <!-- Placeholder for Google Maps iframe -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.250551185368!2d144.963057615317!3d-37.8142170797519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b58c2f1f2d%3A0x50456784629e4e0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1678901234567!5m2!1sen!2sau"
                         width="100%" height="100%" class="map-iframe-style" allowfullscreen=""
@@ -494,7 +486,7 @@
             </div>
         </div>
         <div class="container mx-auto px-6 mt-8 pt-8 border-t border-gray-700">
-            <p class="mb-4">&copy; 2025 AutoPartsPro. All rights reserved.</p>
+            <p class="mb-4">© 2025 AutoPartsPro. All rights reserved.</p>
             <div class="flex justify-center space-x-6">
                 <a href="#" class="hover:underline">Privacy Policy</a>
                 <a href="#" class="hover:underline">Terms of Service</a>
