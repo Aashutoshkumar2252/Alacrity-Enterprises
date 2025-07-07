@@ -9,29 +9,217 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for Social Icons (optional, for real icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Tailwind CSS Configuration for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0E2148',
+                        'secondary-purple': '#483AA0',
+                        'neutral-bg': '#7965C1',
+                        'highlight-yellow': '#E3D095',
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        /* Custom CSS for Automobile Parts Wholesaler Portfolio */
+
+        /* General Body and Font */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            /* Using Tailwind's text-gray-800 for default color */
+        }
+
+        /* Hero Section */
+        .hero-section {
+            /* Using a placeholder image with the primary-dark color for consistency */
+            background-image: url('https://placehold.co/1920x800/0E2148/FFFFFF?text=Automotive+Parts+Wholesale');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 10rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: #483AA0;
+            /* Secondary color */
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 9999px;
+            /* Full rounded */
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #3A2E80;
+            /* Darker secondary for hover */
+            transform: translateY(-2px);
+        }
+
+        .btn-primary-header {
+            background-color: #0E2148;
+            /* Primary color */
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 9999px;
+            /* Full rounded */
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .btn-primary-header:hover {
+            background-color: #1A3460;
+            /* Darker primary for hover */
+            transform: translateY(-1px);
+        }
+
+        /* Section Headings */
+        .section-heading {
+            font-size: 2.5rem;
+            /* Equivalent to text-4xl or text-5xl */
+            font-weight: 700;
+            /* Equivalent to font-bold or font-extrabold */
+            color: #0E2148;
+            /* Primary color */
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #483AA0;
+            /* Secondary color */
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Card Styles (for products and reviews) */
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            /* rounded-xl */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            /* shadow-xl */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            /* Ensure image corners are rounded */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card-image {
+            width: 100%;
+            max-width: 200px;
+            /* Adjust as needed */
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            /* rounded-lg */
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0E2148;
+            /* Primary color */
+            color: #E0E0E0;
+            /* Light gray text */
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #E0E0E0;
+            /* Light gray links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #E3D095;
+            /* Supporting highlight on hover */
+        }
+
+        .footer .fab,
+        .footer .fas {
+            color: #E0E0E0;
+            /* Light gray icons */
+        }
+
+        .footer .fab:hover,
+        .footer .fas:hover {
+            color: #E3D095;
+            /* Supporting highlight on hover */
+        }
+
+        .map-iframe-style {
+            border: 0;
+            border-radius: 0.5rem;
+            /* rounded-lg */
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-neutral-bg text-gray-800">
 
     <!-- Header -->
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
-            <div class="text-2xl font-bold text-gray-900 flex-shrink-0">
-                <a href="#" class="hover:text-blue-600 transition-colors duration-300">Alacrity Enterprises</a>
+            <div class="text-2xl font-bold text-primary-dark flex-shrink-0">
+                <a href="#" class="hover:text-secondary-purple transition-colors duration-300">Alacrity Enterprises</a>
             </div>
 
             <!-- Search Box (Desktop) - Centered -->
             <div class="hidden md:flex flex-grow justify-center items-center">
                 <div class="relative flex items-center">
                     <input type="text" placeholder="What are you looking for?"
-                        class="pl-10 pr-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm">
+                        class="pl-10 pr-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary-purple focus:border-transparent transition-all duration-300 text-sm">
                     <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                     <button
-                        class="px-4 py-2 bg-blue-600 text-white rounded-r-full hover:bg-blue-700 transition-colors duration-300 text-sm"
+                        class="px-4 py-2 bg-primary-dark text-white rounded-r-full hover:bg-secondary-purple transition-colors duration-300 text-sm"
                         title="Search">
                         <i class="fas fa-search"></i>
                     </button>
@@ -41,19 +229,19 @@
             <!-- Navigation Links (Desktop) - Pushed to right -->
             <ul class="hidden md:flex items-center space-x-8 flex-shrink-0">
                 <li><a href="./index.html"
-                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
+                        class="text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Home</a>
                 </li>
                 <li><a href="./aboutUs.html"
-                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About
+                        class="text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">About
                         Us</a></li>
                 <li><a href="./products.html"
-                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a>
+                        class="text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Products</a>
                 </li>
                 <li><a href="#footer" class="btn-primary-header inline-block">Contact Us</a></li>
             </ul>
 
             <!-- Mobile Menu Button (Hamburger) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none"
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-secondary-purple focus:outline-none"
                 aria-label="Toggle mobile menu" title="Toggle mobile menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -66,23 +254,23 @@
         <div id="mobile-menu" class="md:hidden bg-white px-6 py-4 border-t border-gray-200 hidden">
             <ul class="flex flex-col space-y-4">
                 <li><a href="#home"
-                        class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
+                        class="block text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Home</a>
                 </li>
                 <li><a href="#about"
-                        class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About
+                        class="block text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">About
                         Us</a></li>
                 <li><a href="#products"
-                        class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a>
+                        class="block text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Products</a>
                 </li>
                 <!-- Search Box and Button for Mobile -->
                 <li class="flex items-center w-full">
                     <div class="relative flex-grow">
                         <input type="text" placeholder="Search products..."
-                            class="pl-10 pr-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm w-full">
+                            class="pl-10 pr-4 py-2 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary-purple focus:border-transparent transition-all duration-300 text-sm w-full">
                         <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                     </div>
                     <button
-                        class="px-4 py-2 bg-blue-600 text-white rounded-r-full hover:bg-blue-700 transition-colors duration-300 text-sm flex-shrink-0"
+                        class="px-4 py-2 bg-primary-dark text-white rounded-r-full hover:bg-secondary-purple transition-colors duration-300 text-sm flex-shrink-0"
                         title="Search">
                         <i class="fas fa-search"></i>
                     </button>
@@ -118,77 +306,77 @@
                         blocks, pistons, crankshafts, and cylinder heads.</p>
                 </div>
                 <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://placehold.co/400x200/F59E0B/FFFFFF?text=Braking+Systems" alt="Braking Systems"
+                    <img src="https://placehold.co/400x200/483AA0/FFFFFF?text=Braking+Systems" alt="Braking Systems"
                         class="product-card-image mb-4">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Braking Systems</h3>
                     <p class="text-sm text-gray-600 text-center">High-performance brake pads, rotors, calipers, and
                         master cylinders for all vehicle types.</p>
                 </div>
                 <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://placehold.co/400x200/10B981/FFFFFF?text=Suspension" alt="Suspension Parts"
+                    <img src="https://placehold.co/400x200/0E2148/FFFFFF?text=Suspension" alt="Suspension Parts"
                         class="product-card-image mb-4">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Suspension & Steering</h3>
                     <p class="text-sm text-gray-600 text-center">Shocks, struts, control arms, tie rods, and power
                         steering components for smooth rides.</p>
                 </div>
                 <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://placehold.co/400x200/EF4444/FFFFFF?text=Electrical+Parts" alt="Electrical Parts"
+                    <img src="https://placehold.co/400x200/E3D095/0E2148?text=Electrical+Parts" alt="Electrical Parts"
                         class="product-card-image mb-4">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Electrical Components</h3>
                     <p class="text-sm text-gray-600 text-center">Starters, alternators, batteries, wiring harnesses, and
                         various sensors.</p>
                 </div>
                 <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://placehold.co/400x200/6366F1/FFFFFF?text=Body+Panels" alt="Body Panels"
+                    <img src="https://placehold.co/400x200/483AA0/FFFFFF?text=Body+Panels" alt="Body Panels"
                         class="product-card-image mb-4">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Body & Exterior</h3>
                     <p class="text-sm text-gray-600 text-center">Fenders, bumpers, doors, mirrors, and lighting
                         assemblies for all models.</p>
                 </div>
                 <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://placehold.co/400x200/06B6D4/FFFFFF?text=Transmission" alt="Transmission Parts"
+                    <img src="https://placehold.co/400x200/0E2148/FFFFFF?text=Transmission" alt="Transmission Parts"
                         class="product-card-image mb-4">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Transmission & Drivetrain</h3>
                     <p class="text-sm text-gray-600 text-center">Transmissions, clutches, axles, and universal joints
                         for efficient power transfer.</p>
                 </div>
                 <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://placehold.co/400x200/FF5733/FFFFFF?text=Exhaust+Systems" alt="Exhaust Systems"
+                    <img src="https://placehold.co/400x200/E3D095/0E2148?text=Exhaust+Systems" alt="Exhaust Systems"
                         class="product-card-image mb-4">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Exhaust Systems</h3>
                     <p class="text-sm text-gray-600 text-center">Mufflers, catalytic converters, exhaust pipes, and
                         performance headers.</p>
                 </div>
                 <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://placehold.co/400x200/33FF57/FFFFFF?text=Fuel+System" alt="Fuel System"
+                    <img src="https://placehold.co/400x200/483AA0/FFFFFF?text=Fuel+System" alt="Fuel System"
                         class="product-card-image mb-4">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Fuel System</h3>
                     <p class="text-sm text-gray-600 text-center">Fuel pumps, injectors, tanks, and lines for efficient
                         fuel delivery.</p>
                 </div>
                 <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://placehold.co/400x200/3357FF/FFFFFF?text=Cooling+System" alt="Cooling System"
+                    <img src="https://placehold.co/400x200/0E2148/FFFFFF?text=Cooling+System" alt="Cooling System"
                         class="product-card-image mb-4">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Cooling System</h3>
                     <p class="text-sm text-gray-600 text-center">Radiators, water pumps, thermostats, and cooling fans.
                     </p>
                 </div>
                 <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://placehold.co/400x200/FF33D4/FFFFFF?text=Interior+Parts" alt="Interior Parts"
+                    <img src="https://placehold.co/400x200/E3D095/0E2148?text=Interior+Parts" alt="Interior Parts"
                         class="product-card-image mb-4">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Interior Components</h3>
                     <p class="text-sm text-gray-600 text-center">Seats, dashboards, carpets, and various trim pieces.
                     </p>
                 </div>
                 <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://placehold.co/400x200/33D4FF/FFFFFF?text=Wheels+%26+Tires" alt="Wheels & Tires"
+                    <img src="https://placehold.co/400x200/483AA0/FFFFFF?text=Wheels+%26+Tires" alt="Wheels & Tires"
                         class="product-card-image mb-4">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Wheels & Tires</h3>
                     <p class="text-sm text-gray-600 text-center">Alloy wheels, steel rims, and a variety of tire types
                         for all conditions.</p>
                 </div>
                 <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://placehold.co/400x200/D4FF33/FFFFFF?text=Filters+%26+Fluids" alt="Filters & Fluids"
+                    <img src="https://placehold.co/400x200/0E2148/FFFFFF?text=Filters+%26+Fluids" alt="Filters & Fluids"
                         class="product-card-image mb-4">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Filters & Fluids</h3>
                     <p class="text-sm text-gray-600 text-center">Oil filters, air filters, cabin filters, engine oil,
@@ -205,50 +393,50 @@
             <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
                 <!-- Partner Card 1 -->
                 <div
-                    class="flex items-center justify-center w-40 h-24 bg-blue-600 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
-                    <img src="https://placehold.co/150x80/FFFFFF/1A202C?text=Brand+A" alt="Brand A Logo"
+                    class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
+                    <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+A" alt="Brand A Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
                 <!-- Partner Card 2 -->
                 <div
-                    class="flex items-center justify-center w-40 h-24 bg-green-600 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
-                    <img src="https://placehold.co/150x80/FFFFFF/1A202C?text=Brand+B" alt="Brand B Logo"
+                    class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
+                    <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+B" alt="Brand B Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
                 <!-- Partner Card 3 -->
                 <div
-                    class="flex items-center justify-center w-40 h-24 bg-yellow-600 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
-                    <img src="https://placehold.co/150x80/FFFFFF/1A202C?text=Brand+C" alt="Brand C Logo"
+                    class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
+                    <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+C" alt="Brand C Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
                 <!-- Partner Card 4 -->
                 <div
-                    class="flex items-center justify-center w-40 h-24 bg-red-600 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
-                    <img src="https://placehold.co/150x80/FFFFFF/1A202C?text=Brand+D" alt="Brand D Logo"
+                    class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
+                    <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+D" alt="Brand D Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
                 <!-- Partner Card 5 -->
                 <div
-                    class="flex items-center justify-center w-40 h-24 bg-purple-600 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
-                    <img src="https://placehold.co/150x80/FFFFFF/1A202C?text=Brand+E" alt="Brand E Logo"
+                    class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
+                    <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+E" alt="Brand E Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
                 <!-- Partner Card 6 (New Demo) -->
                 <div
-                    class="flex items-center justify-center w-40 h-24 bg-indigo-600 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
-                    <img src="https://placehold.co/150x80/FFFFFF/1A202C?text=Brand+F" alt="Brand F Logo"
+                    class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
+                    <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+F" alt="Brand F Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
                 <!-- Partner Card 7 (New Demo) -->
                 <div
-                    class="flex items-center justify-center w-40 h-24 bg-pink-600 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
-                    <img src="https://placehold.co/150x80/FFFFFF/1A202C?text=Brand+G" alt="Brand G Logo"
+                    class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
+                    <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+G" alt="Brand G Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
                 <!-- Partner Card 8 (New Demo) -->
                 <div
-                    class="flex items-center justify-center w-40 h-24 bg-teal-600 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
-                    <img src="https://placehold.co/150x80/FFFFFF/1A202C?text=Brand+H" alt="Brand H Logo"
+                    class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
+                    <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+H" alt="Brand H Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
             </div>
@@ -256,13 +444,13 @@
     </section>
 
     <!-- Customer Reviews Section -->
-    <section id="reviews" class="py-20 bg-gray-50">
+    <section id="reviews" class="py-20 bg-neutral-bg">
         <div class="container mx-auto px-6 text-center">
             <h2 class="section-heading mb-4">What Our Customers Say</h2>
             <!-- Overall Rating Summary -->
             <div class="overall-rating-summary mb-12">
                 <p class="text-4xl font-bold text-gray-900 mb-2">4.9 / 5.0</p>
-                <div class="text-yellow-500 text-3xl mb-2">
+                <div class="text-highlight-yellow text-3xl mb-2">
                     ★★★★★
                 </div>
                 <p class="text-gray-600 text-lg">(Based on 150+ reviews)</p>
@@ -280,7 +468,7 @@
                     </div>
                     <p class="text-gray-700 leading-relaxed mb-4">"AutoPartsPro has been our go-to supplier for years.
                         Their quality is unmatched, and their delivery is always on time. Highly recommend!"</p>
-                    <div class="text-yellow-500">
+                    <div class="text-highlight-yellow">
                         ★★★★★
                     </div>
                 </div>
@@ -296,7 +484,7 @@
                     </div>
                     <p class="text-gray-700 leading-relaxed mb-4">"Their extensive range of parts and competitive
                         pricing have significantly boosted our efficiency. A truly reliable partner!"</p>
-                    <div class="text-yellow-500">
+                    <div class="text-highlight-yellow">
                         ★★★★★
                     </div>
                 </div>
@@ -312,7 +500,7 @@
                     </div>
                     <p class="text-gray-700 leading-relaxed mb-4">"Fantastic customer service and high-quality parts.
                         They always go the extra mile to ensure we get what we need."</p>
-                    <div class="text-yellow-500">
+                    <div class="text-highlight-yellow">
                         ★★★★★
                     </div>
                 </div>
@@ -320,7 +508,7 @@
         </div>
     </section>
 
-    <!-- Contact Us Section -->
+    <!-- Contact Us Section (Modal) -->
     <div id="modalOverlay" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
         <div
             class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto p-8 relative z-50 border border-gray-200 dark:border-gray-700">
@@ -335,17 +523,17 @@
 
             <form id="modal-contact-form" class="space-y-4">
                 <input id="modal-name" type="text" placeholder="Name" required
-                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-secondary-purple">
                 <input id="modal-email" type="email" placeholder="Email" required
-                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-secondary-purple">
                 <input id="modal-company" type="text" placeholder="Company"
-                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-secondary-purple">
                 <input id="modal-subject" type="text" placeholder="Subject" required
-                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-secondary-purple">
                 <textarea id="modal-message" placeholder="Message" required rows="4"
-                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-secondary-purple"></textarea>
                 <button type="submit"
-                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-md font-semibold transition">Submit</button>
+                    class="w-full bg-primary-dark hover:bg-secondary-purple text-white py-3 rounded-md font-semibold transition">Submit</button>
             </form>
 
             <p id="modal-success"
@@ -373,16 +561,16 @@
                 <h3 class="text-xl font-semibold mb-4">Our Company</h3>
                 <ul>
                     <li class="mb-2"><a href="#about"
-                            class="text-gray-400 hover:text-blue-400 transition-colors duration-300">About Us</a></li>
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">About Us</a></li>
                     <li class="mb-2"><a href="#products"
-                            class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Our Products</a>
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Our Products</a>
                     </li>
                     <li class="mb-2"><a href="#contact"
-                            class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact Us</a></li>
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Contact Us</a></li>
                     <li class="mb-2"><a href="#"
-                            class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Sitemap</a></li>
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Sitemap</a></li>
                     <li class="mb-2"><a href="#"
-                            class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Download
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Download
                             Brochure</a></li>
                 </ul>
             </div>
@@ -391,13 +579,13 @@
             <div>
                 <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                    <a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300"
                         aria-label="Facebook"><i class="fab fa-facebook-f text-2xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                    <a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300"
                         aria-label="Twitter"><i class="fab fa-twitter text-2xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                    <a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300"
                         aria-label="LinkedIn"><i class="fab fa-linkedin-in text-2xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                    <a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300"
                         aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
                 </div>
             </div>
@@ -405,7 +593,7 @@
             <!-- Map Placeholder -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Location</h3>
-                <div class="w-full h-48 bg-gray-700 rounded-lg overflow-hidden">
+                <div class="w-full h-48 bg-primary-dark rounded-lg overflow-hidden">
                     <!-- Placeholder for Google Maps iframe -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.250551185368!2d144.963057615317!3d-37.8142170797519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b58c2f1f2d%3A0x50456784629e4e0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1678901234567!5m2!1sen!2sau"

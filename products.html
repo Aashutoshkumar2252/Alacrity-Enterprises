@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,39 +9,208 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS for the products page -->
-    <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Tailwind CSS Configuration for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0E2148',
+                        'secondary-purple': '#483AA0',
+                        'neutral-bg': '#7965C1', /* This color will be used more sparingly for subtle accents */
+                        'highlight-yellow': '#E3D095',
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        /* Custom styles for this page, ensuring professional application of the palette */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            /* Default text color is handled by Tailwind's text-gray-800 */
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0E2148; /* Primary Dark for strong headings */
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #483AA0; /* Secondary color for heading underline */
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: #483AA0; /* Secondary color for main buttons */
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 9999px; /* Full rounded */
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #3A2E80; /* Slightly darker secondary for hover */
+            transform: translateY(-2px);
+        }
+
+        .btn-primary-header {
+            background-color: #0E2148; /* Primary dark for header buttons */
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 9999px; /* Full rounded */
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .btn-primary-header:hover {
+            background-color: #1A3460; /* Darker primary for hover */
+            transform: translateY(-1px);
+        }
+
+        .card {
+            background-color: #ffffff; /* White background for cards for clean look */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Filter Buttons */
+        .filter-button {
+            background-color: #483AA0; /* Secondary color for filter buttons */
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .filter-button:hover {
+            background-color: #3A2E80; /* Darker secondary for hover */
+            transform: translateY(-1px);
+        }
+
+        .filter-button.active {
+            background-color: #0E2148; /* Primary Dark for active filter button */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer styles for consistency across pages */
+        .footer {
+            background-color: #0E2148; /* Primary color for footer background */
+            color: #E0E0E0; /* Light gray text for footer */
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #E0E0E0; /* Light gray links in footer */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #E3D095; /* Highlight yellow on footer link hover */
+        }
+
+        .footer .fab,
+        .footer .fas {
+            color: #E0E0E0; /* Light gray icons in footer */
+        }
+
+        .footer .fab:hover,
+        .footer .fas:hover {
+            color: #E3D095; /* Highlight yellow on footer icon hover */
+        }
+
+        .map-iframe-style {
+            border: 0;
+            border-radius: 0.5rem; /* rounded-lg */
+        }
+    </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Header (Similar to index.html for consistency) -->
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
-            <div class="text-2xl font-bold text-gray-900">
-                <a href="index.html" class="hover:text-blue-600 transition-colors duration-300">AutoPartsPro</a>
+            <div class="text-2xl font-bold text-primary-dark">
+                <a href="index.html" class="hover:text-secondary-purple transition-colors duration-300">AutoPartsPro</a>
             </div>
             <ul class="hidden md:flex space-x-8 items-center">
-                <li><a href="./index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a></li>
-                <li><a href="./aboutUs.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
-                <li><a href="./products.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
+                <li><a href="./index.html"
+                        class="text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Home</a>
+                </li>
+                <li><a href="./aboutUs.html"
+                        class="text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">About
+                        Us</a></li>
+                <li><a href="./products.html"
+                        class="text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Products</a>
+                </li>
                 <li><a href="#footer" class="btn-primary-header inline-block">Contact Us</a></li>
             </ul>
             <!-- Mobile Menu Button (Hamburger) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none" aria-label="Toggle mobile menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-secondary-purple focus:outline-none"
+                aria-label="Toggle mobile menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
                 </svg>
             </button>
         </nav>
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="md:hidden bg-white px-6 py-4 border-t border-gray-200 hidden">
             <ul class="flex flex-col space-y-4">
-                <li><a href="./index.html" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a></li>
-                <li><a href="./aboutUs.html" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
-                <li><a href="./products.html" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
-                <li><a href="" class="block btn-primary-header">Contact Us</a></li>
+                <li><a href="./index.html"
+                        class="block text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Home</a>
+                </li>
+                <li><a href="./aboutUs.html"
+                        class="block text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">About
+                        Us</a></li>
+                <li><a href="./products.html"
+                        class="block text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Products</a>
+                </li>
+                <li><a href="#footer" class="block btn-primary-header">Contact Us</a></li>
             </ul>
         </div>
     </header>
@@ -63,69 +233,86 @@
         <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             <!-- Product Card 1 -->
             <div class="product-card card p-6 flex flex-col items-center" data-category="engine">
-                <img src="https://placehold.co/400x200/4F46E5/FFFFFF?text=Engine+Parts" alt="Engine Parts" class="product-card-image mb-4">
+                <img src="https://placehold.co/400x200/483AA0/FFFFFF?text=Engine+Parts" alt="Engine Parts"
+                    class="product-card-image mb-4">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Engine Components</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Comprehensive selection of engine parts including blocks, pistons, crankshafts, and cylinder heads.</p>
-                <a href="./Products/Product-1.html" class="text-blue-600 hover:underline font-medium">View Details</a>
+                <p class="text-gray-600 text-center text-sm mb-4">Comprehensive selection of engine parts including
+                    blocks, pistons, crankshafts, and cylinder heads.</p>
+                <a href="productpage.html" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
             <!-- Product Card 2 -->
             <div class="product-card card p-6 flex flex-col items-center" data-category="braking">
-                <img src="https://placehold.co/400x200/F59E0B/FFFFFF?text=Braking+Systems" alt="Braking Systems" class="product-card-image mb-4">
+                <img src="https://placehold.co/400x200/E3D095/0E2148?text=Braking+Systems" alt="Braking Systems"
+                    class="product-card-image mb-4">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Braking Systems</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">High-performance brake pads, rotors, calipers, and master cylinders for all vehicle types.</p>
-                <a href="#" class="text-blue-600 hover:underline font-medium">View Details</a>
+                <p class="text-gray-600 text-center text-sm mb-4">High-performance brake pads, rotors, calipers, and
+                    master cylinders for all vehicle types.</p>
+                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
             <!-- Product Card 3 -->
             <div class="product-card card p-6 flex flex-col items-center" data-category="suspension">
-                <img src="https://placehold.co/400x200/10B981/FFFFFF?text=Suspension" alt="Suspension Parts" class="product-card-image mb-4">
+                <img src="https://placehold.co/400x200/0E2148/FFFFFF?text=Suspension" alt="Suspension Parts"
+                    class="product-card-image mb-4">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Suspension & Steering</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Shocks, struts, control arms, tie rods, and power steering components for smooth rides.</p>
-                <a href="#" class="text-blue-600 hover:underline font-medium">View Details</a>
+                <p class="text-gray-600 text-center text-sm mb-4">Shocks, struts, control arms, tie rods, and power
+                    steering components for smooth rides.</p>
+                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
             <!-- Product Card 4 -->
             <div class="product-card card p-6 flex flex-col items-center" data-category="electrical">
-                <img src="https://placehold.co/400x200/EF4444/FFFFFF?text=Electrical+Parts" alt="Electrical Parts" class="product-card-image mb-4">
+                <img src="https://placehold.co/400x200/483AA0/FFFFFF?text=Electrical+Parts" alt="Electrical Parts"
+                    class="product-card-image mb-4">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Electrical Components</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Starters, alternators, batteries, wiring harnesses, and various sensors.</p>
-                <a href="#" class="text-blue-600 hover:underline font-medium">View Details</a>
+                <p class="text-gray-600 text-center text-sm mb-4">Starters, alternators, batteries, wiring harnesses,
+                    and various sensors.</p>
+                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
             <!-- Product Card 5 -->
             <div class="product-card card p-6 flex flex-col items-center" data-category="body">
-                <img src="https://placehold.co/400x200/6366F1/FFFFFF?text=Body+Panels" alt="Body Panels" class="product-card-image mb-4">
+                <img src="https://placehold.co/400x200/E3D095/0E2148?text=Body+Panels" alt="Body Panels"
+                    class="product-card-image mb-4">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Body & Exterior</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Fenders, bumpers, doors, mirrors, and lighting assemblies for all models.</p>
-                <a href="#" class="text-blue-600 hover:underline font-medium">View Details</a>
+                <p class="text-gray-600 text-center text-sm mb-4">Fenders, bumpers, doors, mirrors, and lighting
+                    assemblies for all models.</p>
+                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
             <!-- Product Card 6 -->
             <div class="product-card card p-6 flex flex-col items-center" data-category="transmission">
-                <img src="https://placehold.co/400x200/06B6D4/FFFFFF?text=Transmission" alt="Transmission Parts" class="product-card-image mb-4">
+                <img src="https://placehold.co/400x200/0E2148/FFFFFF?text=Transmission" alt="Transmission Parts"
+                    class="product-card-image mb-4">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Transmission & Drivetrain</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Transmissions, clutches, axles, and universal joints for efficient power transfer.</p>
-                <a href="#" class="text-blue-600 hover:underline font-medium">View Details</a>
+                <p class="text-gray-600 text-center text-sm mb-4">Transmissions, clutches, axles, and universal joints
+                    for efficient power transfer.</p>
+                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
             <!-- Add more product cards as needed -->
             <div class="product-card card p-6 flex flex-col items-center" data-category="engine">
-                <img src="https://placehold.co/400x200/4F46E5/FFFFFF?text=Turbocharger" alt="Turbocharger" class="product-card-image mb-4">
+                <img src="https://placehold.co/400x200/483AA0/FFFFFF?text=Turbocharger" alt="Turbocharger"
+                    class="product-card-image mb-4">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Turbocharger Units</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Boost engine performance with our high-quality, durable turbochargers.</p>
-                <a href="#" class="text-blue-600 hover:underline font-medium">View Details</a>
+                <p class="text-gray-600 text-center text-sm mb-4">Boost engine performance with our high-quality,
+                    durable turbochargers.</p>
+                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
             <div class="product-card card p-6 flex flex-col items-center" data-category="braking">
-                <img src="https://placehold.co/400x200/F59E0B/FFFFFF?text=Brake+Lines" alt="Brake Lines" class="product-card-image mb-4">
+                <img src="https://placehold.co/400x200/E3D095/0E2148?text=Brake+Lines" alt="Brake Lines"
+                    class="product-card-image mb-4">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Steel Braided Brake Lines</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Improve brake pedal feel and response with reinforced lines.</p>
-                <a href="#" class="text-blue-600 hover:underline font-medium">View Details</a>
+                <p class="text-gray-600 text-center text-sm mb-4">Improve brake pedal feel and response with reinforced
+                    lines.</p>
+                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
         </div>
     </section>
 
     <!-- Footer (Similar to index.html for consistency) -->
-    <footer class="footer" id="footer">
+    <footer class="footer bg-primary-dark text-gray-300 py-12" id="footer">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
             <!-- Contact Info -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
-                <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> 123 Auto Parts Lane, Industrial City, ZIP 12345</p>
+                <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> 123 Auto Parts Lane, Industrial City, ZIP
+                    12345</p>
                 <p class="mb-2"><i class="fas fa-phone mr-2"></i> +1 (555) 123-4567</p>
                 <p class="mb-2"><i class="fas fa-envelope mr-2"></i> info@autopartspro.com</p>
                 <p class="mb-2"><i class="fas fa-clock mr-2"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
@@ -135,11 +322,18 @@
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Company</h3>
                 <ul>
-                    <li class="mb-2"><a href="index.html#about" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">About Us</a></li>
-                    <li class="mb-2"><a href="index.html#products" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Our Products</a></li>
-                    <li class="mb-2"><a href="index.html#contact" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact Us</a></li>
-                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Sitemap</a></li>
-                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Download Brochure</a></li>
+                    <li class="mb-2"><a href="index.html#about"
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">About Us</a></li>
+                    <li class="mb-2"><a href="index.html#products"
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Our Products</a>
+                    </li>
+                    <li class="mb-2"><a href="index.html#contact"
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Contact Us</a></li>
+                    <li class="mb-2"><a href="#"
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Sitemap</a></li>
+                    <li class="mb-2"><a href="#"
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Download
+                            Brochure</a></li>
                 </ul>
             </div>
 
@@ -147,26 +341,26 @@
             <div>
                 <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" aria-label="Facebook"><i class="fab fa-facebook-f text-2xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" aria-label="Twitter"><i class="fab fa-twitter text-2xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-2xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300"
+                        aria-label="Facebook"><i class="fab fa-facebook-f text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300"
+                        aria-label="Twitter"><i class="fab fa-twitter text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin-in text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300"
+                        aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
                 </div>
             </div>
 
             <!-- Map Placeholder -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Location</h3>
-                <div class="w-full h-48 bg-gray-700 rounded-lg overflow-hidden">
+                <div class="w-full h-48 bg-primary-dark rounded-lg overflow-hidden">
                     <!-- Placeholder for Google Maps iframe -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.250551185368!2d144.963057615317!3d-37.8142170797519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b58c2f1f2d%3A0x50456784629e4e0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1678901234567!5m2!1sen!2sau"
-                        width="100%"
-                        height="100%"
-                        class="map-iframe-style"
-                        allowfullscreen=""
-                        title="Company Location on Map"
-                    ></iframe>
+                        width="100%" height="100%" class="map-iframe-style" allowfullscreen=""
+                        title="Company Location on Map"></iframe>
                 </div>
             </div>
         </div>
@@ -181,4 +375,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

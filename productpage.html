@@ -12,23 +12,175 @@
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Tailwind CSS Configuration for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0E2148',
+                        'secondary-purple': '#483AA0',
+                        'neutral-bg': '#7965C1', /* This color will be used more sparingly for subtle accents */
+                        'highlight-yellow': '#E3D095',
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        /* Custom styles for this page, ensuring professional application of the palette */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            /* Default text color is handled by Tailwind's text-gray-800 */
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0E2148; /* Primary Dark for strong headings */
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #483AA0; /* Secondary color for heading underline */
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: #483AA0; /* Secondary color for main buttons */
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 9999px; /* Full rounded */
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #3A2E80; /* Slightly darker secondary for hover */
+            transform: translateY(-2px);
+        }
+
+        /* Removed .btn-primary-header custom CSS rule from here to prevent conflict */
+
+        .btn-primary-large {
+            background-color: #483AA0; /* Secondary color for large buttons */
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px; /* Full rounded */
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.125rem; /* text-lg */
+        }
+
+        .btn-primary-large:hover {
+            background-color: #3A2E80; /* Darker secondary for hover */
+            transform: translateY(-3px);
+        }
+
+        .card {
+            background-color: #ffffff; /* White background for cards for clean look */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .thumbnail-image {
+            width: 120px; /* Fixed width for thumbnails */
+            height: 90px; /* Fixed height for thumbnails */
+            object-fit: cover;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .thumbnail-image:hover {
+            border-color: #483AA0; /* Secondary color on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Footer styles for consistency across pages */
+        .footer {
+            background-color: #0E2148; /* Primary color for footer background */
+            color: #E0E0E0; /* Light gray text for footer */
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #E0E0E0; /* Light gray links in footer */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #E3D095; /* Highlight yellow on footer link hover */
+        }
+
+        .footer .fab,
+        .footer .fas {
+            color: #E0E0E0; /* Light gray icons in footer */
+        }
+
+        .footer .fab:hover,
+        .footer .fas:hover {
+            color: #E3D095; /* Highlight yellow on footer icon hover */
+        }
+
+        .map-iframe-style {
+            border: 0;
+            border-radius: 0.5rem; /* rounded-lg */
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Header (Similar to index.html for consistency) -->
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
-            <div class="text-2xl font-bold text-gray-900">
-                <a href="index.html" class="hover:text-blue-600 transition-colors duration-300">AutoPartsPro</a>
+            <div class="text-2xl font-bold text-primary-dark">
+                <a href="index.html" class="hover:text-secondary-purple transition-colors duration-300">AutoPartsPro</a>
             </div>
             <ul class="hidden md:flex space-x-8 items-center">
-                <li><a href="index.html#home" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a></li>
-                <li><a href="index.html#about" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
-                <li><a href="index.html#products" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
-                <li><a href="index.html#contact" class="btn-primary-header inline-block">Contact Us</a></li>
+                <li><a href="index.html" class="text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Home</a></li>
+                <li><a href="aboutUs.html" class="text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">About Us</a></li>
+                <li><a href="products.html" class="text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Products</a></li>
+                <!-- Applied Tailwind classes directly for the Contact Us button -->
+                <li><a href="#footer" class="inline-block bg-primary-dark text-white py-2 px-5 rounded-full font-medium hover:bg-primary-dark/90 transition-colors duration-300 shadow-md">Contact Us</a></li>
             </ul>
             <!-- Mobile Menu Button (Hamburger) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none" aria-label="Toggle mobile menu">
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-secondary-purple focus:outline-none" aria-label="Toggle mobile menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
@@ -37,10 +189,11 @@
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="md:hidden bg-white px-6 py-4 border-t border-gray-200 hidden">
             <ul class="flex flex-col space-y-4">
-                <li><a href="index.html#home" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a></li>
-                <li><a href="index.html#about" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
-                <li><a href="index.html#products" class="block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
-                <li><a href="index.html#contact" class="block btn-primary-header">Contact Us</a></li>
+                <li><a href="index.html#home" class="block text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Home</a></li>
+                <li><a href="aboutUs.html" class="block text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">About Us</a></li>
+                <li><a href="products.html" class="block text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Products</a></li>
+                <!-- Applied Tailwind classes directly for the mobile Contact Us button -->
+                <li><a href="#footer" class="block bg-primary-dark text-white py-2 px-5 rounded-full font-medium hover:bg-primary-dark/90 transition-colors duration-300 shadow-md">Contact Us</a></li>
             </ul>
         </div>
     </header>
@@ -51,23 +204,23 @@
             <!-- Product Image Gallery (Placeholder) -->
             <div class="md:w-1/2 w-full">
                 <div class="main-product-image-container rounded-lg shadow-xl overflow-hidden mb-6">
-                    <img src="https://placehold.co/800x600/3B82F6/FFFFFF?text=Product+Main+Image" alt="Main Product Image" class="w-full h-auto object-cover">
+                    <img src="https://placehold.co/800x600/483AA0/FFFFFF?text=Product+Main+Image" alt="Main Product Image" class="w-full h-auto object-cover">
                 </div>
                 <div class="flex gap-4 overflow-x-auto pb-4">
-                    <img src="https://placehold.co/120x90/60A5FA/FFFFFF?text=Thumb1" alt="Product Thumbnail 1" class="thumbnail-image">
-                    <img src="https://placehold.co/120x90/60A5FA/FFFFFF?text=Thumb2" alt="Product Thumbnail 2" class="thumbnail-image">
-                    <img src="https://placehold.co/120x90/60A5FA/FFFFFF?text=Thumb3" alt="Product Thumbnail 3" class="thumbnail-image">
-                    <img src="https://placehold.co/120x90/60A5FA/FFFFFF?text=Thumb4" alt="Product Thumbnail 4" class="thumbnail-image">
+                    <img src="https://placehold.co/120x90/0E2148/FFFFFF?text=Thumb1" alt="Product Thumbnail 1" class="thumbnail-image">
+                    <img src="https://placehold.co/120x90/E3D095/0E2148?text=Thumb2" alt="Product Thumbnail 2" class="thumbnail-image">
+                    <img src="https://placehold.co/120x90/483AA0/FFFFFF?text=Thumb3" alt="Product Thumbnail 3" class="thumbnail-image">
+                    <img src="https://placehold.co/120x90/0E2148/FFFFFF?text=Thumb4" alt="Product Thumbnail 4" class="thumbnail-image">
                 </div>
             </div>
 
             <!-- Product Information -->
             <div class="md:w-1/2 w-full">
-                <h1 class="text-4xl font-bold text-gray-900 mb-4">High-Performance Brake Caliper</h1>
-                <p class="text-2xl text-blue-600 font-semibold mb-6">$129.99 <span class="text-gray-500 text-lg line-through">$149.99</span></p>
+                <h1 class="text-4xl font-bold text-primary-dark mb-4">High-Performance Brake Caliper</h1>
+                <p class="text-2xl text-secondary-purple font-semibold mb-6">$129.99 <span class="text-gray-500 text-lg line-through">$149.99</span></p>
 
                 <div class="flex items-center mb-6">
-                    <div class="text-yellow-500 text-xl mr-2">★★★★☆</div>
+                    <div class="text-highlight-yellow text-xl mr-2">★★★★☆</div>
                     <span class="text-gray-600">(4.5 / 5.0 based on 78 reviews)</span>
                 </div>
 
@@ -108,38 +261,38 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Related Product Card 1 -->
                 <div class="card p-4 flex flex-col items-center">
-                    <img src="https://placehold.co/300x200/4F46E5/FFFFFF?text=Brake+Pads" alt="Related Product 1" class="product-card-image mb-3">
+                    <img src="https://placehold.co/300x200/483AA0/FFFFFF?text=Brake+Pads" alt="Related Product 1" class="product-card-image mb-3">
                     <h3 class="text-lg font-semibold text-gray-900 mb-1">Ceramic Brake Pads</h3>
                     <p class="text-gray-600 text-sm mb-3">$45.00</p>
-                    <a href="#" class="text-blue-600 hover:underline text-sm">View Details</a>
+                    <a href="#" class="text-secondary-purple hover:underline text-sm">View Details</a>
                 </div>
-                <!-- Related Product Card 2 -->
+                <!-- Related Product 2 -->
                 <div class="card p-4 flex flex-col items-center">
-                    <img src="https://placehold.co/300x200/F59E0B/FFFFFF?text=Brake+Rotor" alt="Related Product 2" class="product-card-image mb-3">
+                    <img src="https://placehold.co/300x200/E3D095/0E2148?text=Brake+Rotor" alt="Related Product 2" class="product-card-image mb-3">
                     <h3 class="text-lg font-semibold text-gray-900 mb-1">Slotted Brake Rotor</h3>
                     <p class="text-gray-600 text-sm mb-3">$85.00</p>
-                    <a href="#" class="text-blue-600 hover:underline text-sm">View Details</a>
+                    <a href="#" class="text-secondary-purple hover:underline text-sm">View Details</a>
                 </div>
-                <!-- Related Product Card 3 -->
+                <!-- Related Product 3 -->
                 <div class="card p-4 flex flex-col items-center">
-                    <img src="https://placehold.co/300x200/10B981/FFFFFF?text=Brake+Fluid" alt="Related Product 3" class="product-card-image mb-3">
+                    <img src="https://placehold.co/300x200/0E2148/FFFFFF?text=Brake+Fluid" alt="Related Product 3" class="product-card-image mb-3">
                     <h3 class="text-lg font-semibold text-gray-900 mb-1">DOT 4 Brake Fluid</h3>
                     <p class="text-gray-600 text-sm mb-3">$12.50</p>
-                    <a href="#" class="text-blue-600 hover:underline text-sm">View Details</a>
+                    <a href="#" class="text-secondary-purple hover:underline text-sm">View Details</a>
                 </div>
-                <!-- Related Product Card 4 -->
+                <!-- Related Product 4 -->
                 <div class="card p-4 flex flex-col items-center">
-                    <img src="https://placehold.co/300x200/EF4444/FFFFFF?text=Brake+Line" alt="Related Product 4" class="product-card-image mb-3">
+                    <img src="https://placehold.co/300x200/483AA0/FFFFFF?text=Brake+Line" alt="Related Product 4" class="product-card-image mb-3">
                     <h3 class="text-lg font-semibold text-gray-900 mb-1">Stainless Steel Brake Line Kit</h3>
                     <p class="text-gray-600 text-sm mb-3">$70.00</p>
-                    <a href="#" class="text-blue-600 hover:underline text-sm">View Details</a>
+                    <a href="#" class="text-secondary-purple hover:underline text-sm">View Details</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer (Similar to index.html for consistency) -->
-    <footer class="footer">
+    <footer class="footer bg-primary-dark text-gray-300 py-12" id="footer">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
             <!-- Contact Info -->
             <div>
@@ -154,11 +307,11 @@
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Company</h3>
                 <ul>
-                    <li class="mb-2"><a href="index.html#about" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">About Us</a></li>
-                    <li class="mb-2"><a href="index.html#products" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Our Products</a></li>
-                    <li class="mb-2"><a href="index.html#contact" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact Us</a></li>
-                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Sitemap</a></li>
-                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Download Brochure</a></li>
+                    <li class="mb-2"><a href="index.html#about" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">About Us</a></li>
+                    <li class="mb-2"><a href="index.html#products" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Our Products</a></li>
+                    <li class="mb-2"><a href="index.html#contact" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Contact Us</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Sitemap</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Download Brochure</a></li>
                 </ul>
             </div>
 
@@ -166,17 +319,17 @@
             <div>
                 <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" aria-label="Facebook"><i class="fab fa-facebook-f text-2xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" aria-label="Twitter"><i class="fab fa-twitter text-2xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-2xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300" aria-label="Facebook"><i class="fab fa-facebook-f text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300" aria-label="Twitter"><i class="fab fa-twitter text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300" aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
                 </div>
             </div>
 
             <!-- Map Placeholder -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Location</h3>
-                <div class="w-full h-48 bg-gray-700 rounded-lg overflow-hidden">
+                <div class="w-full h-48 bg-primary-dark rounded-lg overflow-hidden">
                     <!-- Placeholder for Google Maps iframe -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.250551185368!2d144.963057615317!3d-37.8142170797519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b58c2f1f2d%3A0x50456784629e4e0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1678901234567!5m2!1sen!2sau"
@@ -197,5 +350,6 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
