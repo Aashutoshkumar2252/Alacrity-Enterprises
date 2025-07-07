@@ -39,7 +39,8 @@
         .section-heading {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #0E2148; /* Primary Dark for strong headings */
+            color: #0E2148;
+            /* Primary Dark for strong headings */
             margin-bottom: 3rem;
             position: relative;
             display: inline-block;
@@ -50,17 +51,20 @@
             display: block;
             width: 60px;
             height: 4px;
-            background-color: #483AA0; /* Secondary color for heading underline */
+            background-color: #483AA0;
+            /* Secondary color for heading underline */
             margin: 0.5rem auto 0;
             border-radius: 2px;
         }
 
         /* Buttons */
         .btn-primary {
-            background-color: #483AA0; /* Secondary color for main buttons */
+            background-color: #483AA0;
+            /* Secondary color for main buttons */
             color: white;
             padding: 0.8rem 2rem;
-            border-radius: 9999px; /* Full rounded */
+            border-radius: 9999px;
+            /* Full rounded */
             font-weight: 600;
             transition: background-color 0.3s ease, transform 0.2s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -69,15 +73,18 @@
         }
 
         .btn-primary:hover {
-            background-color: #3A2E80; /* Slightly darker secondary for hover */
+            background-color: #3A2E80;
+            /* Slightly darker secondary for hover */
             transform: translateY(-2px);
         }
 
         .btn-primary-header {
-            background-color: #0E2148; /* Primary dark for header buttons */
+            background-color: #0E2148;
+            /* Primary dark for header buttons */
             color: white;
             padding: 0.6rem 1.5rem;
-            border-radius: 9999px; /* Full rounded */
+            border-radius: 9999px;
+            /* Full rounded */
             font-weight: 500;
             transition: background-color 0.3s ease, transform 0.2s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -85,12 +92,14 @@
         }
 
         .btn-primary-header:hover {
-            background-color: #1A3460; /* Darker primary for hover */
+            background-color: #1A3460;
+            /* Darker primary for hover */
             transform: translateY(-1px);
         }
 
         .card {
-            background-color: #ffffff; /* White background for cards for clean look */
+            background-color: #ffffff;
+            /* White background for cards for clean look */
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -112,7 +121,8 @@
 
         /* Filter Buttons */
         .filter-button {
-            background-color: #483AA0; /* Secondary color for filter buttons */
+            background-color: #483AA0;
+            /* Secondary color for filter buttons */
             color: white;
             padding: 0.6rem 1.5rem;
             border-radius: 9999px;
@@ -124,46 +134,55 @@
         }
 
         .filter-button:hover {
-            background-color: #3A2E80; /* Darker secondary for hover */
+            background-color: #3A2E80;
+            /* Darker secondary for hover */
             transform: translateY(-1px);
         }
 
         .filter-button.active {
-            background-color: #0E2148; /* Primary Dark for active filter button */
+            background-color: #0E2148;
+            /* Primary Dark for active filter button */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Footer styles for consistency across pages */
         .footer {
-            background-color: #0E2148; /* Primary color for footer background */
-            color: #E0E0E0; /* Light gray text for footer */
+            background-color: #0E2148;
+            /* Primary color for footer background */
+            color: #E0E0E0;
+            /* Light gray text for footer */
             padding: 4rem 0;
             text-align: center;
         }
 
         .footer a {
-            color: #E0E0E0; /* Light gray links in footer */
+            color: #E0E0E0;
+            /* Light gray links in footer */
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer a:hover {
-            color: #E3D095; /* Highlight yellow on footer link hover */
+            color: #E3D095;
+            /* Highlight yellow on footer link hover */
         }
 
         .footer .fab,
         .footer .fas {
-            color: #E0E0E0; /* Light gray icons in footer */
+            color: #E0E0E0;
+            /* Light gray icons in footer */
         }
 
         .footer .fab:hover,
         .footer .fas:hover {
-            color: #E3D095; /* Highlight yellow on footer icon hover */
+            color: #E3D095;
+            /* Highlight yellow on footer icon hover */
         }
 
         .map-iframe-style {
             border: 0;
-            border-radius: 0.5rem; /* rounded-lg */
+            border-radius: 0.5rem;
+            /* rounded-lg */
         }
     </style>
 </head>
@@ -174,7 +193,8 @@
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <div class="text-2xl font-bold text-primary-dark">
-                <a href="index.html" class="hover:text-secondary-purple transition-colors duration-300">Alacrity Enterprises</a>
+                <a href="index.html" class="hover:text-secondary-purple transition-colors duration-300">Alacrity
+                    Enterprises</a>
             </div>
             <ul class="hidden md:flex space-x-8 items-center">
                 <li><a href="./index.html"
@@ -189,7 +209,8 @@
                 <li><a href="#footer" class="btn-primary-header inline-block">Contact Us</a></li>
             </ul>
             <!-- Mobile Menu Button (Hamburger) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-secondary-purple focus:outline-none"
+            <button id="mobile-menu-button"
+                class="md:hidden text-gray-600 hover:text-secondary-purple focus:outline-none"
                 aria-label="Toggle mobile menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -230,77 +251,90 @@
             <button class="filter-button" data-filter="transmission">Transmission & Drivetrain</button>
         </div>
 
-        <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            <!-- Product Card 1 -->
-            <div class="product-card card p-6 flex flex-col items-center" data-category="engine">
-                <img src="https://placehold.co/400x200/483AA0/FFFFFF?text=Engine+Parts" alt="Engine Parts"
+        <div class="flex flex-wrap justify-center gap-10 product-grid">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <img src="https://carfromjapan.com/wp-content/uploads/2017/11/1-1.jpg" alt="Engine Parts"
                     class="product-card-image mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Engine Components</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Comprehensive selection of engine parts including
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Engine Components</h3>
+                <p class="text-sm text-gray-600 text-center">Comprehensive selection of engine parts including
                     blocks, pistons, crankshafts, and cylinder heads.</p>
-                <a href="productpage.html" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
-            <!-- Product Card 2 -->
-            <div class="product-card card p-6 flex flex-col items-center" data-category="braking">
-                <img src="https://placehold.co/400x200/E3D095/0E2148?text=Braking+Systems" alt="Braking Systems"
-                    class="product-card-image mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Braking Systems</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">High-performance brake pads, rotors, calipers, and
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.CmWuXuf7t2hlAFlj4wyiQgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Braking Systems" class="product-card-image mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Braking Systems</h3>
+                <p class="text-sm text-gray-600 text-center">High-performance brake pads, rotors, calipers, and
                     master cylinders for all vehicle types.</p>
-                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
-            <!-- Product Card 3 -->
-            <div class="product-card card p-6 flex flex-col items-center" data-category="suspension">
-                <img src="https://placehold.co/400x200/0E2148/FFFFFF?text=Suspension" alt="Suspension Parts"
-                    class="product-card-image mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Suspension & Steering</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Shocks, struts, control arms, tie rods, and power
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.Jm7zvxNSJnpLsiSzJKjtcQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Suspension Parts" class="product-card-image mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Suspension & Steering</h3>
+                <p class="text-sm text-gray-600 text-center">Shocks, struts, control arms, tie rods, and power
                     steering components for smooth rides.</p>
-                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
-            <!-- Product Card 4 -->
-            <div class="product-card card p-6 flex flex-col items-center" data-category="electrical">
-                <img src="https://placehold.co/400x200/483AA0/FFFFFF?text=Electrical+Parts" alt="Electrical Parts"
-                    class="product-card-image mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Electrical Components</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Starters, alternators, batteries, wiring harnesses,
-                    and various sensors.</p>
-                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.gyfOSg1R9hiuWKjkK32N0AHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Electrical Parts" class="product-card-image mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Electrical Components</h3>
+                <p class="text-sm text-gray-600 text-center">Starters, alternators, batteries, wiring harnesses, and
+                    various sensors.</p>
             </div>
-            <!-- Product Card 5 -->
-            <div class="product-card card p-6 flex flex-col items-center" data-category="body">
-                <img src="https://placehold.co/400x200/E3D095/0E2148?text=Body+Panels" alt="Body Panels"
-                    class="product-card-image mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Body & Exterior</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Fenders, bumpers, doors, mirrors, and lighting
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.Q3R330GRbHzEIR69ZyoP-AHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Body Panels" class="product-card-image mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Body & Exterior</h3>
+                <p class="text-sm text-gray-600 text-center">Fenders, bumpers, doors, mirrors, and lighting
                     assemblies for all models.</p>
-                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
-            <!-- Product Card 6 -->
-            <div class="product-card card p-6 flex flex-col items-center" data-category="transmission">
-                <img src="https://placehold.co/400x200/0E2148/FFFFFF?text=Transmission" alt="Transmission Parts"
-                    class="product-card-image mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Transmission & Drivetrain</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Transmissions, clutches, axles, and universal joints
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <img src="https://th.bing.com/th/id/R.94722b0f55250a1bc57e563ddcf473dd?rik=a3SYMDbiJZOfDA&riu=http%3a%2f%2fcdn.shopify.com%2fs%2ffiles%2f1%2f0681%2f0212%2f7933%2fcollections%2fb-series-awd-dog-box_1024x1024.jpg%3fv%3d1676580241&ehk=D8tym4e%2fWzhYiHkBqXU9tFC2taePZ29tczPAFt5GciI%3d&risl=&pid=ImgRaw&r=0"
+                    alt="Transmission Parts" class="product-card-image mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Transmission & Drivetrain</h3>
+                <p class="text-sm text-gray-600 text-center">Transmissions, clutches, axles, and universal joints
                     for efficient power transfer.</p>
-                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
             </div>
-            <!-- Add more product cards as needed -->
-            <div class="product-card card p-6 flex flex-col items-center" data-category="engine">
-                <img src="https://placehold.co/400x200/483AA0/FFFFFF?text=Turbocharger" alt="Turbocharger"
-                    class="product-card-image mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Turbocharger Units</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Boost engine performance with our high-quality,
-                    durable turbochargers.</p>
-                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.6NRDfOugt0rj-vfJB4o5GAHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Exhaust Systems" class="product-card-image mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Exhaust Systems</h3>
+                <p class="text-sm text-gray-600 text-center">Mufflers, catalytic converters, exhaust pipes, and
+                    performance headers.</p>
             </div>
-            <div class="product-card card p-6 flex flex-col items-center" data-category="braking">
-                <img src="https://placehold.co/400x200/E3D095/0E2148?text=Brake+Lines" alt="Brake Lines"
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <img src="https://m.media-amazon.com/images/I/61FG7M0seJL._AC_SL1500_.jpg" alt="Fuel System"
                     class="product-card-image mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Steel Braided Brake Lines</h3>
-                <p class="text-gray-600 text-center text-sm mb-4">Improve brake pedal feel and response with reinforced
-                    lines.</p>
-                <a href="#" class="text-secondary-purple hover:underline font-medium">View Details</a>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Fuel System</h3>
+                <p class="text-sm text-gray-600 text-center">Fuel pumps, injectors, tanks, and lines for efficient
+                    fuel delivery.</p>
+            </div>
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/PX/XR/SN/1520574/mahindra-car-radiator-1000x1000.jpg"
+                    alt="Cooling System" class="product-card-image mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Cooling System</h3>
+                <p class="text-sm text-gray-600 text-center">Radiators, water pumps, thermostats, and cooling fans.
+                </p>
+            </div>
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <img src="https://www.motoringresearch.com/wp-content/uploads/2024/08/006-Most-Eye-Catching-Dashboards.jpg"
+                    alt="Interior Parts" class="product-card-image mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Interior Components</h3>
+                <p class="text-sm text-gray-600 text-center">Seats, dashboards, carpets, and various trim pieces.
+                </p>
+            </div>
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.7NJ37FNJ3HlWjPHJhReH7QHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Wheels & Tires" class="product-card-image mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Wheels & Tires</h3>
+                <p class="text-sm text-gray-600 text-center">Alloy wheels, steel rims, and a variety of tire types
+                    for all conditions.</p>
+            </div>
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+                <img src="https://urbanmatter.com/wp-content/uploads/2022/09/OilFilter.png" alt="Filters & Fluids"
+                    class="product-card-image mb-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Filters & Fluids</h3>
+                <p class="text-sm text-gray-600 text-center">Oil filters, air filters, cabin filters, engine oil,
+                    and coolants.</p>
             </div>
         </div>
     </section>
@@ -323,14 +357,18 @@
                 <h3 class="text-xl font-semibold mb-4">Our Company</h3>
                 <ul>
                     <li class="mb-2"><a href="index.html#about"
-                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">About Us</a></li>
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">About
+                            Us</a></li>
                     <li class="mb-2"><a href="index.html#products"
-                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Our Products</a>
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Our
+                            Products</a>
                     </li>
                     <li class="mb-2"><a href="index.html#contact"
-                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Contact Us</a></li>
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Contact
+                            Us</a></li>
                     <li class="mb-2"><a href="#"
-                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Sitemap</a></li>
+                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Sitemap</a>
+                    </li>
                     <li class="mb-2"><a href="#"
                             class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Download
                             Brochure</a></li>
