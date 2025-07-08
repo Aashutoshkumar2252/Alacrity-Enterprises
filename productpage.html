@@ -8,8 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS for the product page -->
-    <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -74,8 +72,6 @@
             transform: translateY(-2px);
         }
 
-        /* Removed .btn-primary-header custom CSS rule from here to prevent conflict */
-
         .btn-primary-large {
             background-color: #483AA0; /* Secondary color for large buttons */
             color: white;
@@ -125,7 +121,8 @@
             transition: border-color 0.2s ease, transform 0.2s ease;
         }
 
-        .thumbnail-image:hover {
+        .thumbnail-image:hover,
+        .thumbnail-image.active { /* Added active class for styling the selected thumbnail */
             border-color: #483AA0; /* Secondary color on hover */
             transform: translateY(-2px);
         }
@@ -201,13 +198,13 @@
     <!-- Product Detail Section -->
     <section class="container mx-auto px-6 py-12 md:py-20 product-detail-section">
         <div class="flex flex-col md:flex-row gap-10 items-start">
-            <!-- Product Image Gallery (Placeholder) -->
+            <!-- Product Image Gallery -->
             <div class="md:w-1/2 w-full">
                 <div class="main-product-image-container rounded-lg shadow-xl overflow-hidden mb-6">
-                    <img src="https://media.istockphoto.com/photos/axial-fan-picture-id585480928?k=20&m=585480928&s=612x612&w=0&h=DcK1Mh9I_6eN2Nbq-5DzcxKU6yvNLr6AmIu9M69sKR8=" alt="Main Product Image" class="w-full h-auto object-cover">
+                    <img id="main-product-image" src="https://media.istockphoto.com/photos/axial-fan-picture-id585480928?k=20&m=585480928&s=612x612&w=0&h=DcK1Mh9I_6eN2Nbq-5DzcxKU6yvNLr6AmIu9M69sKR8=" alt="Main Product Image" class="w-full h-auto object-cover">
                 </div>
                 <div class="flex gap-4 overflow-x-auto pb-4">
-                    <img src="https://down-my.img.susercontent.com/file/75d3c27eedd7915e6addc2d2c23b91d7" alt="Product Thumbnail 1" class="thumbnail-image">
+                    <img src="https://down-my.img.susercontent.com/file/75d3c27eedd7915e6addc2d2c23b91d7" alt="Product Thumbnail 1" class="thumbnail-image active"> <!-- Added 'active' class to default selected thumbnail -->
                     <img src="https://tse3.mm.bing.net/th/id/OIP.gXEEf5arCdqq7xXY09hHFAHaH_?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Product Thumbnail 2" class="thumbnail-image">
                     <img src="https://media.digikey.com/photos/Orion%20Fans/MFG_OA9232EC-UR-1WB.jpg" alt="Product Thumbnail 3" class="thumbnail-image">
                     <img src="https://assets.rs-online.com/c_scale,w_600,f_auto,q_auto,d_no_image.png/70289118_3.jpg" alt="Product Thumbnail 4" class="thumbnail-image">
@@ -350,6 +347,55 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    console.log('Mobile menu toggled.'); // Debug: confirm mobile menu click
+                });
+            } else {
+                console.log('Mobile menu elements not found.'); // Debug: if elements are missing
+            }
+
+            // Product image gallery functionality
+            const mainProductImage = document.getElementById('main-product-image');
+            const thumbnailImages = document.querySelectorAll('.thumbnail-image');
+
+            console.log('Main product image element:', mainProductImage); // Debug: check if main image is found
+            console.log('Thumbnail image elements (NodeList):', thumbnailImages); // Debug: check if thumbnails are found
+
+            if (mainProductImage && thumbnailImages.length > 0) {
+                thumbnailImages.forEach((thumbnail, index) => {
+                    console.log(`Attaching event listener to thumbnail ${index}:`, thumbnail); // Debug: confirm loop and element
+
+                    thumbnail.addEventListener('click', () => {
+                        console.log(`Thumbnail ${index} clicked! Source:`, thumbnail.src); // Debug: confirm click and source
+
+                        // Update the main image source
+                        mainProductImage.src = thumbnail.src;
+                        console.log('Main image source updated to:', mainProductImage.src); // Debug: confirm main image update
+
+                        // Remove 'active' class from all thumbnails
+                        thumbnailImages.forEach(img => {
+                            img.classList.remove('active');
+                        });
+                        console.log('Removed active class from all thumbnails.'); // Debug: confirm class removal
+
+                        // Add 'active' class to the clicked thumbnail
+                        thumbnail.classList.add('active');
+                        console.log('Added active class to clicked thumbnail.'); // Debug: confirm class addition
+                    });
+                });
+            } else {
+                console.log('Image gallery elements not found or no thumbnails present.'); // Debug: if gallery elements are missing
+            }
+        });
+    </script>
 </body>
 </html>
