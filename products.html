@@ -100,7 +100,7 @@
             border: 1px solid #e0e0e0; /* Added a subtle border for more definition */
             padding: 0; /* Removed padding from the card itself */
             height: auto; /* Allow height to adjust based on content */
-            min-height: 280px; /* Ensures a consistent minimum height for cards, adjusted for no description */
+            min-height: 260px; /* Adjusted minimum height for cards to be more compact */
             display: flex; /* Use flexbox for vertical alignment within the card */
             flex-direction: column; /* Stack content vertically */
             justify-content: flex-start; /* Align content to the start */
@@ -130,9 +130,7 @@
             width: 100%;
             position: relative; /* Needed for absolute positioning of the image */
             padding-bottom: 75%; /* 4:3 Aspect Ratio (height is 75% of width) */
-            /* Removed margin-bottom here as it's now part of the card's internal structure */
             overflow: hidden; /* Hide any overflow if image is larger than container */
-            /* border-radius is now applied directly to the image or handled by card overflow */
         }
 
         /* Styling for product images to fill container */
@@ -149,7 +147,7 @@
 
         /* Styling for the text content area within the card */
         .card-content-area {
-            padding: 1rem; /* Padding for the text content */
+            padding: 0.25rem 0.5rem; /* Reduced vertical padding for the text content */
             flex-grow: 1; /* Allows this area to take up remaining space */
             display: flex;
             flex-direction: column;
@@ -174,7 +172,7 @@
             font-size: 0.875rem; /* text-sm */
             font-weight: 500;
             border-radius: 9999px; /* Full rounded */
-            background-color: '#0E2148'; /* Primary Dark for dropdown background */
+            background-color: #0E2148; /* Corrected color */
             color: white;
             border: 2px solid transparent;
             transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -184,11 +182,11 @@
         }
 
         .filter-dropdown:hover {
-            background-color: '#1A3460'; /* Slightly darker primary dark on hover */
+            background-color: #1A3460; /* Corrected hover color */
         }
 
         .filter-dropdown:focus {
-            border-color: '#E3D095'; /* Highlight yellow on focus */
+            border-color: #E3D095; /* Highlight yellow on focus */
             box-shadow: 0 0 0 3px rgba(227, 208, 149, 0.5); /* Ring effect */
         }
 
@@ -207,7 +205,7 @@
         }
 
         .footer a:hover {
-            color: #E3D095;
+            color: #E3D0E0;
         }
 
         .footer .fab,
@@ -217,7 +215,7 @@
 
         .footer .fab:hover,
         .footer .fas:hover {
-            color: #E3D095;
+            color: #E3D0E0;
         }
 
         .map-iframe-style {
@@ -407,7 +405,7 @@
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Interior Components"></a>
                 <div class="product-card-image-container">
                     <img src="https://www.motoringresearch.com/wp-content/uploads/2024/08/006-Most-Eye-Catching-Dashboards.jpg"
-                        alt="Interior Parts" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Interior Components</h3>
