@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <script>
+        // Tailwind CSS configuration for custom colors
         tailwind.config = {
             theme: {
                 extend: {
@@ -25,32 +26,35 @@
     </script>
 
     <style>
-        /* Custom styles from your provided code */
+        /* Custom styles for the body and typography */
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
         }
 
+        /* Styling for section headings */
         .section-heading {
             font-size: 2.5rem;
             font-weight: 700;
             color: #0E2148;
             margin-bottom: 3rem;
             position: relative;
-            display: inline-block;
+            display: block;
+            text-align: left; /* Align heading text to the left */
         }
 
+        /* Underline effect for section headings */
         .section-heading::after {
             content: '';
             display: block;
             width: 60px;
             height: 4px;
             background-color: #483AA0;
-            margin: 0.5rem auto 0;
+            margin: 0.5rem 0 0; /* Aligns underline to the left */
             border-radius: 2px;
         }
 
-        /* Buttons */
+        /* Primary button styling */
         .btn-primary {
             background-color: #483AA0;
             color: white;
@@ -68,6 +72,7 @@
             transform: translateY(-2px);
         }
 
+        /* Header button styling */
         .btn-primary-header {
             background-color: #0E2148;
             color: white;
@@ -84,6 +89,7 @@
             transform: translateY(-1px);
         }
 
+        /* Card styling for product items */
         .card {
             background-color: #ffffff;
             border-radius: 0.75rem;
@@ -91,8 +97,14 @@
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             cursor: pointer;
             position: relative;
+            border: 1px solid #e0e0e0; /* Added a subtle border for more definition */
+            height: 100%; /* Ensure cards take equal height within the grid row */
+            display: flex; /* Use flexbox for vertical alignment within the card */
+            flex-direction: column; /* Stack content vertically */
+            justify-content: space-between; /* Distribute space between items */
         }
 
+        /* Overlay link for the entire card to be clickable */
         .card a.card-link-overlay {
             position: absolute;
             top: 0;
@@ -104,12 +116,13 @@
             color: inherit;
         }
 
+        /* Hover effect for cards */
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
-        /* Adjusted product-card-image to fit within a fixed height container */
+        /* Container for product images to maintain consistent height */
         .product-card-image-container {
             width: 100%;
             height: 160px; /* Fixed height for image container */
@@ -117,8 +130,10 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
+            padding: 0.5rem; /* Added padding inside image container */
         }
 
+        /* Styling for product images */
         .product-card-image {
             max-width: 100%;
             max-height: 100%;
@@ -126,7 +141,7 @@
             border-radius: 0.5rem;
         }
 
-        /* Dropdown style */
+        /* Custom styling for the filter dropdown */
         .filter-dropdown {
             -webkit-appearance: none; /* Remove default browser styling */
             -moz-appearance: none;
@@ -136,7 +151,6 @@
             background-position: right 0.75rem center;
             background-size: 1.5em 1.5em;
             padding-right: 2.5rem; /* Make space for the custom arrow */
-            /* Tailwind classes for styling */
             display: block;
             width: 100%;
             max-width: 300px; /* Limit width for better aesthetics */
@@ -144,7 +158,7 @@
             font-size: 0.875rem; /* text-sm */
             font-weight: 500;
             border-radius: 9999px; /* Full rounded */
-            background-color: #0E2148; /* Primary Dark for dropdown background */
+            background-color: '#0E2148'; /* Primary Dark for dropdown background */
             color: white;
             border: 2px solid transparent;
             transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -154,11 +168,11 @@
         }
 
         .filter-dropdown:hover {
-            background-color: #1A3460; /* Slightly darker primary dark on hover */
+            background-color: '#1A3460'; /* Slightly darker primary dark on hover */
         }
 
         .filter-dropdown:focus {
-            border-color: #E3D095; /* Highlight yellow on focus */
+            border-color: '#E3D095'; /* Highlight yellow on focus */
             box-shadow: 0 0 0 3px rgba(227, 208, 149, 0.5); /* Ring effect */
         }
 
@@ -199,12 +213,15 @@
 
 <body class="bg-gray-50 text-gray-800">
 
+    <!-- Header section with navigation -->
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Logo/Site Title -->
             <div class="text-2xl font-bold text-primary-dark">
                 <a href="index.html" class="hover:text-secondary-purple transition-colors duration-300">Alacrity
                     Enterprises</a>
             </div>
+            <!-- Desktop Navigation -->
             <ul class="hidden md:flex space-x-8 items-center">
                 <li><a href="./index.html"
                         class="text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Home</a>
@@ -217,6 +234,7 @@
                 </li>
                 <li><a href="#footer" class="btn-primary-header inline-block">Contact Us</a></li>
             </ul>
+            <!-- Mobile Menu Button -->
             <button id="mobile-menu-button"
                 class="md:hidden text-gray-600 hover:text-secondary-purple focus:outline-none"
                 aria-label="Toggle mobile menu">
@@ -227,6 +245,7 @@
                 </svg>
             </button>
         </nav>
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden bg-white px-6 py-4 border-t border-gray-200 hidden">
             <ul class="flex flex-col space-y-4">
                 <li><a href="./index.html"
@@ -243,11 +262,12 @@
         </div>
     </header>
 
+    <!-- Main content section for product catalog -->
     <section class="container mx-auto px-6 py-12 md:py-20">
         <h2 class="section-heading mb-12">Our Full Product Catalog</h2>
 
-        <!-- Filter Dropdown (for all screens) -->
-        <div class="flex justify-end mb-12"> <!-- Changed justify-center to justify-end -->
+        <!-- Filter Dropdown -->
+        <div class="flex justify-end mb-12">
             <select id="filter-dropdown" class="filter-dropdown">
                 <option value="all">All Products</option>
                 <option value="engine">Engine Components</option>
@@ -265,132 +285,147 @@
             </select>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-10 product-grid" id="product-grid">
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="engine">
+        <!-- Product Grid - Updated to use CSS Grid for better responsiveness -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 product-grid" id="product-grid">
+            <!-- Product Card: Engine Components -->
+            <div class="card p-6 flex flex-col items-center" data-category="engine">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Engine Components"></a>
                 <div class="product-card-image-container">
                     <img src="https://carfromjapan.com/wp-content/uploads/2017/11/1-1.jpg" alt="Engine Parts"
-                        class="product-card-image">
+                        class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/160x160/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Engine Components</h3>
-                <p class="text-sm text-gray-600 text-center">Comprehensive selection of engine parts including
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Engine Components</h3>
+                <p class="text-xs sm:text-sm text-gray-600 text-center">Comprehensive selection of engine parts including
                     blocks, pistons, crankshafts, and cylinder heads.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="braking">
+            <!-- Product Card: Braking Systems -->
+            <div class="card p-6 flex flex-col items-center" data-category="braking">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Braking Systems"></a>
                 <div class="product-card-image-container">
                     <img src="https://tse3.mm.bing.net/th/id/OIP.CmWuXuf7t2hlAFlj4wyiQgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Braking Systems" class="product-card-image">
+                        alt="Braking Systems" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/160x160/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Braking Systems</h3>
-                <p class="text-sm text-gray-600 text-center">High-performance brake pads, rotors, calipers, and
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Braking Systems</h3>
+                <p class="text-xs sm:text-sm text-gray-600 text-center">High-performance brake pads, rotors, calipers, and
                     master cylinders for all vehicle types.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="suspension">
+            <!-- Product Card: Suspension & Steering -->
+            <div class="card p-6 flex flex-col items-center" data-category="suspension">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Suspension & Steering"></a>
                 <div class="product-card-image-container">
                     <img src="https://tse4.mm.bing.net/th/id/OIP.Jm7zvxNSJnpLsiSzJKjtcQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Suspension Parts" class="product-card-image">
+                        alt="Suspension Parts" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/160x160/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Suspension & Steering</h3>
-                <p class="text-sm text-gray-600 text-center">Shocks, struts, control arms, tie rods, and power
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Suspension & Steering</h3>
+                <p class="text-xs sm:text-sm text-gray-600 text-center">Shocks, struts, control arms, tie rods, and power
                     steering components for smooth rides.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="electrical">
+            <!-- Product Card: Electrical Components -->
+            <div class="card p-6 flex flex-col items-center" data-category="electrical">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Electrical Components"></a>
                 <div class="product-card-image-container">
                     <img src="https://tse3.mm.bing.net/th/id/OIP.gyfOSg1R9hiuWKjkK32N0AHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Electrical Parts" class="product-card-image">
+                        alt="Electrical Parts" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/160x160/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Electrical Components</h3>
-                <p class="text-sm text-gray-600 text-center">Starters, alternators, batteries, wiring harnesses, and
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Electrical Components</h3>
+                <p class="text-xs sm:text-sm text-gray-600 text-center">Starters, alternators, batteries, wiring harnesses, and
                     various sensors.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="body">
+            <!-- Product Card: Body & Exterior -->
+            <div class="card p-6 flex flex-col items-center" data-category="body">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Body & Exterior"></a>
                 <div class="product-card-image-container">
                     <img src="https://tse4.mm.bing.net/th/id/OIP.Q3R330GRbHzEIR69ZyoP-AHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Body Panels" class="product-card-image">
+                        alt="Body Panels" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/160x160/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Body & Exterior</h3>
-                <p class="text-sm text-gray-600 text-center">Fenders, bumpers, doors, mirrors, and lighting
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Body & Exterior</h3>
+                <p class="text-xs sm:text-sm text-gray-600 text-center">Fenders, bumpers, doors, mirrors, and lighting
                     assemblies for all models.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="transmission">
+            <!-- Product Card: Transmission & Drivetrain -->
+            <div class="card p-6 flex flex-col items-center" data-category="transmission">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Transmission & Drivetrain"></a>
                 <div class="product-card-image-container">
                     <img src="https://th.bing.com/th/id/R.94722b0f55250a1bc57e563ddcf473dd?rik=a3SYMDbiJZOfDA&riu=http%3a%2f%2fcdn.shopify.com%2fs%2ffiles%2f1%2f0681%2f0212%2f7933%2fcollections%2fb-series-awd-dog-box_1024x1024.jpg%3fv%3d1676580241&ehk=D8tym4e%2fWzhYiHkBqXU9tFC2taePZ29tczPAFt5GciI%3d&risl=&pid=ImgRaw&r=0"
-                        alt="Transmission Parts" class="product-card-image">
+                        alt="Transmission Parts" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/160x160/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Transmission & Drivetrain</h3>
-                <p class="text-sm text-gray-600 text-center">Transmissions, clutches, axles, and universal joints
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Transmission & Drivetrain</h3>
+                <p class="text-xs sm:text-sm text-gray-600 text-center">Transmissions, clutches, axles, and universal joints
                     for efficient power transfer.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="exhaust">
+            <!-- Product Card: Exhaust Systems -->
+            <div class="card p-6 flex flex-col items-center" data-category="exhaust">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Exhaust Systems"></a>
                 <div class="product-card-image-container">
                     <img src="https://tse3.mm.bing.net/th/id/OIP.6NRDfOugt0rj-vfJB4o5GAHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Exhaust Systems" class="product-card-image">
+                        alt="Exhaust Systems" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/160x160/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Exhaust Systems</h3>
-                <p class="text-sm text-gray-600 text-center">Mufflers, catalytic converters, exhaust pipes, and
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Exhaust Systems</h3>
+                <p class="text-xs sm:text-sm text-gray-600 text-center">Mufflers, catalytic converters, exhaust pipes, and
                     performance headers.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="fuel">
+            <!-- Product Card: Fuel System -->
+            <div class="card p-6 flex flex-col items-center" data-category="fuel">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Fuel System"></a>
                 <div class="product-card-image-container">
                     <img src="https://m.media-amazon.com/images/I/61FG7M0seJL._AC_SL1500_.jpg" alt="Fuel System"
-                        class="product-card-image">
+                        class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/160x160/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Fuel System</h3>
-                <p class="text-sm text-gray-600 text-center">Fuel pumps, injectors, tanks, and lines for efficient
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Fuel System</h3>
+                <p class="text-xs sm:text-sm text-gray-600 text-center">Fuel pumps, injectors, tanks, and lines for efficient
                     fuel delivery.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="cooling">
+            <!-- Product Card: Cooling System -->
+            <div class="card p-6 flex flex-col items-center" data-category="cooling">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Cooling System"></a>
                 <div class="product-card-image-container">
                     <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/PX/XR/SN/1520574/mahindra-car-radiator-1000x1000.jpg"
-                        alt="Cooling System" class="product-card-image">
+                        alt="Cooling System" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/160x160/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Cooling System</h3>
-                <p class="text-sm text-gray-600 text-center">Radiators, water pumps, thermostats, and cooling fans.
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Cooling System</h3>
+                <p class="text-xs sm:text-sm text-gray-600 text-center">Radiators, water pumps, thermostats, and cooling fans.
                 </p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="interior">
+            <!-- Product Card: Interior Components -->
+            <div class="card p-6 flex flex-col items-center" data-category="interior">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Interior Components"></a>
                 <div class="product-card-image-container">
                     <img src="https://www.motoringresearch.com/wp-content/uploads/2024/08/006-Most-Eye-Catching-Dashboards.jpg"
-                        alt="Interior Parts" class="product-card-image">
+                        alt="Interior Parts" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/160x160/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Interior Components</h3>
-                <p class="text-sm text-gray-600 text-center">Seats, dashboards, carpets, and various trim pieces.
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Interior Components</h3>
+                <p class="text-xs sm:text-sm text-gray-600 text-center">Seats, dashboards, carpets, and various trim pieces.
                 </p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="wheels">
+            <!-- Product Card: Wheels & Tires -->
+            <div class="card p-6 flex flex-col items-center" data-category="wheels">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Wheels & Tires"></a>
                 <div class="product-card-image-container">
                     <img src="https://tse4.mm.bing.net/th/id/OIP.7NJ37FNJ3HlWjPHJhReH7QHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Wheels & Tires" class="product-card-image">
+                        alt="Wheels & Tires" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/160x160/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Wheels & Tires</h3>
-                <p class="text-sm text-gray-600 text-center">Alloy wheels, steel rims, and a variety of tire types
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Wheels & Tires</h3>
+                <p class="text-xs sm:text-sm text-gray-600 text-center">Alloy wheels, steel rims, and a variety of tire types
                     for all conditions.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="filters">
+            <!-- Product Card: Filters & Fluids -->
+            <div class="card p-6 flex flex-col items-center" data-category="filters">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Filters & Fluids"></a>
                 <div class="product-card-image-container">
                     <img src="https://urbanmatter.com/wp-content/uploads/2022/09/OilFilter.png" alt="Filters & Fluids"
-                        class="product-card-image">
+                        class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/160x160/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Filters & Fluids</h3>
-                <p class="text-sm text-gray-600 text-center">Oil filters, air filters, cabin filters, engine oil,
+                <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Filters & Fluids</h3>
+                <p class="text-xs sm:text-sm text-gray-600 text-center">Oil filters, air filters, cabin filters, engine oil,
                     and coolants.</p>
             </div>
         </div>
     </section>
 
+    <!-- Footer section -->
     <footer class="footer bg-primary-dark text-gray-300 py-12" id="footer">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
+            <!-- Contact Information -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                 <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> 123 Auto Parts Lane, Industrial City, ZIP
@@ -400,6 +435,7 @@
                 <p class="mb-2"><i class="fas fa-clock mr-2"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
             </div>
 
+            <!-- Company Links -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Company</h3>
                 <ul>
@@ -422,6 +458,7 @@
                 </ul>
             </div>
 
+            <!-- Social Media Links -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
                 <div class="flex space-x-4">
@@ -436,6 +473,7 @@
                 </div>
             </div>
 
+            <!-- Location Map -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Location</h3>
                 <div class="w-full h-48 bg-primary-dark rounded-lg overflow-hidden">
@@ -446,6 +484,7 @@
                 </div>
             </div>
         </div>
+        <!-- Copyright and Legal Links -->
         <div class="container mx-auto px-6 mt-8 pt-8 border-t border-gray-700">
             <p class="mb-4">&copy; 2025 AutoPartsPro. All rights reserved.</p>
             <div class="flex justify-center space-x-6">
@@ -470,7 +509,7 @@
             const filterDropdown = document.getElementById('filter-dropdown');
             const productCards = document.querySelectorAll('.product-grid .card');
 
-            // Function to filter products
+            // Function to filter products based on selected category
             const filterProducts = (category) => {
                 productCards.forEach(card => {
                     const cardCategory = card.dataset.category;
@@ -490,7 +529,7 @@
                 });
             }
 
-            // Initial filter application (show all products by default)
+            // Initial filter application (show all products by default on page load)
             filterProducts('all');
         });
     </script>
