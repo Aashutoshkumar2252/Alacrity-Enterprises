@@ -40,7 +40,8 @@
             margin-bottom: 3rem;
             position: relative;
             display: block;
-            text-align: left; /* Align heading text to the left */
+            text-align: left;
+            /* Align heading text to the left */
         }
 
         /* Underline effect for section headings */
@@ -50,7 +51,8 @@
             width: 60px;
             height: 4px;
             background-color: #483AA0;
-            margin: 0.5rem 0 0; /* Aligns underline to the left */
+            margin: 0.5rem 0 0;
+            /* Aligns underline to the left */
             border-radius: 2px;
         }
 
@@ -97,14 +99,20 @@
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             cursor: pointer;
             position: relative;
-            border: 1px solid #e0e0e0; /* Added a subtle border for more definition */
-            padding: 0; /* Removed padding from the card itself */
-            height: auto; /* Allow height to adjust based on content */
-            /* min-height: 260px; REMOVED: This was causing issues on smaller screens */
-            display: flex; /* Use flexbox for vertical alignment within the card */
-            flex-direction: column; /* Stack content vertically */
-            justify-content: flex-start; /* Align content to the start */
-            overflow: hidden; /* Ensure rounded corners on image are visible */
+            border: 1px solid #e0e0e0;
+            /* Added a subtle border for more definition */
+            padding: 0;
+            /* Removed padding from the card itself */
+            height: auto;
+            /* Allow height to adjust based on content */
+            display: flex;
+            /* Use flexbox for vertical alignment within the card */
+            flex-direction: column;
+            /* Stack content vertically */
+            justify-content: flex-start;
+            /* Align content to the start */
+            overflow: hidden;
+            /* Ensure rounded corners on image are visible */
         }
 
         /* Overlay link for the entire card to be clickable */
@@ -128,9 +136,12 @@
         /* Container for product images to maintain aspect ratio and fill card width */
         .product-card-image-container {
             width: 100%;
-            position: relative; /* Needed for absolute positioning of the image */
-            padding-bottom: 100%; /* CHANGED to 1:1 Aspect Ratio (height is 100% of width) */
-            overflow: hidden; /* Hide any overflow if image is larger than container */
+            position: relative;
+            /* Needed for absolute positioning of the image */
+            padding-bottom: 100%;
+            /* CHANGED to 1:1 Aspect Ratio (height is 100% of width) */
+            overflow: hidden;
+            /* Hide any overflow if image is larger than container */
         }
 
         /* Styling for product images to fill container */
@@ -140,54 +151,69 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures image covers the container, cropping if necessary */
-            border-top-left-radius: 0.75rem; /* Match card top border-radius */
-            border-top-right-radius: 0.75rem; /* Match card top border-radius */
+            object-fit: cover;
+            /* Ensures image covers the container, cropping if necessary */
+            border-top-left-radius: 0.75rem;
+            /* Match card top border-radius */
+            border-top-right-radius: 0.75rem;
+            /* Match card top border-radius */
         }
 
         /* Styling for the text content area within the card */
         .card-content-area {
-            padding: 0.25rem 0.5rem; /* Adjusted vertical padding for the text content */
-            flex-grow: 1; /* Allows this area to take up remaining space */
+            padding: 0.5rem 0.75rem; /* Adjusted padding for better spacing */
+            flex-grow: 1;
+            /* Allows this area to take up remaining space */
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Center the heading vertically */
-            align-items: center; /* Center the heading horizontally */
+            justify-content: flex-start; /* Align content to the top */
+            align-items: flex-start; /* Align content to the left */
+            text-align: justify; /* Justify text */
         }
 
         /* Custom styling for the filter dropdown */
         .filter-dropdown {
-            -webkit-appearance: none; /* Remove default browser styling */
+            -webkit-appearance: none;
+            /* Remove default browser styling */
             -moz-appearance: none;
             appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 0.75rem center;
             background-size: 1.5em 1.5em;
-            padding-right: 2.5rem; /* Make space for the custom arrow */
+            padding-right: 2.5rem;
+            /* Make space for the custom arrow */
             display: block;
             width: 100%;
-            max-width: 300px; /* Limit width for better aesthetics */
+            max-width: 300px;
+            /* Limit width for better aesthetics */
             padding: 0.6rem 1.5rem;
-            font-size: 0.875rem; /* text-sm */
+            font-size: 0.875rem;
+            /* text-sm */
             font-weight: 500;
-            border-radius: 9999px; /* Full rounded */
-            background-color: #0E2148; /* Corrected color */
+            border-radius: 9999px;
+            /* Full rounded */
+            background-color: '#0E2148';
+            /* Corrected color */
             color: white;
             border: 2px solid transparent;
             transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            outline: none; /* Remove default focus outline */
+            outline: none;
+            /* Remove default focus outline */
         }
 
         .filter-dropdown:hover {
-            background-color: #1A3460; /* Corrected hover color */
+            background-color: '#1A3460';
+            /* Corrected hover color */
         }
 
         .filter-dropdown:focus {
-            border-color: #E3D095; /* Highlight yellow on focus */
-            box-shadow: 0 0 0 3px rgba(227, 208, 149, 0.5); /* Ring effect */
+            border-color: '#E3D095';
+            /* Highlight yellow on focus */
+            box-shadow: 0 0 0 3px rgba(227, 208, 149, 0.5);
+            /* Ring effect */
         }
 
         /* Footer styles for consistency across pages */
@@ -292,7 +318,7 @@
             </select>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 product-grid" id="product-grid">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-x-10 md:gap-y-10 product-grid" id="product-grid">
             <div class="card" data-category="engine">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Engine Components"></a>
                 <div class="product-card-image-container">
@@ -301,7 +327,9 @@
                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
-                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Engine Components</h3>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Engine Components</h3>
+                    <p class="text-sm font-normal text-gray-600">Brand X</p>
+                    <p class="text-sm font-semibold text-secondary-purple">$120.00</p>
                 </div>
             </div>
             <div class="card" data-category="braking">
@@ -312,7 +340,9 @@
                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
-                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Braking Systems</h3>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Braking Systems</h3>
+                    <p class="text-sm font-normal text-gray-600">Brembo</p>
+                    <p class="text-sm font-semibold text-secondary-purple">$250.50</p>
                 </div>
             </div>
             <div class="card" data-category="suspension">
@@ -323,7 +353,9 @@
                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
-                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Suspension & Steering</h3>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Suspension & Steering Kit</h3>
+                    <p class="text-sm font-normal text-gray-600">Monroe</p>
+                    <p class="text-sm font-semibold text-secondary-purple">$350.00</p>
                 </div>
             </div>
             <div class="card" data-category="electrical">
@@ -334,7 +366,9 @@
                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
-                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Electrical Components</h3>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Spark Plugs Set</h3>
+                    <p class="text-sm font-normal text-gray-600">Bosch</p>
+                    <p class="text-sm font-semibold text-secondary-purple">$45.75</p>
                 </div>
             </div>
             <div class="card" data-category="body">
@@ -345,7 +379,9 @@
                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
-                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Body & Exterior</h3>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Fender Panel</h3>
+                    <p class="text-sm font-normal text-gray-600">OEM Parts</p>
+                    <p class="text-sm font-semibold text-secondary-purple">$90.00</p>
                 </div>
             </div>
             <div class="card" data-category="transmission">
@@ -356,7 +392,9 @@
                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
-                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Transmission & Drivetrain</h3>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Transmission Fluid</h3>
+                    <p class="text-sm font-normal text-gray-600">Castrol</p>
+                    <p class="text-sm font-semibold text-secondary-purple">$30.25</p>
                 </div>
             </div>
             <div class="card" data-category="exhaust">
@@ -367,7 +405,9 @@
                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
-                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Exhaust Systems</h3>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Sport Exhaust Muffler</h3>
+                    <p class="text-sm font-normal text-gray-600">MagnaFlow</p>
+                    <p class="text-sm font-semibold text-secondary-purple">$180.00</p>
                 </div>
             </div>
             <div class="card" data-category="fuel">
@@ -378,7 +418,9 @@
                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
-                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Fuel System</h3>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Fuel Pump Assembly</h3>
+                    <p class="text-sm font-normal text-gray-600">Delphi</p>
+                    <p class="text-sm font-semibold text-secondary-purple">$95.50</p>
                 </div>
             </div>
             <div class="card" data-category="cooling">
@@ -389,7 +431,9 @@
                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
-                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Cooling System</h3>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Radiator Fan</h3>
+                    <p class="text-sm font-normal text-gray-600">Denso</p>
+                    <p class="text-sm font-semibold text-secondary-purple">$70.00</p>
                 </div>
             </div>
             <div class="card" data-category="interior">
@@ -400,7 +444,9 @@
                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
-                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Interior Components</h3>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Floor Mats Set</h3>
+                    <p class="text-sm font-normal text-gray-600">WeatherTech</p>
+                    <p class="text-sm font-semibold text-secondary-purple">$60.00</p>
                 </div>
             </div>
             <div class="card" data-category="wheels">
@@ -411,7 +457,9 @@
                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
-                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Wheels & Tires</h3>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Alloy Wheel 17"</h3>
+                    <p class="text-sm font-normal text-gray-600">Konig</p>
+                    <p class="text-sm font-semibold text-secondary-purple">$150.00</p>
                 </div>
             </div>
             <div class="card" data-category="filters">
@@ -422,7 +470,9 @@
                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
-                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Filters & Fluids</h3>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900">Oil Filter</h3>
+                    <p class="text-sm font-normal text-gray-600">Mann-Filter</p>
+                    <p class="text-sm font-semibold text-secondary-purple">$15.99</p>
                 </div>
             </div>
         </div>
@@ -479,7 +529,7 @@
                 <h3 class="text-xl font-semibold mb-4">Our Location</h3>
                 <div class="w-full h-48 bg-primary-dark rounded-lg overflow-hidden">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.250551185368!2d144.963057615317!3d-37.8142170797519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b58c2f1f2d%3A0x50456784629e4e0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1678901234567!5m2!1sen!2sau"
+                        src="http://googleusercontent.com/maps/0"
                         width="100%" height="100%" class="map-iframe-style" allowfullscreen=""
                         title="Company Location on Map"></iframe>
                 </div>
