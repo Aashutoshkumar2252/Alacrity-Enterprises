@@ -89,22 +89,19 @@
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            /* Added cursor pointer to indicate clickability */
             cursor: pointer;
-            /* Added a pseudo-element for full card clickable area if needed */
             position: relative;
         }
 
-        /* This pseudo-element makes the *entire* card area clickable without affecting layout */
         .card a.card-link-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 10; /* Ensures it's above other content for clicking */
-            text-decoration: none; /* Remove underline */
-            color: inherit; /* Inherit text color */
+            z-index: 10;
+            text-decoration: none;
+            color: inherit;
         }
 
         .card:hover {
@@ -112,36 +109,57 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
-        .product-card-image {
+        /* Adjusted product-card-image to fit within a fixed height container */
+        .product-card-image-container {
             width: 100%;
-            max-width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 0.5rem;
+            height: 160px; /* Fixed height for image container */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1rem;
         }
 
-        /* Filter Buttons */
-        .filter-button {
-            background-color: #483AA0;
-            color: white;
+        .product-card-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ensures image is fully visible without cropping */
+            border-radius: 0.5rem;
+        }
+
+        /* Dropdown style */
+        .filter-dropdown {
+            -webkit-appearance: none; /* Remove default browser styling */
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem; /* Make space for the custom arrow */
+            /* Tailwind classes for styling */
+            display: block;
+            width: 100%;
+            max-width: 300px; /* Limit width for better aesthetics */
             padding: 0.6rem 1.5rem;
-            border-radius: 9999px;
+            font-size: 0.875rem; /* text-sm */
             font-weight: 500;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 9999px; /* Full rounded */
+            background-color: #0E2148; /* Primary Dark for dropdown background */
+            color: white;
+            border: 2px solid transparent;
+            transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            border: none;
+            outline: none; /* Remove default focus outline */
         }
 
-        .filter-button:hover {
-            background-color: #3A2E80;
-            transform: translateY(-1px);
+        .filter-dropdown:hover {
+            background-color: #1A3460; /* Slightly darker primary dark on hover */
         }
 
-        .filter-button.active {
-            background-color: #0E2148;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        .filter-dropdown:focus {
+            border-color: #E3D095; /* Highlight yellow on focus */
+            box-shadow: 0 0 0 3px rgba(227, 208, 149, 0.5); /* Ring effect */
         }
 
         /* Footer styles for consistency across pages */
@@ -228,199 +246,142 @@
     <section class="container mx-auto px-6 py-12 md:py-20">
         <h2 class="section-heading mb-12">Our Full Product Catalog</h2>
 
-        <div class="flex flex-wrap justify-center gap-3 mb-12">
-            <button class="
-                        inline-flex items-center px-4 py-2
-                        text-sm font-medium
-                        rounded-full
-                        bg-[#0E2148] text-white
-                        shadow-lg transform -translate-y-0.5
-                        transition-all duration-300 ease-in-out
-                        cursor-pointer
-                        border-2 border-[#0E2148]
-                        ring-2 ring-[#6366F1] ring-offset-2 ring-offset-gray-100
-                        " data-filter="all">
-                All Products
-            </button>
-
-            <button class="
-                        inline-flex items-center px-4 py-2
-                        text-sm font-medium
-                        rounded-full
-                        bg-gray-200 text-gray-800
-                        hover:bg-gray-300 hover:text-gray-900
-                        transition-all duration-300 ease-in-out
-                        shadow-sm hover:shadow-md transform hover:-translate-y-0.5
-                        cursor-pointer
-                        border-2 border-transparent
-                        " data-filter="engine">
-                Engine Components
-            </button>
-
-            <button class="
-                        inline-flex items-center px-4 py-2
-                        text-sm font-medium
-                        rounded-full
-                        bg-gray-200 text-gray-800
-                        hover:bg-gray-300 hover:text-gray-900
-                        transition-all duration-300 ease-in-out
-                        shadow-sm hover:shadow-md transform hover:-translate-y-0.5
-                        cursor-pointer
-                        border-2 border-transparent
-                        " data-filter="braking">
-                Braking Systems
-            </button>
-
-            <button class="
-                        inline-flex items-center px-4 py-2
-                        text-sm font-medium
-                        rounded-full
-                        bg-gray-200 text-gray-800
-                        hover:bg-gray-300 hover:text-gray-900
-                        transition-all duration-300 ease-in-out
-                        shadow-sm hover:shadow-md transform hover:-translate-y-0.5
-                        cursor-pointer
-                        border-2 border-transparent
-                        " data-filter="suspension">
-                Suspension & Steering
-            </button>
-
-            <button class="
-                        inline-flex items-center px-4 py-2
-                        text-sm font-medium
-                        rounded-full
-                        bg-gray-200 text-gray-800
-                        hover:bg-gray-300 hover:text-gray-900
-                        transition-all duration-300 ease-in-out
-                        shadow-sm hover:shadow-md transform hover:-translate-y-0.5
-                        cursor-pointer
-                        border-2 border-transparent
-                        " data-filter="electrical">
-                Electrical Components
-            </button>
-
-            <button class="
-                        inline-flex items-center px-4 py-2
-                        text-sm font-medium
-                        rounded-full
-                        bg-gray-200 text-gray-800
-                        hover:bg-gray-300 hover:text-gray-900
-                        transition-all duration-300 ease-in-out
-                        shadow-sm hover:shadow-md transform hover:-translate-y-0.5
-                        cursor-pointer
-                        border-2 border-transparent
-                        " data-filter="body">
-                Body & Exterior
-            </button>
-
-            <button class="
-                        inline-flex items-center px-4 py-2
-                        text-sm font-medium
-                        rounded-full
-                        bg-gray-200 text-gray-800
-                        hover:bg-gray-300 hover:text-gray-900
-                        transition-all duration-300 ease-in-out
-                        shadow-sm hover:shadow-md transform hover:-translate-y-0.5
-                        cursor-pointer
-                        border-2 border-transparent
-                        " data-filter="transmission">
-                Transmission & Drivetrain
-            </button>
+        <!-- Filter Dropdown (for all screens) -->
+        <div class="flex justify-end mb-12"> <!-- Changed justify-center to justify-end -->
+            <select id="filter-dropdown" class="filter-dropdown">
+                <option value="all">All Products</option>
+                <option value="engine">Engine Components</option>
+                <option value="braking">Braking Systems</option>
+                <option value="suspension">Suspension & Steering</option>
+                <option value="electrical">Electrical Components</option>
+                <option value="body">Body & Exterior</option>
+                <option value="transmission">Transmission & Drivetrain</option>
+                <option value="exhaust">Exhaust Systems</option>
+                <option value="fuel">Fuel System</option>
+                <option value="cooling">Cooling System</option>
+                <option value="interior">Interior Components</option>
+                <option value="wheels">Wheels & Tires</option>
+                <option value="filters">Filters & Fluids</option>
+            </select>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-10 product-grid">
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+        <div class="flex flex-wrap justify-center gap-10 product-grid" id="product-grid">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="engine">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Engine Components"></a>
-                <img src="https://carfromjapan.com/wp-content/uploads/2017/11/1-1.jpg" alt="Engine Parts"
-                    class="product-card-image mb-4">
+                <div class="product-card-image-container">
+                    <img src="https://carfromjapan.com/wp-content/uploads/2017/11/1-1.jpg" alt="Engine Parts"
+                        class="product-card-image">
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Engine Components</h3>
                 <p class="text-sm text-gray-600 text-center">Comprehensive selection of engine parts including
                     blocks, pistons, crankshafts, and cylinder heads.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="braking">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Braking Systems"></a>
-                <img src="https://tse3.mm.bing.net/th/id/OIP.CmWuXuf7t2hlAFlj4wyiQgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                    alt="Braking Systems" class="product-card-image mb-4">
+                <div class="product-card-image-container">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.CmWuXuf7t2hlAFlj4wyiQgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Braking Systems" class="product-card-image">
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Braking Systems</h3>
                 <p class="text-sm text-gray-600 text-center">High-performance brake pads, rotors, calipers, and
                     master cylinders for all vehicle types.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="suspension">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Suspension & Steering"></a>
-                <img src="https://tse4.mm.bing.net/th/id/OIP.Jm7zvxNSJnpLsiSzJKjtcQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                    alt="Suspension Parts" class="product-card-image mb-4">
+                <div class="product-card-image-container">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.Jm7zvxNSJnpLsiSzJKjtcQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Suspension Parts" class="product-card-image">
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Suspension & Steering</h3>
                 <p class="text-sm text-gray-600 text-center">Shocks, struts, control arms, tie rods, and power
                     steering components for smooth rides.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="electrical">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Electrical Components"></a>
-                <img src="https://tse3.mm.bing.net/th/id/OIP.gyfOSg1R9hiuWKjkK32N0AHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                    alt="Electrical Parts" class="product-card-image mb-4">
+                <div class="product-card-image-container">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.gyfOSg1R9hiuWKjkK32N0AHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Electrical Parts" class="product-card-image">
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Electrical Components</h3>
                 <p class="text-sm text-gray-600 text-center">Starters, alternators, batteries, wiring harnesses, and
                     various sensors.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="body">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Body & Exterior"></a>
-                <img src="https://tse4.mm.bing.net/th/id/OIP.Q3R330GRbHzEIR69ZyoP-AHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                    alt="Body Panels" class="product-card-image mb-4">
+                <div class="product-card-image-container">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.Q3R330GRbHzEIR69ZyoP-AHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Body Panels" class="product-card-image">
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Body & Exterior</h3>
                 <p class="text-sm text-gray-600 text-center">Fenders, bumpers, doors, mirrors, and lighting
                     assemblies for all models.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="transmission">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Transmission & Drivetrain"></a>
-                <img src="https://th.bing.com/th/id/R.94722b0f55250a1bc57e563ddcf473dd?rik=a3SYMDbiJZOfDA&riu=http%3a%2f%2fcdn.shopify.com%2fs%2ffiles%2f1%2f0681%2f0212%2f7933%2fcollections%2fb-series-awd-dog-box_1024x1024.jpg%3fv%3d1676580241&ehk=D8tym4e%2fWzhYiHkBqXU9tFC2taePZ29tczPAFt5GciI%3d&risl=&pid=ImgRaw&r=0"
-                    alt="Transmission Parts" class="product-card-image mb-4">
+                <div class="product-card-image-container">
+                    <img src="https://th.bing.com/th/id/R.94722b0f55250a1bc57e563ddcf473dd?rik=a3SYMDbiJZOfDA&riu=http%3a%2f%2fcdn.shopify.com%2fs%2ffiles%2f1%2f0681%2f0212%2f7933%2fcollections%2fb-series-awd-dog-box_1024x1024.jpg%3fv%3d1676580241&ehk=D8tym4e%2fWzhYiHkBqXU9tFC2taePZ29tczPAFt5GciI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="Transmission Parts" class="product-card-image">
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Transmission & Drivetrain</h3>
                 <p class="text-sm text-gray-600 text-center">Transmissions, clutches, axles, and universal joints
                     for efficient power transfer.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="exhaust">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Exhaust Systems"></a>
-                <img src="https://tse3.mm.bing.net/th/id/OIP.6NRDfOugt0rj-vfJB4o5GAHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                    alt="Exhaust Systems" class="product-card-image mb-4">
+                <div class="product-card-image-container">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.6NRDfOugt0rj-vfJB4o5GAHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Exhaust Systems" class="product-card-image">
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Exhaust Systems</h3>
                 <p class="text-sm text-gray-600 text-center">Mufflers, catalytic converters, exhaust pipes, and
                     performance headers.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="fuel">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Fuel System"></a>
-                <img src="https://m.media-amazon.com/images/I/61FG7M0seJL._AC_SL1500_.jpg" alt="Fuel System"
-                    class="product-card-image mb-4">
+                <div class="product-card-image-container">
+                    <img src="https://m.media-amazon.com/images/I/61FG7M0seJL._AC_SL1500_.jpg" alt="Fuel System"
+                        class="product-card-image">
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Fuel System</h3>
                 <p class="text-sm text-gray-600 text-center">Fuel pumps, injectors, tanks, and lines for efficient
                     fuel delivery.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="cooling">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Cooling System"></a>
-                <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/PX/XR/SN/1520574/mahindra-car-radiator-1000x1000.jpg"
-                    alt="Cooling System" class="product-card-image mb-4">
+                <div class="product-card-image-container">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/PX/XR/SN/1520574/mahindra-car-radiator-1000x1000.jpg"
+                        alt="Cooling System" class="product-card-image">
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Cooling System</h3>
                 <p class="text-sm text-gray-600 text-center">Radiators, water pumps, thermostats, and cooling fans.
                 </p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="interior">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Interior Components"></a>
-                <img src="https://www.motoringresearch.com/wp-content/uploads/2024/08/006-Most-Eye-Catching-Dashboards.jpg"
-                    alt="Interior Parts" class="product-card-image mb-4">
+                <div class="product-card-image-container">
+                    <img src="https://www.motoringresearch.com/wp-content/uploads/2024/08/006-Most-Eye-Catching-Dashboards.jpg"
+                        alt="Interior Parts" class="product-card-image">
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Interior Components</h3>
                 <p class="text-sm text-gray-600 text-center">Seats, dashboards, carpets, and various trim pieces.
                 </p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="wheels">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Wheels & Tires"></a>
-                <img src="https://tse4.mm.bing.net/th/id/OIP.7NJ37FNJ3HlWjPHJhReH7QHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                    alt="Wheels & Tires" class="product-card-image mb-4">
+                <div class="product-card-image-container">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.7NJ37FNJ3HlWjPHJhReH7QHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Wheels & Tires" class="product-card-image">
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Wheels & Tires</h3>
                 <p class="text-sm text-gray-600 text-center">Alloy wheels, steel rims, and a variety of tire types
                     for all conditions.</p>
             </div>
-            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
+            <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]" data-category="filters">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Filters & Fluids"></a>
-                <img src="https://urbanmatter.com/wp-content/uploads/2022/09/OilFilter.png" alt="Filters & Fluids"
-                    class="product-card-image mb-4">
+                <div class="product-card-image-container">
+                    <img src="https://urbanmatter.com/wp-content/uploads/2022/09/OilFilter.png" alt="Filters & Fluids"
+                        class="product-card-image">
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Filters & Fluids</h3>
                 <p class="text-sm text-gray-600 text-center">Oil filters, air filters, cabin filters, engine oil,
                     and coolants.</p>
@@ -443,21 +404,21 @@
                 <h3 class="text-xl font-semibold mb-4">Our Company</h3>
                 <ul>
                     <li class="mb-2"><a href="index.html#about"
-                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">About
-                            Us</a></li>
+                                class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">About
+                                Us</a></li>
                     <li class="mb-2"><a href="index.html#products"
-                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Our
-                            Products</a>
+                                class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Our
+                                Products</a>
                     </li>
                     <li class="mb-2"><a href="index.html#contact"
-                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Contact
-                            Us</a></li>
+                                class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Contact
+                                Us</a></li>
                     <li class="mb-2"><a href="#"
-                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Sitemap</a>
+                                class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Sitemap</a>
                     </li>
                     <li class="mb-2"><a href="#"
-                            class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Download
-                            Brochure</a></li>
+                                class="text-gray-400 hover:text-highlight-yellow transition-colors duration-300">Download
+                                Brochure</a></li>
                 </ul>
             </div>
 
@@ -486,7 +447,7 @@
             </div>
         </div>
         <div class="container mx-auto px-6 mt-8 pt-8 border-t border-gray-700">
-            <p class="mb-4">© 2025 AutoPartsPro. All rights reserved.</p>
+            <p class="mb-4">&copy; 2025 AutoPartsPro. All rights reserved.</p>
             <div class="flex justify-center space-x-6">
                 <a href="#" class="hover:underline">Privacy Policy</a>
                 <a href="#" class="hover:underline">Terms of Service</a>
@@ -494,7 +455,45 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            const filterDropdown = document.getElementById('filter-dropdown');
+            const productCards = document.querySelectorAll('.product-grid .card');
+
+            // Function to filter products
+            const filterProducts = (category) => {
+                productCards.forEach(card => {
+                    const cardCategory = card.dataset.category;
+                    if (category === 'all' || cardCategory === category) {
+                        card.style.display = 'flex'; // Show the card
+                    } else {
+                        card.style.display = 'none'; // Hide the card
+                    }
+                });
+            };
+
+            // Event listener for the filter dropdown
+            if (filterDropdown) {
+                filterDropdown.addEventListener('change', (event) => {
+                    const selectedCategory = event.target.value;
+                    filterProducts(selectedCategory);
+                });
+            }
+
+            // Initial filter application (show all products by default)
+            filterProducts('all');
+        });
+    </script>
 </body>
 
 </html>
