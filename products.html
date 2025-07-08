@@ -100,7 +100,7 @@
             border: 1px solid #e0e0e0; /* Added a subtle border for more definition */
             padding: 0; /* Removed padding from the card itself */
             height: auto; /* Allow height to adjust based on content */
-            min-height: 260px; /* Adjusted minimum height for cards to be more compact */
+            /* min-height: 260px; REMOVED: This was causing issues on smaller screens */
             display: flex; /* Use flexbox for vertical alignment within the card */
             flex-direction: column; /* Stack content vertically */
             justify-content: flex-start; /* Align content to the start */
@@ -129,7 +129,7 @@
         .product-card-image-container {
             width: 100%;
             position: relative; /* Needed for absolute positioning of the image */
-            padding-bottom: 75%; /* 4:3 Aspect Ratio (height is 75% of width) */
+            padding-bottom: 100%; /* CHANGED to 1:1 Aspect Ratio (height is 100% of width) */
             overflow: hidden; /* Hide any overflow if image is larger than container */
         }
 
@@ -147,7 +147,7 @@
 
         /* Styling for the text content area within the card */
         .card-content-area {
-            padding: 0.25rem 0.5rem; /* Reduced vertical padding for the text content */
+            padding: 0.25rem 0.5rem; /* Adjusted vertical padding for the text content */
             flex-grow: 1; /* Allows this area to take up remaining space */
             display: flex;
             flex-direction: column;
@@ -227,15 +227,12 @@
 
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header section with navigation -->
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
-            <!-- Logo/Site Title -->
             <div class="text-2xl font-bold text-primary-dark">
                 <a href="index.html" class="hover:text-secondary-purple transition-colors duration-300">Alacrity
                     Enterprises</a>
             </div>
-            <!-- Desktop Navigation -->
             <ul class="hidden md:flex space-x-8 items-center">
                 <li><a href="./index.html"
                         class="text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Home</a>
@@ -248,7 +245,6 @@
                 </li>
                 <li><a href="#footer" class="btn-primary-header inline-block">Contact Us</a></li>
             </ul>
-            <!-- Mobile Menu Button -->
             <button id="mobile-menu-button"
                 class="md:hidden text-gray-600 hover:text-secondary-purple focus:outline-none"
                 aria-label="Toggle mobile menu">
@@ -259,7 +255,6 @@
                 </svg>
             </button>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden bg-white px-6 py-4 border-t border-gray-200 hidden">
             <ul class="flex flex-col space-y-4">
                 <li><a href="./index.html"
@@ -276,11 +271,9 @@
         </div>
     </header>
 
-    <!-- Main content section for product catalog -->
     <section class="container mx-auto px-6 py-12 md:py-20">
         <h2 class="section-heading mb-12">Our Full Product Catalog</h2>
 
-        <!-- Filter Dropdown -->
         <div class="flex justify-end mb-12">
             <select id="filter-dropdown" class="filter-dropdown">
                 <option value="all">All Products</option>
@@ -299,135 +292,134 @@
             </select>
         </div>
 
-        <!-- Product Grid - Updated to use CSS Grid for better responsiveness -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 product-grid" id="product-grid">
-            <!-- Product Card: Engine Components -->
             <div class="card" data-category="engine">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Engine Components"></a>
                 <div class="product-card-image-container">
                     <img src="https://carfromjapan.com/wp-content/uploads/2017/11/1-1.jpg" alt="Engine Parts"
-                        class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        class="product-card-image"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Engine Components</h3>
                 </div>
             </div>
-            <!-- Product Card: Braking Systems -->
             <div class="card" data-category="braking">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Braking Systems"></a>
                 <div class="product-card-image-container">
                     <img src="https://tse3.mm.bing.net/th/id/OIP.CmWuXuf7t2hlAFlj4wyiQgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Braking Systems" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        alt="Braking Systems" class="product-card-image"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Braking Systems</h3>
                 </div>
             </div>
-            <!-- Product Card: Suspension & Steering -->
             <div class="card" data-category="suspension">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Suspension & Steering"></a>
                 <div class="product-card-image-container">
                     <img src="https://tse4.mm.bing.net/th/id/OIP.Jm7zvxNSJnpLsiSzJKjtcQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Suspension Parts" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        alt="Suspension Parts" class="product-card-image"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Suspension & Steering</h3>
                 </div>
             </div>
-            <!-- Product Card: Electrical Components -->
             <div class="card" data-category="electrical">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Electrical Components"></a>
                 <div class="product-card-image-container">
                     <img src="https://tse3.mm.bing.net/th/id/OIP.gyfOSg1R9hiuWKjkK32N0AHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Electrical Parts" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        alt="Electrical Parts" class="product-card-image"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Electrical Components</h3>
                 </div>
             </div>
-            <!-- Product Card: Body & Exterior -->
             <div class="card" data-category="body">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Body & Exterior"></a>
                 <div class="product-card-image-container">
                     <img src="https://tse4.mm.bing.net/th/id/OIP.Q3R330GRbHzEIR69ZyoP-AHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Body Panels" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        alt="Body Panels" class="product-card-image"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Body & Exterior</h3>
                 </div>
             </div>
-            <!-- Product Card: Transmission & Drivetrain -->
             <div class="card" data-category="transmission">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Transmission & Drivetrain"></a>
                 <div class="product-card-image-container">
                     <img src="https://th.bing.com/th/id/R.94722b0f55250a1bc57e563ddcf473dd?rik=a3SYMDbiJZOfDA&riu=http%3a%2f%2fcdn.shopify.com%2fs%2ffiles%2f1%2f0681%2f0212%2f7933%2fcollections%2fb-series-awd-dog-box_1024x1024.jpg%3fv%3d1676580241&ehk=D8tym4e%2fWzhYiHkBqXU9tFC2taePZ29tczPAFt5GciI%3d&risl=&pid=ImgRaw&r=0"
-                        alt="Transmission Parts" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        alt="Transmission Parts" class="product-card-image"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Transmission & Drivetrain</h3>
                 </div>
             </div>
-            <!-- Product Card: Exhaust Systems -->
             <div class="card" data-category="exhaust">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Exhaust Systems"></a>
                 <div class="product-card-image-container">
                     <img src="https://tse3.mm.bing.net/th/id/OIP.6NRDfOugt0rj-vfJB4o5GAHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Exhaust Systems" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        alt="Exhaust Systems" class="product-card-image"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Exhaust Systems</h3>
                 </div>
             </div>
-            <!-- Product Card: Fuel System -->
             <div class="card" data-category="fuel">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Fuel System"></a>
                 <div class="product-card-image-container">
                     <img src="https://m.media-amazon.com/images/I/61FG7M0seJL._AC_SL1500_.jpg" alt="Fuel System"
-                        class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        class="product-card-image"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Fuel System</h3>
                 </div>
             </div>
-            <!-- Product Card: Cooling System -->
             <div class="card" data-category="cooling">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Cooling System"></a>
                 <div class="product-card-image-container">
                     <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/PX/XR/SN/1520574/mahindra-car-radiator-1000x1000.jpg"
-                        alt="Cooling System" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        alt="Cooling System" class="product-card-image"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Cooling System</h3>
                 </div>
             </div>
-            <!-- Product Card: Interior Components -->
             <div class="card" data-category="interior">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Interior Components"></a>
                 <div class="product-card-image-container">
                     <img src="https://www.motoringresearch.com/wp-content/uploads/2024/08/006-Most-Eye-Catching-Dashboards.jpg"
-                        class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        class="product-card-image"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Interior Components</h3>
                 </div>
             </div>
-            <!-- Product Card: Wheels & Tires -->
             <div class="card" data-category="wheels">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Wheels & Tires"></a>
                 <div class="product-card-image-container">
                     <img src="https://tse4.mm.bing.net/th/id/OIP.7NJ37FNJ3HlWjPHJhReH7QHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Wheels & Tires" class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        alt="Wheels & Tires" class="product-card-image"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Wheels & Tires</h3>
                 </div>
             </div>
-            <!-- Product Card: Filters & Fluids -->
             <div class="card" data-category="filters">
                 <a href="productpage.html" class="card-link-overlay" aria-label="View Filters & Fluids"></a>
                 <div class="product-card-image-container">
                     <img src="https://urbanmatter.com/wp-content/uploads/2022/09/OilFilter.png" alt="Filters & Fluids"
-                        class="product-card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
+                        class="product-card-image"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
                 </div>
                 <div class="card-content-area">
                     <h3 class="text-base sm:text-lg font-semibold text-gray-900 text-center">Filters & Fluids</h3>
@@ -436,10 +428,8 @@
         </div>
     </section>
 
-    <!-- Footer section -->
     <footer class="footer bg-primary-dark text-gray-300 py-12" id="footer">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
-            <!-- Contact Information -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                 <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> 123 Auto Parts Lane, Industrial City, ZIP
@@ -449,7 +439,6 @@
                 <p class="mb-2"><i class="fas fa-clock mr-2"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
             </div>
 
-            <!-- Company Links -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Company</h3>
                 <ul>
@@ -472,7 +461,6 @@
                 </ul>
             </div>
 
-            <!-- Social Media Links -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
                 <div class="flex space-x-4">
@@ -487,7 +475,6 @@
                 </div>
             </div>
 
-            <!-- Location Map -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Location</h3>
                 <div class="w-full h-48 bg-primary-dark rounded-lg overflow-hidden">
@@ -498,9 +485,8 @@
                 </div>
             </div>
         </div>
-        <!-- Copyright and Legal Links -->
         <div class="container mx-auto px-6 mt-8 pt-8 border-t border-gray-700">
-            <p class="mb-4">&copy; 2025 AutoPartsPro. All rights reserved.</p>
+            <p class="mb-4">© 2025 AutoPartsPro. All rights reserved.</p>
             <div class="flex justify-center space-x-6">
                 <a href="#" class="hover:underline">Privacy Policy</a>
                 <a href="#" class="hover:underline">Terms of Service</a>
