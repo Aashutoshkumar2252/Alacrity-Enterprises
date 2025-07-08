@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automobile Parts Wholesaler - Portfolio</title>
-    <!-- Tailwind CSS CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Social Icons (optional, for real icons) -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Tailwind CSS Configuration for Custom Colors -->
+
     <script>
         tailwind.config = {
             theme: {
@@ -28,7 +28,7 @@
         };
     </script>
 
-    <!-- Custom CSS -->
+
     <style>
         /* Custom CSS for Automobile Parts Wholesaler Portfolio */
 
@@ -41,16 +41,17 @@
 
         /* Hero Section */
         .hero-section {
-            /* Using a placeholder image with the primary-dark color for consistency */
             background-image: url('https://img.freepik.com/premium-photo/hydraulic-motor-white-background_996135-19258.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center; /* Ensures the image is centered */
             color: white;
             padding: 10rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background-repeat: no-repeat;
+            background-attachment: scroll;
         }
 
         .hero-section::before {
@@ -63,6 +64,29 @@
             background: rgba(0, 0, 0, 0.4);
             z-index: 1;
         }
+
+        /* Responsive text for hero section */
+        .hero-section h1 {
+            font-size: 3rem; /* Default for larger screens (text-5xl) */
+        }
+
+        .hero-section p {
+            font-size: 1.125rem; /* Default for larger screens (text-lg) */
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 6rem 0; /* Adjust padding for mobile */
+            }
+            .hero-section h1 {
+                font-size: 2.25rem; /* text-4xl equivalent for mobile */
+            }
+            .hero-section p {
+                font-size: 1rem; /* text-base equivalent for mobile */
+                max-width: 90%; /* Adjust width for better wrapping */
+            }
+        }
+
 
         /* Buttons */
         .btn-primary {
@@ -142,6 +166,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center; /* Center text within cards */
         }
 
         .card:hover {
@@ -149,15 +174,22 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
+        .product-card-image-container {
+            width: 100%;
+            height: 150px; /* Fixed height for image container */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
         .product-card-image {
             width: 100%;
-            max-width: 200px;
-            /* Adjust as needed */
-            height: auto;
-            object-fit: cover;
+            height: 100%;
+            object-fit: contain; /* Ensure the entire image is visible within the container */
             border-radius: 0.5rem;
-            /* rounded-lg */
-            margin-bottom: 1rem;
         }
 
         /* Footer */
@@ -204,14 +236,12 @@
 
 <body class="bg-neutral-bg text-gray-800">
 
-    <!-- Header -->
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <div class="text-2xl font-bold text-primary-dark flex-shrink-0">
                 <a href="#" class="hover:text-secondary-purple transition-colors duration-300">Alacrity Enterprises</a>
             </div>
 
-            <!-- Search Box (Desktop) - Centered -->
             <div class="hidden md:flex flex-grow justify-center items-center">
                 <div class="relative flex items-center">
                     <input type="text" placeholder="What are you looking for?"
@@ -225,7 +255,6 @@
                 </div>
             </div>
 
-            <!-- Navigation Links (Desktop) - Pushed to right -->
             <ul class="hidden md:flex items-center space-x-8 flex-shrink-0">
                 <li><a href="./index.html"
                         class="text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Home</a>
@@ -239,7 +268,6 @@
                 <li><a href="#footer" class="btn-primary-header inline-block">Contact Us</a></li>
             </ul>
 
-            <!-- Mobile Menu Button (Hamburger) -->
             <button id="mobile-menu-button"
                 class="md:hidden text-gray-600 hover:text-secondary-purple focus:outline-none"
                 aria-label="Toggle mobile menu" title="Toggle mobile menu">
@@ -250,7 +278,7 @@
                 </svg>
             </button>
         </nav>
-        <!-- Mobile Menu (Hidden by default) -->
+
         <div id="mobile-menu" class="md:hidden bg-white px-6 py-4 border-t border-gray-200 hidden">
             <ul class="flex flex-col space-y-4">
                 <li><a href="index.html"
@@ -262,7 +290,7 @@
                 <li><a href="products.html"
                         class="block text-gray-600 hover:text-secondary-purple font-medium transition-colors duration-300">Products</a>
                 </li>
-                <!-- Search Box and Button for Mobile -->
+
                 <li class="flex items-center w-full">
                     <div class="relative flex-grow">
                         <input type="text" placeholder="Search products..."
@@ -280,160 +308,179 @@
         </div>
     </header>
 
-    <!-- Hero Section (Default UI) -->
     <section id="home" class="hero-section">
         <div class="container mx-auto px-6 relative z-10">
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">Your Trusted Partner in <br> Mechanical
-                Parts Wholesale</h1>
-            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
-                Delivering high-quality, reliable automobile components to businesses worldwide.
-                Experience unparalleled service and competitive pricing.
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">Your Trusted Mechanical Parts Partner</h1>
+            <p class="text-lg md:text-xl mb-6 max-w-3xl mx-auto opacity-90">
+                High-quality components, reliable service, competitive pricing.
             </p>
             <Button id="openModal" class="btn-primary inline-block">Get a Quote Today</Button>
         </div>
     </section>
 
-    <!-- Featured Product Section -->
     <section id="products" class="py-20 bg-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="section-heading mb-12">Our Product Range</h2>
-            <div class="flex flex-wrap justify-center gap-10 product-grid">
-                <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://carfromjapan.com/wp-content/uploads/2017/11/1-1.jpg" alt="Engine Parts"
-                        class="product-card-image mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Engine Components</h3>
-                    <p class="text-sm text-gray-600 text-center">Comprehensive selection of engine parts including
-                        blocks, pistons, crankshafts, and cylinder heads.</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 product-grid">
+                <div class="card p-4 flex flex-col items-center">
+                    <div class="product-card-image-container">
+                        <img src="https://carfromjapan.com/wp-content/uploads/2017/11/1-1.jpg" alt="Engine Parts"
+                            class="product-card-image">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Engine Components</h3>
+                    <p class="text-sm text-gray-600 mb-2">Brand: XYZ Motors</p>
+                    <p class="text-md font-bold text-primary-dark">$120.00</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://tse3.mm.bing.net/th/id/OIP.CmWuXuf7t2hlAFlj4wyiQgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Braking Systems" class="product-card-image mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Braking Systems</h3>
-                    <p class="text-sm text-gray-600 text-center">High-performance brake pads, rotors, calipers, and
-                        master cylinders for all vehicle types.</p>
+                <div class="card p-4 flex flex-col items-center">
+                    <div class="product-card-image-container">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.CmWuXuf7t2hlAFlj4wyiQgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                            alt="Braking Systems" class="product-card-image">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Braking Systems</h3>
+                    <p class="text-sm text-gray-600 mb-2">Brand: BrakeTech</p>
+                    <p class="text-md font-bold text-primary-dark">$85.50</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.Jm7zvxNSJnpLsiSzJKjtcQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Suspension Parts" class="product-card-image mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Suspension & Steering</h3>
-                    <p class="text-sm text-gray-600 text-center">Shocks, struts, control arms, tie rods, and power
-                        steering components for smooth rides.</p>
+                <div class="card p-4 flex flex-col items-center">
+                    <div class="product-card-image-container">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.Jm7zvxNSJnpLsiSzJKjtcQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                            alt="Suspension Parts" class="product-card-image">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Suspension & Steering</h3>
+                    <p class="text-sm text-gray-600 mb-2">Brand: RideSmooth</p>
+                    <p class="text-md font-bold text-primary-dark">$150.00</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://tse3.mm.bing.net/th/id/OIP.gyfOSg1R9hiuWKjkK32N0AHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Electrical Parts" class="product-card-image mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Electrical Components</h3>
-                    <p class="text-sm text-gray-600 text-center">Starters, alternators, batteries, wiring harnesses, and
-                        various sensors.</p>
+                <div class="card p-4 flex flex-col items-center">
+                    <div class="product-card-image-container">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.gyfOSg1R9hiuWKjkK32N0AHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                            alt="Electrical Parts" class="product-card-image">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Electrical Components</h3>
+                    <p class="text-sm text-gray-600 mb-2">Brand: ElectroAuto</p>
+                    <p class="text-md font-bold text-primary-dark">$45.00</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.Q3R330GRbHzEIR69ZyoP-AHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Body Panels" class="product-card-image mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Body & Exterior</h3>
-                    <p class="text-sm text-gray-600 text-center">Fenders, bumpers, doors, mirrors, and lighting
-                        assemblies for all models.</p>
+                <div class="card p-4 flex flex-col items-center">
+                    <div class="product-card-image-container">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.Q3R330GRbHzEIR69ZyoP-AHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                            alt="Body Panels" class="product-card-image">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Body & Exterior</h3>
+                    <p class="text-sm text-gray-600 mb-2">Brand: AutoBodyPro</p>
+                    <p class="text-md font-bold text-primary-dark">$200.00</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://th.bing.com/th/id/R.94722b0f55250a1bc57e563ddcf473dd?rik=a3SYMDbiJZOfDA&riu=http%3a%2f%2fcdn.shopify.com%2fs%2ffiles%2f1%2f0681%2f0212%2f7933%2fcollections%2fb-series-awd-dog-box_1024x1024.jpg%3fv%3d1676580241&ehk=D8tym4e%2fWzhYiHkBqXU9tFC2taePZ29tczPAFt5GciI%3d&risl=&pid=ImgRaw&r=0"
-                        alt="Transmission Parts" class="product-card-image mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Transmission & Drivetrain</h3>
-                    <p class="text-sm text-gray-600 text-center">Transmissions, clutches, axles, and universal joints
-                        for efficient power transfer.</p>
+                <div class="card p-4 flex flex-col items-center">
+                    <div class="product-card-image-container">
+                        <img src="https://th.bing.com/th/id/R.94722b0f55250a1bc57e563ddcf473dd?rik=a3SYMDbiJZOfDA&riu=http%3a%2f%2fcdn.shopify.com%2fs%2ffiles%2f1%2f0681%2f0212%2f7933%2fcollections%2fb-series-awd-dog-box_1024x1024.jpg%3fv%3d1676580241&ehk=D8tym4e%2fWzhYiHkBqXU9tFC2taePZ29tczPAFt5GciI%3d&risl=&pid=ImgRaw&r=0"
+                            alt="Transmission Parts" class="product-card-image">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Transmission & Drivetrain</h3>
+                    <p class="text-sm text-gray-600 mb-2">Brand: GearMaster</p>
+                    <p class="text-md font-bold text-primary-dark">$350.00</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://tse3.mm.bing.net/th/id/OIP.6NRDfOugt0rj-vfJB4o5GAHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Exhaust Systems" class="product-card-image mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Exhaust Systems</h3>
-                    <p class="text-sm text-gray-600 text-center">Mufflers, catalytic converters, exhaust pipes, and
-                        performance headers.</p>
+                <div class="card p-4 flex flex-col items-center">
+                    <div class="product-card-image-container">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.6NRDfOugt0rj-vfJB4o5GAHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                            alt="Exhaust Systems" class="product-card-image">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Exhaust Systems</h3>
+                    <p class="text-sm text-gray-600 mb-2">Brand: FlowMax</p>
+                    <p class="text-md font-bold text-primary-dark">$95.00</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://m.media-amazon.com/images/I/61FG7M0seJL._AC_SL1500_.jpg" alt="Fuel System"
-                        class="product-card-image mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Fuel System</h3>
-                    <p class="text-sm text-gray-600 text-center">Fuel pumps, injectors, tanks, and lines for efficient
-                        fuel delivery.</p>
+                <div class="card p-4 flex flex-col items-center">
+                    <div class="product-card-image-container">
+                        <img src="https://m.media-amazon.com/images/I/61FG7M0seJL._AC_SL1500_.jpg" alt="Fuel System"
+                            class="product-card-image">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Fuel System</h3>
+                    <p class="text-sm text-gray-600 mb-2">Brand: FuelFlow</p>
+                    <p class="text-md font-bold text-primary-dark">$70.00</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/PX/XR/SN/1520574/mahindra-car-radiator-1000x1000.jpg"
-                        alt="Cooling System" class="product-card-image mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Cooling System</h3>
-                    <p class="text-sm text-gray-600 text-center">Radiators, water pumps, thermostats, and cooling fans.
-                    </p>
+                <div class="card p-4 flex flex-col items-center">
+                    <div class="product-card-image-container">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/PX/XR/SN/1520574/mahindra-car-radiator-1000x1000.jpg"
+                            alt="Cooling System" class="product-card-image">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Cooling System</h3>
+                    <p class="text-sm text-gray-600 mb-2">Brand: CoolRide</p>
+                    <p class="text-md font-bold text-primary-dark">$110.00</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://www.motoringresearch.com/wp-content/uploads/2024/08/006-Most-Eye-Catching-Dashboards.jpg"
-                        alt="Interior Parts" class="product-card-image mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Interior Components</h3>
-                    <p class="text-sm text-gray-600 text-center">Seats, dashboards, carpets, and various trim pieces.
-                    </p>
+                <div class="card p-4 flex flex-col items-center">
+                    <div class="product-card-image-container">
+                        <img src="https://www.motoringresearch.com/wp-content/uploads/2024/08/006-Most-Eye-Catching-Dashboards.jpg"
+                            alt="Interior Parts" class="product-card-image">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Interior Components</h3>
+                    <p class="text-sm text-gray-600 mb-2">Brand: ComfortAuto</p>
+                    <p class="text-md font-bold text-primary-dark">$60.00</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.7NJ37FNJ3HlWjPHJhReH7QHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Wheels & Tires" class="product-card-image mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Wheels & Tires</h3>
-                    <p class="text-sm text-gray-600 text-center">Alloy wheels, steel rims, and a variety of tire types
-                        for all conditions.</p>
+                <div class="card p-4 flex flex-col items-center">
+                    <div class="product-card-image-container">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.7NJ37FNJ3HlWjPHJhReH7QHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                            alt="Wheels & Tires" class="product-card-image">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Wheels & Tires</h3>
+                    <p class="text-sm text-gray-600 mb-2">Brand: GripPro</p>
+                    <p class="text-md font-bold text-primary-dark">$250.00</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center w-[calc(25%-30px)] min-w-[200px]">
-                    <img src="https://urbanmatter.com/wp-content/uploads/2022/09/OilFilter.png" alt="Filters & Fluids"
-                        class="product-card-image mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Filters & Fluids</h3>
-                    <p class="text-sm text-gray-600 text-center">Oil filters, air filters, cabin filters, engine oil,
-                        and coolants.</p>
+                <div class="card p-4 flex flex-col items-center">
+                    <div class="product-card-image-container">
+                        <img src="https://urbanmatter.com/wp-content/uploads/2022/09/OilFilter.png" alt="Filters & Fluids"
+                            class="product-card-image">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Filters & Fluids</h3>
+                    <p class="text-sm text-gray-600 mb-2">Brand: CleanFlow</p>
+                    <p class="text-md font-bold text-primary-dark">$25.00</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Brand Partners Section -->
     <section id="partners" class="py-20 bg-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="section-heading mb-12">Our Valued Brand Partners</h2>
             <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
-                <!-- Partner Card 1 -->
+
                 <div
                     class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                     <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+A" alt="Brand A Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
-                <!-- Partner Card 2 -->
+
                 <div
                     class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                     <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+B" alt="Brand B Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
-                <!-- Partner Card 3 -->
+
                 <div
                     class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                     <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+C" alt="Brand C Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
-                <!-- Partner Card 4 -->
+
                 <div
                     class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                     <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+D" alt="Brand D Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
-                <!-- Partner Card 5 -->
+
                 <div
                     class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                     <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+E" alt="Brand E Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
-                <!-- Partner Card 6 (New Demo) -->
+
                 <div
                     class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                     <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+F" alt="Brand F Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
-                <!-- Partner Card 7 (New Demo) -->
+
                 <div
                     class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                     <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+G" alt="Brand G Logo"
                         class="h-full w-full object-contain p-2">
                 </div>
-                <!-- Partner Card 8 (New Demo) -->
+
                 <div
                     class="flex items-center justify-center w-40 h-24 bg-secondary-purple rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                     <img src="https://placehold.co/150x80/FFFFFF/0E2148?text=Brand+H" alt="Brand H Logo"
@@ -443,11 +490,11 @@
         </div>
     </section>
 
-    <!-- Customer Reviews Section -->
+
     <section id="reviews" class="py-20 bg-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="section-heading mb-4">What Our Customers Say</h2>
-            <!-- Overall Rating Summary -->
+
             <div class="overall-rating-summary mb-12">
                 <p class="text-4xl font-bold text-gray-900 mb-2">4.9 / 5.0</p>
                 <div class="text-highlight-yellow text-3xl mb-2">
@@ -456,7 +503,7 @@
                 <p class="text-gray-600 text-lg">(Based on 150+ reviews)</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Review Card 1 -->
+
                 <div class="card p-6 text-left bg-violet-200">
                     <div class="flex items-center mb-4">
                         <img src="https://placehold.co/60x60/A0AEC0/FFFFFF?text=JD" alt="Customer Avatar"
@@ -472,7 +519,7 @@
                         ★★★★★
                     </div>
                 </div>
-                <!-- Review Card 2 -->
+
                 <div class="card p-6 text-left bg-violet-200">
                     <div class="flex items-center mb-4">
                         <img src="https://placehold.co/60x60/A0AEC0/FFFFFF?text=MS" alt="Customer Avatar"
@@ -488,7 +535,7 @@
                         ★★★★★
                     </div>
                 </div>
-                <!-- Review Card 3 -->
+
                 <div class="card p-6 text-left bg-violet-200">
                     <div class="flex items-center mb-4">
                         <img src="https://placehold.co/60x60/A0AEC0/FFFFFF?text=LR" alt="Customer Avatar"
@@ -508,7 +555,7 @@
         </div>
     </section>
 
-    <!-- Contact Us Section (Modal) -->
+
     <div id="modalOverlay" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
         <div
             class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto p-8 relative z-50 border border-gray-200 dark:border-gray-700">
@@ -516,7 +563,7 @@
             <button id="closeModal"
                 class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-3xl font-extrabold transition"
                 aria-label="Close modal">
-                &times;
+                ×
             </button>
 
             <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Get a Quotation</h2>
@@ -543,10 +590,10 @@
         </div>
     </div>
 
-    <!-- Footer -->
+
     <footer class="footer" id="footer">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
-            <!-- Contact Info -->
+
             <div>
                 <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                 <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> MSA 402, New Siyaganj,
@@ -556,7 +603,6 @@
                 <p class="mb-2"><i class="fas fa-clock mr-2"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
             </div>
 
-            <!-- Our Company Section -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Company</h3>
                 <ul>
@@ -579,7 +625,6 @@
                 </ul>
             </div>
 
-            <!-- Social Media -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
                 <div class="flex space-x-4">
@@ -594,11 +639,10 @@
                 </div>
             </div>
 
-            <!-- Map Placeholder -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Our Location</h3>
                 <div class="w-full h-48 bg-primary-dark rounded-lg overflow-hidden">
-                    <!-- Placeholder for Google Maps iframe -->
+
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.250551185368!2d144.963057615317!3d-37.8142170797519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b58c2f1f2d%3A0x50456784629e4e0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1678901234567!5m2!1sen!2sau"
                         width="100%" height="100%" class="map-iframe-style" allowfullscreen=""
@@ -607,7 +651,7 @@
             </div>
         </div>
         <div class="container mx-auto px-6 mt-8 pt-8 border-t border-gray-700">
-            <p class="mb-4">&copy; 2025 Alacrity Enterprises. All rights reserved.</p>
+            <p class="mb-4">© 2025 Alacrity Enterprises. All rights reserved.</p>
             <div class="flex justify-center space-x-6">
                 <a href="#" class="hover:underline">Privacy Policy</a>
                 <a href="#" class="hover:underline">Terms of Service</a>
@@ -615,7 +659,6 @@
         </div>
     </footer>
 
-    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 
