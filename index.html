@@ -41,17 +41,31 @@
 
         /* Hero Section */
         .hero-section {
-            background-image: url('https://img.freepik.com/premium-photo/hydraulic-motor-white-background_996135-19258.jpg');
-            background-size: cover;
-            background-position: center; /* Ensures the image is centered */
-            color: white;
             padding: 10rem 0;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            color: white;
+            overflow: hidden; /* Crucial for hiding parts of images not in view */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            background-repeat: no-repeat;
-            background-attachment: scroll;
+        }
+
+        /* Container for the sliding images */
+        .slider-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex; /* Arranges images side-by-side */
+            transition: transform 1s ease-in-out; /* Smooth transition for sliding */
+            will-change: transform; /* Optimize for animation */
+        }
+
+        .slider-image {
+            flex-shrink: 0; /* Prevents images from shrinking */
+            width: 100%; /* Each image takes full width of the slider container */
+            height: 100%;
+            object-fit: cover; /* Ensures images cover the area */
         }
 
         .hero-section::before {
@@ -67,23 +81,31 @@
 
         /* Responsive text for hero section */
         .hero-section h1 {
-            font-size: 3rem; /* Default for larger screens (text-5xl) */
+            font-size: 3rem;
+            /* Default for larger screens (text-5xl) */
         }
 
         .hero-section p {
-            font-size: 1.125rem; /* Default for larger screens (text-lg) */
+            font-size: 1.125rem;
+            /* Default for larger screens (text-lg) */
         }
 
         @media (max-width: 768px) {
             .hero-section {
-                padding: 6rem 0; /* Adjust padding for mobile */
+                padding: 6rem 0;
+                /* Adjust padding for mobile */
             }
+
             .hero-section h1 {
-                font-size: 2.25rem; /* text-4xl equivalent for mobile */
+                font-size: 2.25rem;
+                /* text-4xl equivalent for mobile */
             }
+
             .hero-section p {
-                font-size: 1rem; /* text-base equivalent for mobile */
-                max-width: 90%; /* Adjust width for better wrapping */
+                font-size: 1rem;
+                /* text-base equivalent for mobile */
+                max-width: 90%;
+                /* Adjust width for better wrapping */
             }
         }
 
@@ -166,7 +188,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center; /* Center text within cards */
+            text-align: center;
+            /* Center text within cards */
         }
 
         .card:hover {
@@ -176,7 +199,8 @@
 
         .product-card-image-container {
             width: 100%;
-            height: 150px; /* Fixed height for image container */
+            height: 150px;
+            /* Fixed height for image container */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -188,7 +212,8 @@
         .product-card-image {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ensure the entire image is visible within the container */
+            object-fit: contain;
+            /* Ensure the entire image is visible within the container */
             border-radius: 0.5rem;
         }
 
@@ -309,12 +334,23 @@
     </header>
 
     <section id="home" class="hero-section">
+        <div class="slider-container" id="slider-container">
+            <img src="https://img.freepik.com/premium-photo/hydraulic-motor-white-background_996135-19258.jpg"
+                alt="Automobile Part 1" class="slider-image">
+            <img src="https://img.freepik.com/free-photo/car-engine-concept_23-2150937072.jpg" alt="Automobile Part 2"
+                class="slider-image">
+            <img src="https://img.freepik.com/free-photo/shiny-modern-car-parts-dark-background-generated-by-ai_188544-24151.jpg"
+                alt="Automobile Part 3" class="slider-image">
+            <img src="https://img.freepik.com/free-photo/view-engine-car-service_23-2150570390.jpg" alt="Automobile Part 4"
+                class="slider-image">
+        </div>
+
         <div class="container mx-auto px-6 relative z-10">
             <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">Your Trusted Mechanical Parts Partner</h1>
             <p class="text-lg md:text-xl mb-6 max-w-3xl mx-auto opacity-90">
                 High-quality components, reliable service, competitive pricing.
             </p>
-            <Button id="openModal" class="btn-primary inline-block">Get a Quote Today</Button>
+            <button id="openModal" class="btn-primary inline-block">Get a Quote Today</button>
         </div>
     </section>
 
@@ -423,8 +459,8 @@
                 </div>
                 <div class="card p-4 flex flex-col items-center">
                     <div class="product-card-image-container">
-                        <img src="https://urbanmatter.com/wp-content/uploads/2022/09/OilFilter.png" alt="Filters & Fluids"
-                            class="product-card-image">
+                        <img src="https://urbanmatter.com/wp-content/uploads/2022/09/OilFilter.png"
+                            alt="Filters & Fluids" class="product-card-image">
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-1">Filters & Fluids</h3>
                     <p class="text-sm text-gray-600 mb-2">Brand: CleanFlow</p>

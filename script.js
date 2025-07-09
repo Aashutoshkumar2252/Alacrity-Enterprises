@@ -88,3 +88,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+
+
+//img slider
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Hero Section Image Slider (Right-to-Left Effect)
+    const sliderContainer = document.getElementById('slider-container');
+    const sliderImages = document.querySelectorAll('.slider-image');
+    const totalImages = sliderImages.length;
+    let currentImageIndex = 0;
+    const slideDuration = 5000; // 5 seconds interval between slides
+
+    function slideImages() {
+        currentImageIndex = (currentImageIndex + 1) % totalImages;
+        const offset = -currentImageIndex * 100; // Calculate percentage to slide
+        sliderContainer.style.transform = `translateX(${offset}%)`;
+    }
+
+    // Duplicate the first image at the end for seamless looping transition
+    // This is a common trick for smooth infinite carousels without complex JS
+    const firstImageClone = sliderImages[0].cloneNode(true);
+    sliderContainer.appendChild(firstImageClone);
+
+    // Start the slider
+    setInterval(slideImages, slideDuration);
+
+    // Optional: Reset position after a full loop (when the clone is shown)
+    // This prevents a sudden jump back to the start
+    sliderContainer.addEventListener('transitionend', () => {
+        if (currentImageIndex === totalImages) {
+            sliderContainer.style.transition = 'none'; // Temporarily remove transition
+            currentImageIndex = 0;
+            sliderContainer.style.transform = `translateX(0%)`;
+            // Force a reflow to apply the `none` transition before adding it back
+            void sliderContainer.offsetWidth;
+            sliderContainer.style.transition = 'transform 1s ease-in-out'; // Add transition back
+        }
+    });
+});
